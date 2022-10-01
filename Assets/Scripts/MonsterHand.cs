@@ -19,8 +19,8 @@ public class MonsterHand : MonoBehaviour
 
     void Update()
     {
-        if (Time.realtimeSinceStartup > 20.0)
-            Active = false;
+        //if (Time.realtimeSinceStartup > 20.0) //for testing!
+        //    Active = false;
 
        
         if (Active && Angle  < 0)
@@ -46,13 +46,11 @@ public class MonsterHand : MonoBehaviour
 
     public void Show()
     {
-        this.transform.rotation = Quaternion.Euler(0, -90, 0);
         Active = true;
     }
 
     public void Hide()
     {
-        this.transform.rotation = Quaternion.Euler(0, 0, 0);
         Active = false;
     }
 
