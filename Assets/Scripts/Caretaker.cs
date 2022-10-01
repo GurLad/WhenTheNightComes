@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Caretaker : MonoBehaviour
 {
+    public float Speed;
     public float ArrivalThreshold = 0.1f;
+    public float TurnSpeed;
+    public Transform RotationObject;
     private Rigidbody rigidbody;
     private List<Vector2Int> currentPath = new List<Vector2Int>();
     private float count;
-    private float yRot;
-    private float targetRot;
+    private Quaternion currentRot;
+    private Quaternion targetRot;
 
     private void Start()
     {
@@ -24,20 +27,29 @@ public class Caretaker : MonoBehaviour
             if (Vector3.Distance(transform.position - new Vector3(0, transform.position.y, 0), currentPath[0].To3D()) <= ArrivalThreshold)
             {
                 currentPath.RemoveAt(0);
-                // Adapted from https://answers.unity.com/questions/1023987/lookat-only-on-z-axis.html
-                Vector3 difference = currentPath[0].To3D() - transform.position;
-                targetRot = Mathf.Atan2(difference.z, difference.x) * Mathf.Rad2Deg;
+                if (currentPath.Count <= 0)
+                {
+                    rigidbody.velocity = Vector3.zero;
+                    return;
+                }
+                currentRot = RotationObject.transform.localRotation;
+                RotationObject.transform.LookAt(-(RotationObject.transform.position - currentPath[0].To3D()));
+                targetRot = RotationObject.transform.localRotation;
+                count = 0;
             }
+            if (count < 1)
+            {
+                RotationObject.transform.localRotation = Quaternion.Slerp(currentRot, targetRot, count);
+                count += Time.deltaTime * TurnSpeed;
+            }
+            else
+            {
+                RotationObject.transform.localRotation = targetRot;
+            }
+            Vector3 dir = -(transform.position - currentPath[0].To3D());
+            dir.y = 0;
+            rigidbody.velocity = dir.normalized * Speed;
         }
-        if (Mathf.Abs(targetRot - yRot) >= ArrivalThreshold)
-        {
-            yRot -= Mathf.Sign(targetRot - yRot) * Time.deltaTime;
-        }
-        else
-        {
-            yRot = targetRot;
-        }
-        transform.localEulerAngles = new Vector3(0, yRot, 0);
     }
 
     public void SetTarget(Vector2Int pos)
