@@ -16,7 +16,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -27,7 +29,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -38,7 +42,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -49,7 +55,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -60,7 +68,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -71,7 +81,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -82,7 +94,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -93,7 +107,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -104,7 +120,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -115,7 +133,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -126,7 +146,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			},
 			{
 				"id": "Bed",
@@ -137,7 +159,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 14259348,
-				"customFields" : {}
+				"customFields": {
+					"Rotation": -1
+				}
 			}
 		],
 		"Caretaker": [
