@@ -11,19 +11,22 @@ public class LevelGenerator : MonoBehaviour
     public int TileSize = 16;
     public int PhysicalSize = 1;
     [Header("Walls")]
-    public GameObject Wall;
     public Transform WallHolder;
+    public GameObject Wall;
     [Header("Entities")]
+    public Transform EntityHolder;
     public GameObject Bed;
     public GameObject Caretaker;
+    public GameObject Player;
     private LevelData levelData;
+    private int[,] walls;
 
     private void Start()
     {
         // Load basic data
         levelData = LevelData.Interpret(EntitiesJSON.text, TileSize);
         // Generate walls
-        int[,] walls = ImportWalls(WallsCSV.text, levelData.Width, levelData.Height);
+        walls = ImportWalls(WallsCSV.text, levelData.Width, levelData.Height);
         for (int x = 0; x < levelData.Width; x++)
         {
             for (int y = 0; y < levelData.Height; y++)
@@ -31,11 +34,92 @@ public class LevelGenerator : MonoBehaviour
                 if (walls[x, y] > 0)
                 {
                     GameObject newWall = Instantiate(Wall, WallHolder);
-                    newWall.transform.position += new Vector3(y, 0, x) * PhysicalSize;
+                    newWall.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
                     newWall.SetActive(true);
                 }
             }
         }
+        // Generate objects
+        foreach (List<Entity> entities in levelData.entities.Values)
+        {
+            foreach (Entity entity in entities)
+            {
+                GameObject entityObject = null;
+                Vector2Int pos = new Vector2Int(entity.x / TileSize, entity.y / TileSize);
+                switch (entity.id)
+                {
+                    case "BedV":
+                    case "BedH":
+                        entityObject = Instantiate(Bed, EntityHolder);
+                        // Rotate base on direction of nearest wall
+                        int rotation = 0;
+                        if (entity.customFields.ContainsKey("Rotation") && entity.customFields["Rotation"] >= 0)
+                        {
+                            rotation = entity.customFields["Rotation"];
+                        }
+                        else
+                        {
+                            if (entity.id == "BedV")
+                            {
+                                if (SafeGetWall(pos.x, pos.y - 1) > 0)
+                                {
+                                    rotation = 270;
+                                }
+                                else
+                                {
+                                    entityObject.transform.position += new Vector3(PhysicalSize, 0, 0);
+                                    rotation = 90;
+                                }
+                            }
+                            else // if (entity.id == "BedH")
+                            {
+                                if (SafeGetWall(pos.x - 1, pos.y) > 0)
+                                {
+                                    rotation = 180;
+                                }
+                                else
+                                {
+                                    entityObject.transform.position += new Vector3(0, 0, PhysicalSize);
+                                    rotation = 0;
+                                }
+                            }
+                        }
+                        entityObject.transform.Rotate(new Vector3(0, rotation, 0));
+                        // For pathfinding
+                        walls[pos.x, pos.y] = 2;
+                        if (entity.id == "BedV")
+                        {
+                            walls[pos.x, pos.y + 1] = 2;
+                        }
+                        else // if (entity.id == "BedH")
+                        {
+                            walls[pos.x + 1, pos.y] = 2;
+                        }
+                        break;
+                    case "Caretaker":
+                        entityObject = Instantiate(Caretaker, EntityHolder);
+                        break;
+                    case "Player":
+                        entityObject = Instantiate(Player, EntityHolder);
+                        break;
+                    default:
+                        throw new System.Exception("What");
+                }
+                entityObject.transform.position += pos.To3D() * PhysicalSize;
+                entityObject.SetActive(true);
+            }
+        }
+        // Init pathfinder
+        Pathfinder.SetMap(walls, new Vector2Int(levelData.Width, levelData.Height));
+    }
+
+    private int SafeGetWall(int x, int y)
+    {
+        if (x < 0 || y < 0 || x >= levelData.Width || y >= levelData.Height)
+        {
+            return 0;
+        }
+        return walls[x, y];
     }
 
     private int[,] ImportWalls(string csv, int width, int height)
@@ -76,15 +160,16 @@ public class LevelGenerator : MonoBehaviour
             //Debug.Log(JsonConvert.SerializeObject(levelData));
             return levelData;
         }
+    }
 
-        [System.Serializable]
-        public class Entity
-        {
-            public string id;
-            public int x;
-            public int y;
-            public int width;
-            public int height;
-        }
+    [System.Serializable]
+    private class Entity
+    {
+        public string id;
+        public int x;
+        public int y;
+        public int width;
+        public int height;
+        public Dictionary<string, int> customFields;
     }
 }
