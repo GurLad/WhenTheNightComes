@@ -17,6 +17,7 @@ public class LevelGenerator : MonoBehaviour
     public Transform EntityHolder;
     public GameObject Bed;
     public GameObject Caretaker;
+    public GameObject Player;
     private LevelData levelData;
     private int[,] walls;
 
@@ -47,7 +48,8 @@ public class LevelGenerator : MonoBehaviour
                 Vector2Int pos = new Vector2Int(entity.x / TileSize, entity.y / TileSize);
                 switch (entity.id)
                 {
-                    case "Bed":
+                    case "BedV":
+                    case "BedH":
                         entityObject = Instantiate(Bed, EntityHolder);
                         // Rotate base on direction of nearest wall
                         int rotation = 0;
@@ -57,27 +59,48 @@ public class LevelGenerator : MonoBehaviour
                         }
                         else
                         {
-                            if (SafeGetWall(pos.x, pos.y - 1) > 0)
+                            if (entity.id == "BedV")
                             {
-                                rotation = 270;
+                                if (SafeGetWall(pos.x, pos.y - 1) > 0)
+                                {
+                                    rotation = 270;
+                                }
+                                else
+                                {
+                                    entityObject.transform.position += new Vector3(PhysicalSize, 0, 0);
+                                    rotation = 90;
+                                }
                             }
-                            else if (SafeGetWall(pos.x, pos.y + 1) > 0)
+                            else // if (entity.id == "BedH")
                             {
-                                rotation = 90;
-                            }
-                            else if (SafeGetWall(pos.x - 1, pos.y) > 0)
-                            {
-                                rotation = 180;
-                            }
-                            else if (SafeGetWall(pos.x + 1, pos.y) > 0)
-                            {
-                                rotation = 0;
+                                if (SafeGetWall(pos.x - 1, pos.y) > 0)
+                                {
+                                    rotation = 180;
+                                }
+                                else
+                                {
+                                    entityObject.transform.position += new Vector3(0, 0, PhysicalSize);
+                                    rotation = 0;
+                                }
                             }
                         }
                         entityObject.transform.Rotate(new Vector3(0, rotation, 0));
+                        // For pathfinding
+                        walls[pos.x, pos.y] = 2;
+                        if (entity.id == "BedV")
+                        {
+                            walls[pos.x, pos.y + 1] = 2;
+                        }
+                        else // if (entity.id == "BedH")
+                        {
+                            walls[pos.x + 1, pos.y] = 2;
+                        }
                         break;
                     case "Caretaker":
                         entityObject = Instantiate(Caretaker, EntityHolder);
+                        break;
+                    case "Player":
+                        entityObject = Instantiate(Player, EntityHolder);
                         break;
                     default:
                         throw new System.Exception("What");
@@ -86,6 +109,8 @@ public class LevelGenerator : MonoBehaviour
                 entityObject.SetActive(true);
             }
         }
+        // Init pathfinder
+        Pathfinder.SetMap(walls, new Vector2Int(levelData.Width, levelData.Height));
     }
 
     private int SafeGetWall(int x, int y)

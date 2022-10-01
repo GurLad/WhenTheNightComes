@@ -226,6 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1b2316db993c348b1e200e90d84a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 1
+  MovementSpeed: 3
   SidewaysSpeedMultiplier: 0.75
   BackwardsSpeedMultiplier: 0.5
