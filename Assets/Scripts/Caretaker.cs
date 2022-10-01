@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Caretaker : MonoBehaviour
 {
+    public float ArrivalThreshold = 0.1f;
     private Rigidbody rigidbody;
     private List<Vector2Int> currentPath = new List<Vector2Int>();
     private float count;
+    private float yRot;
+    private float targetRot;
 
     private void Start()
     {
@@ -18,15 +21,23 @@ public class Caretaker : MonoBehaviour
     {
         if (currentPath.Count > 0)
         {
-            // TEMP LAZY IMPLEMENTATION
-            count += Time.deltaTime;
-            if (count > 0.5f)
+            if (Vector3.Distance(transform.position - new Vector3(0, transform.position.y, 0), currentPath[0].To3D()) <= ArrivalThreshold)
             {
-                transform.position = currentPath[0].To3D() + new Vector3(0, transform.position.y, 0);
                 currentPath.RemoveAt(0);
-                count--;
+                // Adapted from https://answers.unity.com/questions/1023987/lookat-only-on-z-axis.html
+                Vector3 difference = currentPath[0].To3D() - transform.position;
+                targetRot = Mathf.Atan2(difference.z, difference.x) * Mathf.Rad2Deg;
             }
         }
+        if (Mathf.Abs(targetRot - yRot) >= ArrivalThreshold)
+        {
+            yRot -= Mathf.Sign(targetRot - yRot) * Time.deltaTime;
+        }
+        else
+        {
+            yRot = targetRot;
+        }
+        transform.localEulerAngles = new Vector3(0, yRot, 0);
     }
 
     public void SetTarget(Vector2Int pos)
