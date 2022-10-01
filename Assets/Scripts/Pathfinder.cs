@@ -17,6 +17,7 @@ public static class Pathfinder
 
     public static List<Vector2Int> GetPath(Vector2Int sourceVec, Vector2Int destinationVec)
     {
+        // From Wikipedia...
         Node source = new Node(sourceVec);
         Node destination = new Node(destinationVec);
 
@@ -103,12 +104,12 @@ public static class Pathfinder
         }
         Squash(totalPath, curr, next);
         // Reverse & convert path
-        Debug.Log("Final path:");
+        //Debug.Log("Final path:");
         List<Vector2Int> reversed = new List<Vector2Int>();
         for (int i = totalPath.Count - 1; i >= 0; i--)
         {
             reversed.Add(totalPath[i].ToVector2Int());
-            Debug.Log(totalPath[i]);
+            //Debug.Log(totalPath[i]);
         }
         return reversed;
     }
