@@ -7,11 +7,12 @@ public class Caretaker : MonoBehaviour
     public float Speed;
     public float ArrivalThreshold = 0.1f;
     public float TurnSpeed;
+    public Transform RotationObject;
     private Rigidbody rigidbody;
     private List<Vector2Int> currentPath = new List<Vector2Int>();
     private float count;
-    private float yRot;
-    private float targetRot;
+    private Quaternion currentRot;
+    private Quaternion targetRot;
 
     private void Start()
     {
@@ -31,19 +32,20 @@ public class Caretaker : MonoBehaviour
                     rigidbody.velocity = Vector3.zero;
                     return;
                 }
-                // Adapted from https://answers.unity.com/questions/1023987/lookat-only-on-z-axis.html
-                Vector3 difference = currentPath[0].To3D() - transform.position;
-                targetRot = Mathf.Atan2(difference.z, difference.x) * Mathf.Rad2Deg;
+                currentRot = RotationObject.transform.localRotation;
+                RotationObject.transform.LookAt(-(RotationObject.transform.position - currentPath[0].To3D()));
+                targetRot = RotationObject.transform.localRotation;
+                count = 0;
             }
-            if (Mathf.Abs(targetRot - yRot) >= ArrivalThreshold)
+            if (count < 1)
             {
-                yRot += Mathf.Sign(targetRot - yRot) * Time.deltaTime * TurnSpeed;
+                RotationObject.transform.localRotation = Quaternion.Slerp(currentRot, targetRot, count);
+                count += Time.deltaTime * TurnSpeed;
             }
             else
             {
-                yRot = targetRot;
+                RotationObject.transform.localRotation = targetRot;
             }
-            transform.localEulerAngles = new Vector3(0, yRot, 0);
             Vector3 dir = -(transform.position - currentPath[0].To3D());
             dir.y = 0;
             rigidbody.velocity = dir.normalized * Speed;
