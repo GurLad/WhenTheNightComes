@@ -30,4 +30,21 @@ public class UIClock : MonoBehaviour
             HourHandle.transform.rotation = Quaternion.Euler(0, 0, -Mathf.Floor(ClockTime / 10.0f) * 30);
         }
     }
+
+    public int CurrentHour() 
+    {
+        return (int)Mathf.Floor(ClockTime / 10.0f);
+    }
+
+    public float CurrentTime()
+    {
+        return ClockTime;
+    }
+
+    public float CurrentSecond()
+    {
+        return ClockTime % 10.0f;
+    }
+
+
 }
