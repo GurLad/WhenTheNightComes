@@ -34,7 +34,7 @@ public class LevelGenerator : MonoBehaviour
                 if (walls[x, y] > 0)
                 {
                     GameObject newWall = Instantiate(Wall, WallHolder);
-                    newWall.transform.position += new Vector3(y, 0, x) * PhysicalSize;
+                    newWall.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
                     newWall.SetActive(true);
                 }
             }
@@ -105,7 +105,7 @@ public class LevelGenerator : MonoBehaviour
                     default:
                         throw new System.Exception("What");
                 }
-                entityObject.transform.position += new Vector3(pos.y, 0, pos.x) * PhysicalSize;
+                entityObject.transform.position += pos.To3D() * PhysicalSize;
                 entityObject.SetActive(true);
             }
         }

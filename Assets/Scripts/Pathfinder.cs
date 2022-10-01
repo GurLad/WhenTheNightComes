@@ -28,14 +28,15 @@ public static class Pathfinder
 
         Dictionary<Node, int> fScore = new Dictionary<Node, int>();
         fScore.Add(source, GetCost(source, destination));
-
+        int count = 0;
         while (openSet.Count > 0)
         {
             openSet.Sort((a, b) => 
                 fScore.SafeGetKey(a, int.MaxValue) > fScore.SafeGetKey(b, int.MaxValue) ? 1 :
                 fScore.SafeGetKey(a, int.MaxValue) < fScore.SafeGetKey(b, int.MaxValue) ? -1 : 0);
-            Debug.Log(fScore.SafeGetKey(openSet[0], int.MaxValue) + " < " + fScore.SafeGetKey(openSet[openSet.Count - 1], int.MaxValue));
+            //Debug.Log(fScore.SafeGetKey(openSet[0], int.MaxValue) + " < " + fScore.SafeGetKey(openSet[openSet.Count - 1], int.MaxValue));
             Node current = openSet[0];
+            Debug.Log(current);
             if (current == destination)
             {
                 return RecoverPath(cameFrom, current);
@@ -43,17 +44,24 @@ public static class Pathfinder
             openSet.Remove(current);
             foreach (Node neighbor in current.GetNeighbors())
             {
-                int tentativeScore = gScore[current] + GetDistance(current, neighbor); // No safe as the current should always have a gValue
-                if (tentativeScore < gScore.SafeGetKey(neighbor, int.MaxValue))
-                {
-                    cameFrom.AddOrSet(neighbor, current);
-                    gScore.AddOrSet(neighbor, tentativeScore);
-                    fScore.AddOrSet(neighbor, tentativeScore + GetCost(neighbor, destination));
-                    if (!openSet.Contains(neighbor))
+                if (CanMove(neighbor.x, neighbor.y))
+                { 
+                    int tentativeScore = gScore[current] + GetDistance(current, neighbor); // No safe as the current should always have a gValue
+                    if (tentativeScore < gScore.SafeGetKey(neighbor, int.MaxValue))
                     {
-                        openSet.Add(neighbor);
+                        cameFrom.AddOrSet(neighbor, current);
+                        gScore.AddOrSet(neighbor, tentativeScore);
+                        fScore.AddOrSet(neighbor, tentativeScore + GetCost(neighbor, destination));
+                        if (openSet.FindIndex(a => a == neighbor) < 0)
+                        {
+                            openSet.Add(neighbor);
+                        }
                     }
                 }
+            }
+            if (count++ > 1000)
+            {
+                throw new System.Exception("Oof 2!");
             }
         }
         // This should be impossible
@@ -64,10 +72,15 @@ public static class Pathfinder
     {
         List<Node> totalPath = new List<Node>();
         totalPath.Add(current);
-        while (cameFrom.Keys.Count > 0)
+        int count = 0;
+        while (cameFrom.ContainsKey(current))
         {
             current = cameFrom[current];
             totalPath.Add(current);
+            if (count++ > 1000)
+            {
+                throw new System.Exception("Oof 2!");
+            }
         }
         // Reverse & convert path
         List<Vector2Int> reversed = new List<Vector2Int>();
@@ -92,26 +105,9 @@ public static class Pathfinder
     {
         if (x < 0 || y < 0 || x >= size.x || y >= size.y)
         {
-            return false;
+            return true;
         }
-        return map[x, y] > 0;
-    }
-
-    public static S SafeGetKey<T, S>(this Dictionary<T, S> dictionary, T key, S defaultValue = default)
-    {
-        return dictionary.ContainsKey(key) ? dictionary[key] : defaultValue;
-    }
-
-    public static void AddOrSet<T, S>(this Dictionary<T, S> dictionary, T key, S value)
-    {
-        if (!dictionary.ContainsKey(key))
-        {
-            dictionary.Add(key, value);
-        }
-        else
-        {
-            dictionary[key] = value;
-        }
+        return map[x, y] <= 0;
     }
 
     private class Node
@@ -121,6 +117,8 @@ public static class Pathfinder
 
         public static bool operator ==(Node a, Node b)
         {
+            if ((object)a == null) return (object)b == null;
+            if ((object)b == null) return (object)a == null;
             return a.x == b.x && a.y == b.y;
         }
 
@@ -159,12 +157,17 @@ public static class Pathfinder
 
         public int GetDistance(Node other)
         {
-            return Mathf.RoundToInt(Mathf.Sqrt(Mathf.Pow(other.x - x, 2) + Mathf.Pow(other.y + y, 2)));
+            return Mathf.Abs(other.x - x) + Mathf.Abs(other.y - y);// Mathf.RoundToInt(Mathf.Sqrt(Mathf.Pow(other.x - x, 2) + Mathf.Pow(other.y + y, 2)));
         }
 
         public Vector2Int ToVector2Int()
         {
             return new Vector2Int(x, y);
+        }
+
+        public override string ToString()
+        {
+            return "(" + x + ", " + y + ")";
         }
     }
 }
