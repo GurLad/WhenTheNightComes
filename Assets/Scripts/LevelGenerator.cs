@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
@@ -15,17 +16,17 @@ public class LevelGenerator : MonoBehaviour
     [Header("Entities")]
     public GameObject Bed;
     public GameObject Caretaker;
-    private EntitiesInterpreter entitiesInterpreter;
+    private LevelData levelData;
 
     private void Start()
     {
         // Load basic data
-        entitiesInterpreter = new EntitiesInterpreter(EntitiesJSON.text, TileSize);
+        levelData = LevelData.Interpret(EntitiesJSON.text, TileSize);
         // Generate walls
-        int[,] walls = ImportWalls(WallsCSV.text, entitiesInterpreter.Width, entitiesInterpreter.Height);
-        for (int x = 0; x < entitiesInterpreter.Width; x++)
+        int[,] walls = ImportWalls(WallsCSV.text, levelData.Width, levelData.Height);
+        for (int x = 0; x < levelData.Width; x++)
         {
-            for (int y = 0; y < entitiesInterpreter.Height; y++)
+            for (int y = 0; y < levelData.Height; y++)
             {
                 if (walls[x, y] > 0)
                 {
@@ -55,22 +56,25 @@ public class LevelGenerator : MonoBehaviour
     }
 
     [System.Serializable]
-    private class EntitiesInterpreter
+    private class LevelData
     {
-        public List<Dictionary<string, Entity>> entities;
-        [SerializeField]
+        public Dictionary<string, List<Entity>> entities;
+        [Newtonsoft.Json.JsonProperty]
         private int width;
         public int Width => width / tileSize;
-        [SerializeField]
+        [Newtonsoft.Json.JsonProperty]
         private int height;
         public int Height => height / tileSize;
         private int tileSize;
 
-        public EntitiesInterpreter(string json, int tileSize)
+        public static LevelData Interpret(string json, int tileSize)
         {
-            this.tileSize = tileSize;
-            JsonUtility.FromJsonOverwrite(json, this);
-            Debug.Log(JsonUtility.ToJson(this));
+            LevelData levelData = new LevelData();
+            levelData = JsonConvert.DeserializeObject<LevelData>(json);
+            levelData.tileSize = tileSize;
+            //JsonUtility.FromJsonOverwrite(json, this);
+            //Debug.Log(JsonConvert.SerializeObject(levelData));
+            return levelData;
         }
 
         [System.Serializable]
