@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class Pathfinder
@@ -28,15 +30,17 @@ public static class Pathfinder
 
         Dictionary<Node, int> fScore = new Dictionary<Node, int>();
         fScore.Add(source, GetCost(source, destination));
-        int count = 0;
         while (openSet.Count > 0)
         {
-            openSet.Sort((a, b) => 
-                fScore.SafeGetKey(a, int.MaxValue) > fScore.SafeGetKey(b, int.MaxValue) ? 1 :
-                fScore.SafeGetKey(a, int.MaxValue) < fScore.SafeGetKey(b, int.MaxValue) ? -1 : 0);
+            //openSet.Sort((a, b) => 
+            //    fScore.SafeGetKey(a, int.MaxValue) > fScore.SafeGetKey(b, int.MaxValue) ? 1 :
+            //    fScore.SafeGetKey(a, int.MaxValue) < fScore.SafeGetKey(b, int.MaxValue) ? -1 : 0);
             //Debug.Log(fScore.SafeGetKey(openSet[0], int.MaxValue) + " < " + fScore.SafeGetKey(openSet[openSet.Count - 1], int.MaxValue));
+            //Node current = openSet[0];
             Node current = openSet[0];
-            Debug.Log(current);
+            int minValue = int.MaxValue;
+            openSet.ForEach(a => { if (fScore.SafeGetKey(a, int.MaxValue) < minValue) minValue = fScore.SafeGetKey(current = a, int.MaxValue); });
+            //Debug.Log(current);
             if (current == destination)
             {
                 return RecoverPath(cameFrom, current);
@@ -59,10 +63,6 @@ public static class Pathfinder
                     }
                 }
             }
-            if (count++ > 1000)
-            {
-                throw new System.Exception("Oof 2!");
-            }
         }
         // This should be impossible
         return null;
@@ -70,23 +70,45 @@ public static class Pathfinder
 
     private static List<Vector2Int> RecoverPath(Dictionary<Node, Node> cameFrom, Node current)
     {
+        void Squash(List<Node> totalPath, int curr, int next)
+        {
+            Debug.Log("Squashed everything between " + totalPath[curr] + " -> " + totalPath[next - 1]);
+            for (int i = curr + 1; i < next - 1; i++)
+            {
+                totalPath.RemoveAt(curr + 1);
+            }
+        }
+
         List<Node> totalPath = new List<Node>();
         totalPath.Add(current);
-        int count = 0;
         while (cameFrom.ContainsKey(current))
         {
             current = cameFrom[current];
             totalPath.Add(current);
-            if (count++ > 1000)
+        }
+        // Post-process path
+        int curr = 0, next = 2;
+        while (next < totalPath.Count)
+        {
+            if (!HasLineOfSight(totalPath[curr], totalPath[next]))
             {
-                throw new System.Exception("Oof 2!");
+                Squash(totalPath, curr, next);
+                curr++;
+                next = curr + 2; // Must have a line of sight with neighbors, so no need to check them
+            }
+            else
+            {
+                next++;
             }
         }
+        Squash(totalPath, curr, next);
         // Reverse & convert path
+        Debug.Log("Final path:");
         List<Vector2Int> reversed = new List<Vector2Int>();
         for (int i = totalPath.Count - 1; i >= 0; i--)
         {
             reversed.Add(totalPath[i].ToVector2Int());
+            Debug.Log(totalPath[i]);
         }
         return reversed;
     }
@@ -108,6 +130,49 @@ public static class Pathfinder
             return true;
         }
         return map[x, y] <= 0;
+    }
+
+    private static bool HasLineOfSight(Node start, Node end)
+    {
+        // Adapted from https://stackoverflow.com/questions/11678693/all-cases-covered-bresenhams-line-algorithm
+        int x = start.x, y = start.y;
+        int x2 = end.x, y2 = end.y;
+        int w = x2 - x;
+        int h = y2 - y;
+        int dx1 = 0, dy1 = 0, dx2 = 0, dy2 = 0;
+        if (w < 0) dx1 = -1; else if (w > 0) dx1 = 1;
+        if (h < 0) dy1 = -1; else if (h > 0) dy1 = 1;
+        if (w < 0) dx2 = -1; else if (w > 0) dx2 = 1;
+        int longest = Math.Abs(w);
+        int shortest = Math.Abs(h);
+        if (!(longest > shortest))
+        {
+            longest = Math.Abs(h);
+            shortest = Math.Abs(w);
+            if (h < 0) dy2 = -1; else if (h > 0) dy2 = 1;
+            dx2 = 0;
+        }
+        int numerator = longest >> 1;
+        for (int i = 0; i <= longest; i++)
+        {
+            if (!CanMove(x, y))
+            {
+                return false;
+            }
+            numerator += shortest;
+            if (!(numerator < longest))
+            {
+                numerator -= longest;
+                x += dx1;
+                y += dy1;
+            }
+            else
+            {
+                x += dx2;
+                y += dy2;
+            }
+        }
+        return true;
     }
 
     private class Node
@@ -157,7 +222,7 @@ public static class Pathfinder
 
         public int GetDistance(Node other)
         {
-            return Mathf.Abs(other.x - x) + Mathf.Abs(other.y - y);// Mathf.RoundToInt(Mathf.Sqrt(Mathf.Pow(other.x - x, 2) + Mathf.Pow(other.y + y, 2)));
+            return Mathf.RoundToInt(Mathf.Sqrt(Mathf.Pow(other.x - x, 2) + Mathf.Pow(other.y + y, 2))); // Mathf.Abs(other.x - x) + Mathf.Abs(other.y - y);
         }
 
         public Vector2Int ToVector2Int()
