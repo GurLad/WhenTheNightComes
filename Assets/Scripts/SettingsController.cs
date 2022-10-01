@@ -7,7 +7,7 @@ public class SettingsController : MonoBehaviour
     public UnityEngine.UI.Slider SFXSlider, MusicSlider, SensitivitySlider;
     public UnityEngine.UI.Toggle FullscreenBox;
     public UnityEngine.UI.Dropdown ResolutionDropdown;
-    public GameObject SettingsMenu;
+    public GameObject SettingsMenu, GameUI;
 
     private int[,] Resolutions = new int[,] {
         {1024, 768},
@@ -58,5 +58,6 @@ public class SettingsController : MonoBehaviour
         SettingsActive = !SettingsActive;
         Cursor.visible = SettingsActive;
         SettingsMenu.SetActive(SettingsActive);
+        GameUI.SetActive(!SettingsActive);
     }
 }
