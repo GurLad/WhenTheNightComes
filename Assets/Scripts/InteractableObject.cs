@@ -26,6 +26,7 @@ public class InteractableObject : MonoBehaviour
 
     public void Init(int type = -1)
     {
+        CanInteract = true;
         animation = Animations[type >= 0 ? type : Random.Range(0, Animations.Count)];
         animation.gameObject.SetActive(true);
     }
@@ -36,7 +37,7 @@ public class InteractableObject : MonoBehaviour
         {
             highlightDelay = 0;
             animation.AnimateInteraction();
-            CaretakerController.Current.GetClosestCaretaker(transform.position.To2D()).SetTarget(CaretakerPos);
+            CaretakerController.Current.GetClosestCaretaker(CaretakerPos).SetTarget(CaretakerPos, transform.position.To2D());
             CanInteract = false;
         }
     }
