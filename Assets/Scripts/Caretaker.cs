@@ -126,7 +126,7 @@ public class Caretaker : MonoBehaviour
     {
         if (walkingAudioSource == null || !walkingAudioSource.isPlaying)
         {
-            walkingAudioSource = SoundController.PlaySoundStoppable(WalkSFX);
+            walkingAudioSource = SoundController.Play3DSound(WalkSFX, gameObject);
         }
         if (Vector3.Distance(transform.position - new Vector3(0, transform.position.y, 0), currentPath[0].To3D()) <= ArrivalThreshold)
         {

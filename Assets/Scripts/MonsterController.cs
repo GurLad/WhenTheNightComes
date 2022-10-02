@@ -77,7 +77,7 @@ public class MonsterController : MonoBehaviour
         ShuffleHands();
         StopMonsterAttack();
 
-        SoundController.PlaySound(MonsterWinSFX[Random.Range(0, MonsterWinSFX.Length)]);
+        SoundController.Play3DSound(MonsterWinSFX[Random.Range(0, MonsterWinSFX.Length)], gameObject);
         SM.LoseLife();
 
     }
@@ -99,7 +99,7 @@ public class MonsterController : MonoBehaviour
     {
         MonsterAttacking = true;
 
-        SoundController.PlaySound(MonsterSpawnSFX[Random.Range(0, MonsterSpawnSFX.Length)]);
+        SoundController.Play3DSound(MonsterSpawnSFX[Random.Range(0, MonsterSpawnSFX.Length)], gameObject);
 
         AttackTime = 0;
     }
@@ -110,7 +110,7 @@ public class MonsterController : MonoBehaviour
         {
             MonsterAttacking = false;
 
-            SoundController.PlaySound(MonsterDeadSFX[Random.Range(0, MonsterDeadSFX.Length)]);
+            SoundController.Play3DSound(MonsterDeadSFX[Random.Range(0, MonsterDeadSFX.Length)], gameObject);
 
             if (AttackTime < MonsterAttackDuration / 10)  //give points based on the time player took to stop the monster
                 SM.AddPoints(5);
