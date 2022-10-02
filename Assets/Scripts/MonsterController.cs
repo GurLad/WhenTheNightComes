@@ -18,7 +18,9 @@ public class MonsterController : MonoBehaviour
     void Start()
     {
         SC = FindObjectOfType<SettingsController>();
-        //Randomize monster hand, monster eyes arrays
+
+        //Randomizing order of hands
+        ShuffleHands();
 
         StartMonsterAttack(); //testing
     }
@@ -90,6 +92,7 @@ public class MonsterController : MonoBehaviour
         MonsterAttacking = false;
         AttackTime = 0;
 
+        ShuffleHands();
         foreach (var x in MonsterHands)
             x.Hide();
     }
@@ -103,5 +106,26 @@ public class MonsterController : MonoBehaviour
     {
         int x = Random.Range(0, 6);
         MonsterEyes[x].Blink();
+    }
+
+    private void ShuffleHands()
+    {
+        MonsterHand[] NewOrder = new MonsterHand[4];
+        float[] order = new float[4] { Random.value, Random.value, Random.value, Random.value };
+
+        for (int i = 0; i < 4; i++)
+        {
+            int min = 0;
+            for (int j = 0; j < 4; j++)
+            {
+                if (order[j] < order[min])
+                    min = j;
+            }
+            order[min] = 1;
+
+            NewOrder[i] = MonsterHands[min];
+        }
+        for (int i = 0; i < 4; i++)
+            MonsterHands[i] = NewOrder[i];
     }
 }
