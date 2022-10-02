@@ -13,8 +13,18 @@ void StartMonsterAttack()                //starts monster attack (resets time it
 void StopMonsterAttack()                 //stops monster attack
 
 UIClock:
-
 int CurrentHour()			//returns current hour (Time/10 rounded down)
 float CurrentTime()			//returns clock's time in seconds
 float CurrentSecond()			//returns current second (basically time mod 10)
 void SetTime(float Time_)		//sets clock time (in seconds)
+
+ScoreManager:
+
+int GetHighScore()      //Self explanatory
+int GetTotalPoints()	//Self explanatory
+int GetPoints()			//Self explanatory
+void SetScores(int points, int totalpoints, int highscore)    //sets all the scores to given values (in case level change)
+void UpdateDisplay()            //No need to use, set as public just in case, things should update by themselfes as you use other methods
+void EndLevel()				//Calculating total points and resetting points variable
+void EndGame()				//resetting points, setting highscore
+void AddPoints(int Points_)	//Adding to level-score variable (can be negative)

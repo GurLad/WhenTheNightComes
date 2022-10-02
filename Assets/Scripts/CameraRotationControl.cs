@@ -50,7 +50,6 @@ public class CameraRotationControl : MonoBehaviour
                     
                     if (Input.GetMouseButtonDown(0))
                     {
-                        Debug.Log("Clicked InteractableObject!");
                         parent.GetComponent<InteractableObject>().Interact();
                     }
                     break;
