@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -13,11 +14,16 @@ public class LevelGenerator : MonoBehaviour
     [Header("Walls")]
     public Transform WallHolder;
     public GameObject Wall;
+    public GameObject Void;
     [Header("Entities")]
     public Transform EntityHolder;
     public GameObject Bed;
     public GameObject Caretaker;
     public GameObject Player;
+    [Header("Minimap")]
+    public Camera MinimapCamera;
+    public RenderTexture MinimapRenderer;
+    public RawImage MinimapUI;
     private LevelData levelData;
     private int[,] walls;
 
@@ -31,11 +37,17 @@ public class LevelGenerator : MonoBehaviour
         {
             for (int y = 0; y < levelData.Height; y++)
             {
-                if (walls[x, y] > 0)
+                if (walls[x, y] == 1) // Wall
                 {
                     GameObject newWall = Instantiate(Wall, WallHolder);
                     newWall.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
                     newWall.SetActive(true);
+                }
+                else if (walls[x, y] == 2) // Void
+                {
+                    GameObject newVoid = Instantiate(Void, WallHolder);
+                    newVoid.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
+                    newVoid.SetActive(true);
                 }
             }
         }
@@ -111,6 +123,14 @@ public class LevelGenerator : MonoBehaviour
         }
         // Init pathfinder
         Pathfinder.SetMap(walls, new Vector2Int(levelData.Width, levelData.Height));
+        // Move minimap
+        Debug.Log(levelData.Width + ", " + levelData.Height);
+        MinimapCamera.transform.position = new Vector3(levelData.Height / 2.0f - 0.5f, 0, levelData.Width / 2.0f - 0.5f);
+        MinimapCamera.orthographicSize = levelData.Height / 2.0f;
+        MinimapUI.texture = MinimapCamera.targetTexture = MinimapRenderer = Instantiate(MinimapRenderer);
+        MinimapRenderer.width = levelData.Width * TileSize * 4;
+        MinimapRenderer.height = levelData.Height * TileSize * 4;
+        MinimapUI.rectTransform.sizeDelta = new Vector2(MinimapUI.rectTransform.sizeDelta.y * ((float)levelData.Width / levelData.Height), MinimapUI.rectTransform.sizeDelta.y);
     }
 
     private int SafeGetWall(int x, int y)
