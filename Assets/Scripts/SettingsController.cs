@@ -43,6 +43,7 @@ public class SettingsController : MonoBehaviour
 
         Screen.fullScreen = Fullscreen;
         Screen.SetResolution(Resolutions[Resolution, 0], Resolutions[Resolution, 1], Fullscreen);
+        SoundController.Volume = SFX;
     }
 
     private void Update()
