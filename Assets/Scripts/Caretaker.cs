@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Caretaker : MonoBehaviour
 {
+    private enum SweepState { None, FirstPass, SecondPass, Return }
     [Header("General")]
     public float ArrivalThreshold = 0.1f;
     [Header("Run")]
@@ -16,6 +17,7 @@ public class Caretaker : MonoBehaviour
     private Rigidbody rigidbody;
     private CaretakerStats stats;
     private List<Vector2Int> currentPath = new List<Vector2Int>();
+    private SweepState sweepState = SweepState.None;
     private float count;
     private float idlePauseTime = -1;
     private float previousYRot;
@@ -37,10 +39,40 @@ public class Caretaker : MonoBehaviour
             FollowPath();
             return;
         }
-        //if (SwipeAnimation.Active) // Swiping
-        //{
-        //    return;
-        //}
+        if (sweepState != SweepState.None) // Sweeping
+        {
+            if (Rotate(sweepState == SweepState.SecondPass ? stats.SweepSpeed / 2 : stats.SweepSpeed))
+            {
+                switch (sweepState)
+                {
+                    case SweepState.None:
+                        break;
+                    case SweepState.FirstPass:
+                        Debug.Log("Began second pass");
+                        count = 0;
+                        sweepState = SweepState.SecondPass;
+                        previousYRot = currentYRot;
+                        targetYRot = currentYRot + 60;
+                        break;
+                    case SweepState.SecondPass:
+                        Debug.Log("Began return");
+                        count = 0;
+                        sweepState = SweepState.Return;
+                        previousYRot = currentYRot;
+                        targetYRot = currentYRot - 30;
+                        break;
+                    case SweepState.Return:
+                        Debug.Log("Finished sweep");
+                        count = 0;
+                        sweepState = SweepState.None;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            RotationObject.transform.localEulerAngles = new Vector3(0, currentYRot, 0);
+            return;
+        }
         // Idling
         if (idlePauseTime < 0)
         {
@@ -89,34 +121,44 @@ public class Caretaker : MonoBehaviour
             {
                 rigidbody.velocity = Vector3.zero;
                 count = 0;
-                //SwipeAnimation.Activate();
+                // Begin sweep
+                sweepState = SweepState.FirstPass;
+                previousYRot = currentYRot;
+                targetYRot = currentYRot - 30;
+                Debug.Log("Began first pass");
                 return;
             }
             GenerateRots();
         }
-        if (count < 1)
-        {
-            currentYRot = Mathf.Lerp(previousYRot, targetYRot, -(Mathf.Sin(count * Mathf.PI + Mathf.PI / 2)) / 2 + 0.5f);
-            count += Time.deltaTime * stats.TurnSpeed;
-        }
-        else
-        {
-            currentYRot = targetYRot;
-        }
+        Rotate();
         RotationObject.transform.localEulerAngles = new Vector3(0, currentYRot, 0);
         Vector3 dir = -(transform.position - currentPath[0].To3D());
         dir.y = 0;
         rigidbody.velocity = dir.normalized * stats.Speed;
     }
 
-    private void GenerateRots()
+    private bool Rotate(float speed = -1)
+    {
+        if (count < 1)
+        {
+            currentYRot = Mathf.Lerp(previousYRot, targetYRot, -(Mathf.Sin(count * Mathf.PI + Mathf.PI / 2)) / 2 + 0.5f);
+            count += Time.deltaTime * (speed < 0 ? stats.TurnSpeed : speed);
+            return false;
+        }
+        else
+        {
+            currentYRot = targetYRot;
+            return true;
+        }
+    }
+
+    private void GenerateRots(Vector2 diff)
     {
         previousYRot = currentYRot;
         if (Mathf.Abs(previousYRot) > 180) // Bind to 180
         {
             previousYRot -= Mathf.Sign(previousYRot) > 0 ? 360 : -360;
         }
-        Vector2 diff = new Vector2((transform.position.To2D() - currentPath[0]).x, (transform.position.To2D() - currentPath[0]).y).normalized;
         targetYRot = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         if (Mathf.Abs(targetYRot - previousYRot) > 180) // Rotating the opposite direction
         {
@@ -133,8 +175,15 @@ public class Caretaker : MonoBehaviour
         count = 0;
     }
 
+    private void GenerateRots()
+    {
+        GenerateRots(new Vector2((transform.position.To2D() - currentPath[0]).x, (transform.position.To2D() - currentPath[0]).y).normalized);
+    }
+
     public void SetTarget(Vector2Int pos, bool run = true)
     {
+        // Immediatly stop current action
+        currentPath.Clear();
         //transform.position = transform.position.To2D().To3D() + new Vector3(0, transform.position.y, 0);
         stats = run ? RunStats : IdleStats;
         currentPath = Pathfinder.GetPath(transform.position.To2D(), pos);
@@ -147,6 +196,6 @@ public class Caretaker : MonoBehaviour
     {
         public float Speed;
         public float TurnSpeed;
-        public float SwipeSpeed;
+        public float SweepSpeed;
     }
 }
