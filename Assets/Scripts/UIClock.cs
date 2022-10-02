@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class UIClock : MonoBehaviour
 {
+    private static UIClock _current;
+    public static UIClock Current
+    {
+        get
+        {
+            return _current != null ? _current : (_current = FindObjectOfType<UIClock>());
+        }
+    }
     private float ClockTime, LastTime;
     public AudioClip Bell, Ticking;
     public GameObject MinHandle, HourHandle;

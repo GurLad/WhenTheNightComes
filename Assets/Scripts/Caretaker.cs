@@ -37,6 +37,10 @@ public class Caretaker : MonoBehaviour
 
     private void Update()
     {
+        if (UIManager.Current.IsAnyWindowOpen())
+        {
+            return;
+        }
         if (currentPath.Count > 0) // Moving
         {
             FollowPath();
