@@ -9,7 +9,20 @@ public class InteractableObject : MonoBehaviour
     public Vector2Int CaretakerPos;
     [HideInInspector]
     public bool CanInteract;
+    private int highlightDelay;
     private ObjectAnimation animation;
+
+    private void Update()
+    {
+        if (highlightDelay > 0)
+        {
+            highlightDelay--; // No need for deltaTime - just checking that didn't highlight this frame
+            if (highlightDelay <= 0)
+            {
+                animation.AnimateStopHighlight();
+            }
+        }
+    }
 
     public void Init(int type = -1)
     {
@@ -21,6 +34,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (CanInteract)
         {
+            highlightDelay = 0;
             animation.AnimateInteraction();
             CaretakerController.Current.GetClosestCaretaker(transform.position.To2D()).SetTarget(CaretakerPos);
             CanInteract = false;
@@ -29,7 +43,11 @@ public class InteractableObject : MonoBehaviour
 
     public void Highlight()
     {
-        // TBA
+        if (CanInteract)
+        {
+            animation.AnimateHighlight();
+            highlightDelay = 2;
+        }
     }
 
     public void Recover()
