@@ -15,6 +15,11 @@ public static class Pathfinder
         size = newSize;
     }
 
+    public static bool HasLineOfSight(Vector2Int start, Vector2Int end)
+    {
+        return HasLineOfSight(new Node(start), new Node(end));
+    }
+
     public static List<Vector2Int> GetPath(Vector2Int sourceVec, Vector2Int destinationVec)
     {
         // From Wikipedia...
