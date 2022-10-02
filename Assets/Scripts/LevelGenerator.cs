@@ -123,7 +123,6 @@ public class LevelGenerator : MonoBehaviour
                         entityObject = Instantiate(Object, EntityHolder);
                         InteractableObject interactableObject = entityObject.GetComponent<InteractableObject>();
                         interactableObject.CaretakerPos = entity.customFields["CaretakerTarget"].ToVector2Int();
-                        Debug.Log(interactableObject.CaretakerPos);
                         interactableObject.Init((int)entity.customFields["Type"]);
                         break;
                     default:
