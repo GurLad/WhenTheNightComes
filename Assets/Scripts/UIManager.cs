@@ -35,5 +35,17 @@ public class UIManager : MonoBehaviour
         return UIWindows[(int)window].activeInHierarchy;
     }
 
+    public void CloseWindow(UIElements window)
+    {
+        
+        UIWindows[(int)window].SetActive(false);
+        
+        if (!IsAnyWindowOpen())
+        {
+            GameInterface.SetActive(true);
+            Cursor.visible = false;
+        }
+    }
+
 
 }
