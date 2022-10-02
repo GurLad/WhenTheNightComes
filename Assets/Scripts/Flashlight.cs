@@ -5,7 +5,28 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     public GameObject Caretaker;
-    public bool Active;
+    public Renderer MinimapFlashlight;
+    public Color ActiveColor;
+    public Color InactiveColor;
+    private Material minimapMaterial;
+    private bool _active;
+    public bool Active
+    { 
+        get
+        {
+            return _active;
+        }
+        set
+        {
+            _active = value;
+            minimapMaterial.color = Active ? ActiveColor : InactiveColor;
+        }
+    }
+
+    private void Start()
+    {
+        minimapMaterial = MinimapFlashlight.material = Instantiate(MinimapFlashlight.material);
+    }
 
     private void OnTriggerEnter(Collider other)
     {

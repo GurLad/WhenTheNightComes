@@ -142,6 +142,7 @@ public class LevelGenerator : MonoBehaviour
         MinimapRenderer.width = levelData.Width * TileSize * 4;
         MinimapRenderer.height = levelData.Height * TileSize * 4;
         MinimapRenderer.Create();
+        MinimapUI = MinimapUI != null ? MinimapUI : FindObjectOfType<RawImage>(); // Unity can't use ??...
         MinimapUI.texture = MinimapCamera.targetTexture = MinimapRenderer;
         MinimapUI.rectTransform.sizeDelta = new Vector2(MinimapUI.rectTransform.sizeDelta.y * ((float)levelData.Width / levelData.Height), MinimapUI.rectTransform.sizeDelta.y);
     }
