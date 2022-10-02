@@ -28,6 +28,6 @@ public static class ExtensionMethods
 
     public static Vector2Int To2D(this Vector3 vector3)
     {
-        return new Vector2Int((int)vector3.z, (int)vector3.x);
+        return new Vector2Int(Mathf.RoundToInt(vector3.z), Mathf.RoundToInt(vector3.x));
     }
 }

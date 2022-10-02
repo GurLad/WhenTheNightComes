@@ -93,21 +93,24 @@ public static class Pathfinder
             totalPath.Add(current);
         }
         // Post-process path
-        int curr = 0, next = 2;
-        while (next < totalPath.Count)
+        if (totalPath.Count > 2) // No need to squash if it's just 2 steps...
         {
-            if (!HasLineOfSight(totalPath[curr], totalPath[next]))
+            int curr = 0, next = 2;
+            while (next < totalPath.Count)
             {
-                Squash(totalPath, curr, next);
-                curr++;
-                next = curr + 2; // Must have a line of sight with neighbors, so no need to check them
+                if (!HasLineOfSight(totalPath[curr], totalPath[next]))
+                {
+                    Squash(totalPath, curr, next);
+                    curr++;
+                    next = curr + 2; // Must have a line of sight with neighbors, so no need to check them
+                }
+                else
+                {
+                    next++;
+                }
             }
-            else
-            {
-                next++;
-            }
+            Squash(totalPath, curr, next);
         }
-        Squash(totalPath, curr, next);
         // Reverse & convert path
         //Debug.Log("Final path:");
         List<Vector2Int> reversed = new List<Vector2Int>();

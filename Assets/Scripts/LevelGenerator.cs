@@ -124,12 +124,14 @@ public class LevelGenerator : MonoBehaviour
         // Init pathfinder
         Pathfinder.SetMap(walls, new Vector2Int(levelData.Width, levelData.Height));
         // Move minimap
-        Debug.Log(levelData.Width + ", " + levelData.Height);
         MinimapCamera.transform.position = new Vector3(levelData.Height / 2.0f - 0.5f, 0, levelData.Width / 2.0f - 0.5f);
         MinimapCamera.orthographicSize = levelData.Height / 2.0f;
-        MinimapUI.texture = MinimapCamera.targetTexture = MinimapRenderer = Instantiate(MinimapRenderer);
+        MinimapRenderer = Instantiate(MinimapRenderer);
+        MinimapRenderer.Release();
         MinimapRenderer.width = levelData.Width * TileSize * 4;
         MinimapRenderer.height = levelData.Height * TileSize * 4;
+        MinimapRenderer.Create();
+        MinimapUI.texture = MinimapCamera.targetTexture = MinimapRenderer;
         MinimapUI.rectTransform.sizeDelta = new Vector2(MinimapUI.rectTransform.sizeDelta.y * ((float)levelData.Width / levelData.Height), MinimapUI.rectTransform.sizeDelta.y);
     }
 

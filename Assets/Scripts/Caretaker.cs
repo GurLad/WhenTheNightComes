@@ -18,7 +18,7 @@ public class Caretaker : MonoBehaviour
     private CaretakerStats stats;
     private List<Vector2Int> currentPath = new List<Vector2Int>();
     private float count;
-    private float idlePauseTime;
+    private float idlePauseTime = -1;
     private Quaternion currentRot;
     private Quaternion targetRot;
 
@@ -32,6 +32,7 @@ public class Caretaker : MonoBehaviour
         if (currentPath.Count > 0) // Moving
         {
             FollowPath();
+            return;
         }
         //if (SwipeAnimation.Active) // Swiping
         //{
@@ -46,6 +47,7 @@ public class Caretaker : MonoBehaviour
         if (count >= idlePauseTime)
         {
             count = 0;
+            idlePauseTime = -1;
             // Select target
             int move = Random.Range(IdleMoveRange.x, IdleMoveRange.y + 1);
             while (move >= 1 && currentPath.Count <= 0)
@@ -57,8 +59,10 @@ public class Caretaker : MonoBehaviour
                 for (int i = 0; i < rots; i++)
                 {
                     float iRads = i / (float)rots * 2 * Mathf.PI;
-                    Vector2Int target = transform.position.To2D() + new Vector2Int((int)Mathf.Sin(baseRotRads + iRads), (int)Mathf.Sin(baseRotRads + iRads));
-                    Debug.Log("Trying " + target);
+                    Debug.Log("Move: " + move + ", baseRot: " + baseRot + " -> " + baseRotRads + " rads, i: " + i + " -> " + iRads);
+                    Vector2 baseTarget = new Vector2(Mathf.Sin(baseRotRads + iRads), Mathf.Cos(baseRotRads + iRads)) * move;
+                    Vector2Int target = transform.position.To2D() + new Vector2Int(Mathf.RoundToInt(baseTarget.x), Mathf.RoundToInt(baseTarget.y));
+                    Debug.Log("Trying " + baseTarget + ": " + transform.position.To2D() + " -> " + target);
                     if (Pathfinder.HasLineOfSight(transform.position.To2D(), target))
                     {
                         Debug.Log("Chose");
@@ -69,7 +73,7 @@ public class Caretaker : MonoBehaviour
                 move--;
                 Debug.Log("Failed, trying " + move + " move");
             }
-            Debug.Log("Can't move!");
+            Debug.LogWarning("Can't move!");
         }
     }
 
@@ -106,8 +110,10 @@ public class Caretaker : MonoBehaviour
 
     public void SetTarget(Vector2Int pos, bool run = true)
     {
+        transform.position = transform.position.To2D().To3D() + new Vector3(0, transform.position.y, 0);
         stats = run ? RunStats : IdleStats;
         currentPath = Pathfinder.GetPath(transform.position.To2D(), pos);
+        currentPath.RemoveAt(0); // No need for the start pos
     }
 
     [System.Serializable]
