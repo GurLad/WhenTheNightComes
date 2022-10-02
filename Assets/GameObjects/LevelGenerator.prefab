@@ -360,6 +360,7 @@ MonoBehaviour:
   Player: {fileID: 8247316387549448377}
   MinimapCamera: {fileID: 1380344493}
   MinimapRenderer: {fileID: 8400000, guid: 5395cab8fe902c143846fa4194016f51, type: 2}
+  MinimapUI: {fileID: 0}
 --- !u!1 &8613151044076811035
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +534,10 @@ PrefabInstance:
     - target: {fileID: 7696181042163116988, guid: 4a973e2c3c5355148bafdeaa17a736fd, type: 3}
       propertyPath: m_Name
       value: Bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696181042163116988, guid: 4a973e2c3c5355148bafdeaa17a736fd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7696181042163116991, guid: 4a973e2c3c5355148bafdeaa17a736fd, type: 3}
       propertyPath: m_RootOrder

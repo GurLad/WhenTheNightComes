@@ -25,6 +25,9 @@ public class Caretaker : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        //// DEBUG
+        //transform.position = new Vector2Int(19, 13).To3D();
+        //SetTarget(new Vector2Int(16, 17), false);
     }
 
     private void Update()
@@ -59,19 +62,19 @@ public class Caretaker : MonoBehaviour
                 for (int i = 0; i < rots; i++)
                 {
                     float iRads = i / (float)rots * 2 * Mathf.PI;
-                    Debug.Log("Move: " + move + ", baseRot: " + baseRot + " -> " + baseRotRads + " rads, i: " + i + " -> " + iRads);
+                    //Debug.Log("Move: " + move + ", baseRot: " + baseRot + " -> " + baseRotRads + " rads, i: " + i + " -> " + iRads);
                     Vector2 baseTarget = new Vector2(Mathf.Sin(baseRotRads + iRads), Mathf.Cos(baseRotRads + iRads)) * move;
                     Vector2Int target = transform.position.To2D() + new Vector2Int(Mathf.RoundToInt(baseTarget.x), Mathf.RoundToInt(baseTarget.y));
-                    Debug.Log("Trying " + baseTarget + ": " + transform.position.To2D() + " -> " + target);
+                    //Debug.Log("Trying " + baseTarget + ": " + transform.position.To2D() + " -> " + target);
                     if (Pathfinder.HasLineOfSight(transform.position.To2D(), target))
                     {
-                        Debug.Log("Chose");
+                        //Debug.Log("Chose");
                         SetTarget(target, false);
                         return;
                     }
                 }
                 move--;
-                Debug.Log("Failed, trying " + move + " move");
+                //Debug.Log("Failed, trying " + move + " move");
             }
             Debug.LogWarning("Can't move!");
         }
@@ -110,7 +113,7 @@ public class Caretaker : MonoBehaviour
 
     public void SetTarget(Vector2Int pos, bool run = true)
     {
-        transform.position = transform.position.To2D().To3D() + new Vector3(0, transform.position.y, 0);
+        //transform.position = transform.position.To2D().To3D() + new Vector3(0, transform.position.y, 0);
         stats = run ? RunStats : IdleStats;
         currentPath = Pathfinder.GetPath(transform.position.To2D(), pos);
         currentPath.RemoveAt(0); // No need for the start pos
