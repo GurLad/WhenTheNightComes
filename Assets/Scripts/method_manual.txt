@@ -1,0 +1,20 @@
+UIManager:
+
+void OpenWindow(UIElements window)       //open scpecified window
+void CloseWindows()                      //close all windows
+bool IsWindowOpen(UIElements window)     //returns window visibility as a bool
+void CloseWindow(UIElements window)      //close specified window
+
+MonsterController:
+bool IsMonsterAttacking()                //true is monster attack has been triggered
+bool MonsterAttackSuccessful()           //returns true if monster attack succeeded
+float MonsterAttackProgress()            //returns time since the monster attack was started
+void StartMonsterAttack()                //starts monster attack (resets time it if attack is ongoing)
+void StopMonsterAttack()                 //stops monster attack
+
+UIClock:
+
+int CurrentHour()			//returns current hour (Time/10 rounded down)
+float CurrentTime()			//returns clock's time in seconds
+float CurrentSecond()			//returns current second (basically time mod 10)
+void SetTime(float Time_)		//sets clock time (in seconds)

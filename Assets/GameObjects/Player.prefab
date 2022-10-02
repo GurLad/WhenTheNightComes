@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sensitivity: 1
+  ObjectInteractionMaxDistance: 10
 --- !u!1 &431313894683063594
 GameObject:
   m_ObjectHideFlags: 0
