@@ -36,6 +36,14 @@ public static class Pathfinder
         // From Wikipedia...
         Node source = new Node(sourceVec);
         Node destination = new Node(destinationVec);
+        if (source == destination)
+        {
+            throw new Exception("Same source & destination!");
+        }
+        if (!CanMove(destination.x, destination.y))
+        {
+            throw new Exception("Destination is a blocked tile! (" + destination + ")");
+        }
 
         List<Node> openSet = new List<Node>();
         openSet.Add(source);

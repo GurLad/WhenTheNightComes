@@ -135,7 +135,7 @@ public class Caretaker : MonoBehaviour
                 }
                 else
                 {
-                    targetYRot = GetLookAtRot(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible"));
+                    targetYRot = GetLookAtRot(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible")) - 30;
                     lookAtPos = null;
                 }
                 //Debug.Log("Began first pass");
@@ -195,7 +195,7 @@ public class Caretaker : MonoBehaviour
 
     private float GetLookAtRot(Vector2Int start, Vector2Int lookAt)
     {
-        Vector2 diff = new Vector2((transform.position.To2D() - currentPath[0]).x, (transform.position.To2D() - currentPath[0]).y).normalized;
+        Vector2 diff = new Vector2((start - lookAt).x, (start - lookAt).y).normalized;
         return Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
     }
 
