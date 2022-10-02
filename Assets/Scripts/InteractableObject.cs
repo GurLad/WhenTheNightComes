@@ -27,6 +27,11 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
+    public void Highlight()
+    {
+        // TBA
+    }
+
     public void Recover()
     {
         animation.AnimateRecovery();
