@@ -68,7 +68,7 @@ public class SoundController : MonoBehaviour
         if (audioSource == null)
         {
             audioSource = soundController.gameObject.AddComponent<AudioSource>();
-            audioSource.volume = soundController.Volume;
+            audioSource.volume = Volume;
             soundController.audioSources.Add(audioSource);
         }
         audioSource.pitch = pitch;
