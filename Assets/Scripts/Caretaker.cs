@@ -8,6 +8,7 @@ public class Caretaker : MonoBehaviour
     [Header("General")]
     public float ArrivalThreshold = 0.1f;
     public Flashlight Flashlight;
+    public AudioClip WalkSFX;
     [Header("Run")]
     public CaretakerStats RunStats;
     [Header("Idle")]
@@ -25,6 +26,7 @@ public class Caretaker : MonoBehaviour
     private float targetYRot;
     private float currentYRot;
     private Vector2Int? lookAtPos;
+    private AudioSource walkingAudioSource;
 
     private void Start()
     {
@@ -122,6 +124,10 @@ public class Caretaker : MonoBehaviour
 
     private void FollowPath()
     {
+        if (walkingAudioSource == null || !walkingAudioSource.isPlaying)
+        {
+            walkingAudioSource = SoundController.PlaySoundStoppable(WalkSFX);
+        }
         if (Vector3.Distance(transform.position - new Vector3(0, transform.position.y, 0), currentPath[0].To3D()) <= ArrivalThreshold)
         {
             currentPath.RemoveAt(0);
@@ -141,6 +147,10 @@ public class Caretaker : MonoBehaviour
                 {
                     targetYRot = GetLookAtRot(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible")) - 30;
                     lookAtPos = null;
+                }
+                if (walkingAudioSource != null)
+                {
+                    walkingAudioSource.Stop();
                 }
                 //Debug.Log("Began first pass");
                 return;

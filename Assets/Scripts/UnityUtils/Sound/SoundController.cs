@@ -50,11 +50,11 @@ public class SoundController : MonoBehaviour
         soundController.fixedPitchSource.PlayOneShot(audioClip);
     }
 
-    public static void PlaySound(AudioClip audioClip, float pitch)
+    public static AudioSource PlaySoundStoppable(AudioClip audioClip)
     {
         if (audioClip == null)
         {
-            return;
+            return null;
         }
         AudioSource audioSource = null;
         for (int i = 0; i < 3; i++)
@@ -71,8 +71,8 @@ public class SoundController : MonoBehaviour
             audioSource.volume = Volume;
             soundController.audioSources.Add(audioSource);
         }
-        audioSource.pitch = pitch;
         audioSource.PlayOneShot(audioClip);
+        return audioSource;
     }
 
     private void Update()
