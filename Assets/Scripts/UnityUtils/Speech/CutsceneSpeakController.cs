@@ -105,7 +105,7 @@ public class CutsceneSpeakController : MonoBehaviour
                     if (Input.GetButtonDown(ButtonName) && nextLetter > 1)
                     {
                         Panel.text = toWrite;
-                        PlaySound(TypeSound, pitch[currentSpeaker.Name]);
+                        PlaySound(TypeSound);
                         State = CurrentState.Waiting;
                         break;
                     }
@@ -154,7 +154,7 @@ public class CutsceneSpeakController : MonoBehaviour
         Panel.text += toWrite[nextLetter++];
         if (toWrite.ToLower()[nextLetter - 1] >= 'a' && toWrite.ToLower()[nextLetter - 1] <= 'z')
         {
-            PlaySound(TypeSound, pitch[currentSpeaker.Name] + (toWrite.ToLower()[nextLetter - 1] - 'm') * 0.01f);
+            PlaySound(TypeSound);
         }
         else if (toWrite.ToLower()[nextLetter - 1] != ' ' && toWrite.ToLower()[nextLetter - 1] != '\n')
         {
