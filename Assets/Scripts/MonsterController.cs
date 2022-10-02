@@ -29,12 +29,12 @@ public class MonsterController : MonoBehaviour
 
     void Update()
     {
-        if (!UIM.IsAnyWindowOpen())
+        if (!UIM.IsAnyWindowOpen())  //If no window is open
         {
-            if(MonsterAttacking)
+            if(MonsterAttacking)  //While monster is attacking
             {
                 AttackTime += Time.deltaTime;
-                AttackTime = Mathf.Min(AttackTime, MonsterAttackDuration);
+                AttackTime = Mathf.Min(AttackTime, MonsterAttackDuration);   //increase the attack timer and shor a correct ammount of hands based on it
 
                 if (AttackTime > Hand1Time * MonsterAttackDuration)
                     MonsterHands[0].Show();
@@ -45,13 +45,13 @@ public class MonsterController : MonoBehaviour
                 if (AttackTime > Hand4Time * MonsterAttackDuration)
                     MonsterHands[3].Show();
 
-                if(!MonsterBlinking())
+                if(!MonsterBlinking()) //randomly show monster eyes 
                 {
                     if (Random.value < BlinkChanceMonster * (AttackTime / MonsterAttackDuration))
                         Blink();
                 }
             }
-            else
+            else //eyes can appear with small probablility even if no monster is attacking
             {
                 if (!MonsterBlinking())
                 {
@@ -60,7 +60,7 @@ public class MonsterController : MonoBehaviour
                 }
             }
 
-            if (MonsterAttackSuccessful())
+            if (MonsterAttackSuccessful())    //in case attack timer reaches the max value
             {
                 MonsterWin();
                 StartMonsterAttack();
@@ -69,9 +69,9 @@ public class MonsterController : MonoBehaviour
         }
     }
 
-    private void MonsterWin()
+    private void MonsterWin() //Things that happen once monster's attack succedes
     {
-        SM.AddPoints(-20);
+        SM.AddPoints(-20);  //ADD CHILD DEATH ANIMATION HERE
         ShuffleHands();
         StopMonsterAttack();
 
@@ -104,7 +104,7 @@ public class MonsterController : MonoBehaviour
         {
             MonsterAttacking = false;
 
-            if (AttackTime < MonsterAttackDuration / 10)
+            if (AttackTime < MonsterAttackDuration / 10)  //give points based on the time player took to stop the monster
                 SM.AddPoints(5);
             else if (AttackTime < MonsterAttackDuration / 4)
                 SM.AddPoints(4);
@@ -116,22 +116,22 @@ public class MonsterController : MonoBehaviour
         AttackTime = 0;
 
         ShuffleHands();
-        foreach (var x in MonsterHands)
+        foreach (var x in MonsterHands)   //hide monster hands
             x.Hide();
     }
 
-    private bool MonsterBlinking()
+    private bool MonsterBlinking()   //simple check whether there are monster eyes visible
     {
         return MonsterEyes[0].IsBlinking() || MonsterEyes[1].IsBlinking() || MonsterEyes[2].IsBlinking()|| MonsterEyes[3].IsBlinking() || MonsterEyes[4].IsBlinking() || MonsterEyes[5].IsBlinking();
     }
 
-    private void Blink()
+    private void Blink()   //randomly choose monster eyes to blink
     {
         int x = Random.Range(0, 6);
         MonsterEyes[x].Blink();
     }
 
-    private void ShuffleHands()
+    private void ShuffleHands()  //randomly change hands order
     {
         MonsterHand[] NewOrder = new MonsterHand[4];
         float[] order = new float[4] { Random.value, Random.value, Random.value, Random.value };

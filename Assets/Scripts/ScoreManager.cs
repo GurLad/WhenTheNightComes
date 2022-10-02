@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
         UpdateDisplay();
     }
 
-    public void AddPoints(int Points_)
+    public void AddPoints(int Points_) 
     {
         Points += Points_;
         UpdateDisplay();
@@ -25,14 +25,14 @@ public class ScoreManager : MonoBehaviour
         Lifes--;
         UpdateLifesVisibility();
 
-        if (Lifes == 0)
+        if (Lifes == 0) //losing condition. opens game over menu
         {
             EndGame();
             FindObjectOfType<UIManager>().OpenWindow(UIManager.UIElements.GameOver);
         }
     }
 
-    private void UpdateLifesVisibility()
+    private void UpdateLifesVisibility() //Updates lifes display by changing 3 icon's visibility
     {
         if (Lifes == 3)
         { 
@@ -77,7 +77,7 @@ public class ScoreManager : MonoBehaviour
         UpdateLifesVisibility();
         Points = 0;
     }
-    public void UpdateDisplay()
+    public void UpdateDisplay()  
     {
         GameOver.text = "Total Score: " + TotalPoints.ToString() + "\nHighscore: " + HighScore.ToString();
         NextLevel.text = "Score: " + Points.ToString() +"\nTotal Score: " + TotalPoints.ToString() + "\nHighscore: " + HighScore.ToString();

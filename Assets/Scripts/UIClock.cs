@@ -62,7 +62,7 @@ public class UIClock : MonoBehaviour
         ClockTime = Time_;
     }
 
-    private void Win()
+    private void Win() 
     {
         UIM.OpenWindow(UIManager.UIElements.NextLevel);
         FindObjectOfType<ScoreManager>().EndLevel();
