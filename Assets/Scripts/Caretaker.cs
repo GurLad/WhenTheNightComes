@@ -6,7 +6,6 @@ public class Caretaker : MonoBehaviour
 {
     [Header("General")]
     public float ArrivalThreshold = 0.1f;
-    public AdvancedAnimation SwipeAnimation;
     [Header("Run")]
     public CaretakerStats RunStats;
     [Header("Idle")]
@@ -19,8 +18,9 @@ public class Caretaker : MonoBehaviour
     private List<Vector2Int> currentPath = new List<Vector2Int>();
     private float count;
     private float idlePauseTime = -1;
-    private Quaternion currentRot;
-    private Quaternion targetRot;
+    private float previousYRot;
+    private float targetYRot;
+    private float currentYRot;
 
     private void Start()
     {
@@ -92,23 +92,45 @@ public class Caretaker : MonoBehaviour
                 //SwipeAnimation.Activate();
                 return;
             }
-            currentRot = RotationObject.transform.localRotation;
-            RotationObject.transform.LookAt(-(RotationObject.transform.position - currentPath[0].To3D()));
-            targetRot = RotationObject.transform.localRotation;
-            count = 0;
+            GenerateRots();
         }
         if (count < 1)
         {
-            RotationObject.transform.localRotation = Quaternion.Slerp(currentRot, targetRot, count);
+            currentYRot = Mathf.Lerp(previousYRot, targetYRot, -(Mathf.Sin(count * Mathf.PI + Mathf.PI / 2)) / 2 + 0.5f);
             count += Time.deltaTime * stats.TurnSpeed;
         }
         else
         {
-            RotationObject.transform.localRotation = targetRot;
+            currentYRot = targetYRot;
         }
+        RotationObject.transform.localEulerAngles = new Vector3(0, currentYRot, 0);
         Vector3 dir = -(transform.position - currentPath[0].To3D());
         dir.y = 0;
         rigidbody.velocity = dir.normalized * stats.Speed;
+    }
+
+    private void GenerateRots()
+    {
+        previousYRot = currentYRot;
+        if (Mathf.Abs(previousYRot) > 180) // Bind to 180
+        {
+            previousYRot -= Mathf.Sign(previousYRot) > 0 ? 360 : -360;
+        }
+        Vector2 diff = new Vector2((transform.position.To2D() - currentPath[0]).x, (transform.position.To2D() - currentPath[0]).y).normalized;
+        targetYRot = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        if (Mathf.Abs(targetYRot - previousYRot) > 180) // Rotating the opposite direction
+        {
+            if (targetYRot < 0)
+            {
+                targetYRot += 360;
+            }
+            else // previousYRot < 0 - atan bounds to (-180,180)
+            {
+                previousYRot += 360;
+            }
+        }
+        Debug.Log(previousYRot + " -> " + targetYRot);
+        count = 0;
     }
 
     public void SetTarget(Vector2Int pos, bool run = true)
@@ -117,6 +139,7 @@ public class Caretaker : MonoBehaviour
         stats = run ? RunStats : IdleStats;
         currentPath = Pathfinder.GetPath(transform.position.To2D(), pos);
         currentPath.RemoveAt(0); // No need for the start pos
+        GenerateRots();
     }
 
     [System.Serializable]
