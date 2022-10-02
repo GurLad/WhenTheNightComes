@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour
     public void AddPoints(int Points_) 
     {
         Points += Points_;
+        Points = Mathf.Max(Points, 0);
         UpdateDisplay();
     }
 

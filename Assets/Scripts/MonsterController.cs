@@ -8,6 +8,8 @@ public class MonsterController : MonoBehaviour
     public MonsterEyes[] MonsterEyes;
     public float MonsterAttackDuration;
 
+    public AudioClip[] MonsterWinSFX, MonsterSpawnSFX, MonsterDeadSFX;
+
     public float Hand1Time, Hand2Time, Hand3Time, Hand4Time;
     public float BlinkChanceMonster, BlinkChanceSafe;
 
@@ -75,6 +77,7 @@ public class MonsterController : MonoBehaviour
         ShuffleHands();
         StopMonsterAttack();
 
+        SoundController.PlaySound(MonsterWinSFX[Random.Range(0, MonsterWinSFX.Length)]);
         SM.LoseLife();
 
     }
@@ -95,6 +98,9 @@ public class MonsterController : MonoBehaviour
     public void StartMonsterAttack()
     {
         MonsterAttacking = true;
+
+        SoundController.PlaySound(MonsterSpawnSFX[Random.Range(0, MonsterSpawnSFX.Length)]);
+
         AttackTime = 0;
     }
 
@@ -103,6 +109,8 @@ public class MonsterController : MonoBehaviour
         if (MonsterAttacking)
         {
             MonsterAttacking = false;
+
+            SoundController.PlaySound(MonsterDeadSFX[Random.Range(0, MonsterDeadSFX.Length)]);
 
             if (AttackTime < MonsterAttackDuration / 10)  //give points based on the time player took to stop the monster
                 SM.AddPoints(5);
