@@ -99,7 +99,7 @@ MonoBehaviour:
   alpha: 0
   BlinkStart: -999
   TimeSinceStartedBlinking: 1000
-  BlinkDuration: 1
+  BlinkDuration: 2
 --- !u!114 &5784832203830525367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3501d7ef90741b945af66e9130e36b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 180
 --- !u!1 &3976863138830560117
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3976863138830560117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.063, y: -0.49, z: -0.833}
+  m_LocalPosition: {x: -0.063, y: -0.473, z: -0.833}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 2907613785287455579}
@@ -211,7 +212,7 @@ MonoBehaviour:
   alpha: 0
   BlinkStart: -999
   TimeSinceStartedBlinking: 1000
-  BlinkDuration: 1
+  BlinkDuration: 1.5
 --- !u!114 &1943055531786969854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3501d7ef90741b945af66e9130e36b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 180
 --- !u!1 &4422455188648118536
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5552679822894057561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4374935542874287324}
@@ -541,7 +543,7 @@ MonoBehaviour:
   alpha: 0
   BlinkStart: -999
   TimeSinceStartedBlinking: 1000
-  BlinkDuration: 1
+  BlinkDuration: 1.6
 --- !u!114 &8177838810531085772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3501d7ef90741b945af66e9130e36b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 180
 --- !u!1 &7171870294983206536
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +656,7 @@ MonoBehaviour:
   alpha: 0
   BlinkStart: -999
   TimeSinceStartedBlinking: 1000
-  BlinkDuration: 1
+  BlinkDuration: 1.5
 --- !u!114 &7800825594951628500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3501d7ef90741b945af66e9130e36b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 180
 --- !u!1 &7369463045961507529
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +769,7 @@ MonoBehaviour:
   alpha: 0
   BlinkStart: -999
   TimeSinceStartedBlinking: 1000
-  BlinkDuration: 1
+  BlinkDuration: 2
 --- !u!114 &3229409860089256020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,6 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3501d7ef90741b945af66e9130e36b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 180
 --- !u!1 &7462827144245978277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1031,7 @@ MonoBehaviour:
   alpha: 0
   BlinkStart: -999
   TimeSinceStartedBlinking: 1000
-  BlinkDuration: 1
+  BlinkDuration: 2.4
 --- !u!114 &7525545953381918798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,6 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3501d7ef90741b945af66e9130e36b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 180
 --- !u!1001 &1831106583504796273
 PrefabInstance:
   m_ObjectHideFlags: 0

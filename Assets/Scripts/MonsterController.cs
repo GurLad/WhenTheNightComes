@@ -22,7 +22,7 @@ public class MonsterController : MonoBehaviour
         //Randomizing order of hands
         ShuffleHands();
 
-        //StartMonsterAttack(); //testing
+        StartMonsterAttack(); //testing
     }
 
     void Update()
