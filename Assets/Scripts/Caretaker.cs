@@ -24,10 +24,12 @@ public class Caretaker : MonoBehaviour
     private float previousYRot;
     private float targetYRot;
     private float currentYRot;
+    private Vector2Int? lookAtPos;
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        CaretakerController.Current.AddCaretaker(this);
         //// DEBUG
         //transform.position = new Vector2Int(19, 13).To3D();
         //SetTarget(new Vector2Int(16, 17), false);
@@ -127,7 +129,15 @@ public class Caretaker : MonoBehaviour
                 Flashlight.Active = true;
                 sweepState = SweepState.FirstPass;
                 previousYRot = currentYRot;
-                targetYRot = currentYRot - 30;
+                if (lookAtPos == null)
+                {
+                    targetYRot = currentYRot - 30;
+                }
+                else
+                {
+                    targetYRot = GetLookAtRot(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible"));
+                    lookAtPos = null;
+                }
                 //Debug.Log("Began first pass");
                 return;
             }
@@ -155,14 +165,14 @@ public class Caretaker : MonoBehaviour
         }
     }
 
-    private void GenerateRots(Vector2 diff)
+    private void GenerateRots(Vector2Int start, Vector2Int lookAt)
     {
         previousYRot = currentYRot;
         if (Mathf.Abs(previousYRot) > 180) // Bind to 180
         {
             previousYRot -= Mathf.Sign(previousYRot) > 0 ? 360 : -360;
         }
-        targetYRot = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        targetYRot = GetLookAtRot(start, lookAt);
         if (Mathf.Abs(targetYRot - previousYRot) > 180) // Rotating the opposite direction
         {
             if (targetYRot < 0)
@@ -180,7 +190,19 @@ public class Caretaker : MonoBehaviour
 
     private void GenerateRots()
     {
-        GenerateRots(new Vector2((transform.position.To2D() - currentPath[0]).x, (transform.position.To2D() - currentPath[0]).y).normalized);
+        GenerateRots(transform.position.To2D(), currentPath[0]);
+    }
+
+    private float GetLookAtRot(Vector2Int start, Vector2Int lookAt)
+    {
+        Vector2 diff = new Vector2((transform.position.To2D() - currentPath[0]).x, (transform.position.To2D() - currentPath[0]).y).normalized;
+        return Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+    }
+
+    public void SetTarget(Vector2Int pos, Vector2Int lookAtPos) // If looking at something, always running
+    {
+        SetTarget(pos, true);
+        this.lookAtPos = lookAtPos;
     }
 
     public void SetTarget(Vector2Int pos, bool run = true)

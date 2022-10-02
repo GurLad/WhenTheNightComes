@@ -15,6 +15,17 @@ public static class Pathfinder
         size = newSize;
     }
 
+    public static float GetTrueDistance(Vector2Int start, Vector2Int end)
+    {
+        List<Vector2Int> parts = GetPath(start, end);
+        float sum = 0;
+        for (int i = 0; i < parts.Count - 1; i++)
+        {
+            sum += Vector2.Distance(parts[i], parts[i + 1]);
+        }
+        return sum;
+    }
+
     public static bool HasLineOfSight(Vector2Int start, Vector2Int end)
     {
         return HasLineOfSight(new Node(start), new Node(end));

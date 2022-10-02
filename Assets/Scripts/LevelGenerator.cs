@@ -20,6 +20,7 @@ public class LevelGenerator : MonoBehaviour
     public GameObject Bed;
     public GameObject Caretaker;
     public GameObject Player;
+    public GameObject Object;
     [Header("Minimap")]
     public Camera MinimapCamera;
     public RenderTexture MinimapRenderer;
@@ -69,9 +70,9 @@ public class LevelGenerator : MonoBehaviour
                         entityObject = Instantiate(Bed, EntityHolder);
                         // Rotate base on direction of nearest wall
                         int rotation = 0;
-                        if (entity.customFields.ContainsKey("Rotation") && entity.customFields["Rotation"] >= 0)
+                        if (entity.customFields.ContainsKey("Rotation") && (int)entity.customFields["Rotation"] >= 0)
                         {
-                            rotation = entity.customFields["Rotation"];
+                            rotation = (int)entity.customFields["Rotation"];
                         }
                         else
                         {
@@ -117,6 +118,12 @@ public class LevelGenerator : MonoBehaviour
                         break;
                     case "Player":
                         entityObject = Instantiate(Player, EntityHolder);
+                        break;
+                    case "Object":
+                        entityObject = Instantiate(Object, EntityHolder);
+                        InteractableObject interactableObject = entityObject.GetComponent<InteractableObject>();
+                        interactableObject.CaretakerPos = entity.customFields["CaretakerTarget"].ToVector2Int();
+                        interactableObject.Init((int)entity.customFields["Type"]);
                         break;
                     default:
                         throw new System.Exception("What");
@@ -196,6 +203,27 @@ public class LevelGenerator : MonoBehaviour
         public int y;
         public int width;
         public int height;
-        public Dictionary<string, int> customFields;
+        public Dictionary<string, EntityField> customFields;
+    }
+
+    [System.Serializable]
+    private class EntityField
+    {
+        public int cx;
+        public int cy;
+        public System.Int64 intData;
+
+        public EntityField() { }
+        public EntityField(System.Int64 data) { intData = data; }
+
+        public Vector2Int ToVector2Int()
+        {
+            return new Vector2Int(cx, cy);
+        }
+
+        public static implicit operator EntityField(System.Int64 i) =>
+            new EntityField(i);
+        public static implicit operator System.Int64(EntityField ef) =>
+            ef.intData;
     }
 }
