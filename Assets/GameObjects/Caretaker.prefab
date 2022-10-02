@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 9001817751353054560}
   - component: {fileID: 1494738852521834450}
   - component: {fileID: 5601385679702536184}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlashlightHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

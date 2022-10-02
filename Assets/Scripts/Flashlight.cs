@@ -15,7 +15,7 @@ public class Flashlight : MonoBehaviour
             // Check line of sight just to be sure
             RaycastHit hit;
             var rayDirection = Caretaker.transform.position - other.transform.position;
-            if (Physics.Raycast(other.transform.position, rayDirection, out hit))
+            if (Physics.Raycast(other.transform.position, rayDirection, out hit, Mathf.Infinity, ~(1 << 7)))
             {
                 if (hit.transform == Caretaker.transform)
                 {
@@ -24,7 +24,7 @@ public class Flashlight : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("No line of sight!");
+                    Debug.Log("No line of sight! Hit " + hit.transform.name);
                 }
             }
         }
