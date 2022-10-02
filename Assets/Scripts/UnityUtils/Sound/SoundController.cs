@@ -39,13 +39,13 @@ public class SoundController : MonoBehaviour
 
     public static void PlaySound(AudioClip audioClip, bool stop = false)
     {
-        if (audioClip == null)
-        {
-            return;
-        }
         if (stop)
         {
             soundController.fixedPitchSource.Stop();
+        }
+        if (audioClip == null)
+        {
+            return;
         }
         soundController.fixedPitchSource.PlayOneShot(audioClip);
     }
