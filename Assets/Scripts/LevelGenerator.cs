@@ -6,11 +6,16 @@ using UnityEngine.UI;
 
 public class LevelGenerator : MonoBehaviour
 {
+    [Header("Level data")]
     public TextAsset WallsCSV;
     public TextAsset EntitiesJSON;
-    [Header("Level data")]
+    public float MonsterAttackInterval;
+    public float MonsterAttackIntervalDecrement;
+    public string LevelString;
+    [Header("General data")]
     public int TileSize = 16;
     public int PhysicalSize = 1;
+    public GameController GameController;
     [Header("Walls")]
     public Transform WallHolder;
     public GameObject Wall;
@@ -32,6 +37,14 @@ public class LevelGenerator : MonoBehaviour
     {
         // Load basic data
         levelData = LevelData.Interpret(EntitiesJSON.text, TileSize);
+        // Init GameController
+        GameController.MonsterAttackInterval = MonsterAttackInterval;
+        GameController.MonsterAttackIntervalDecrement = MonsterAttackIntervalDecrement;
+        GameController.LevelData = LevelString;
+        for (int i = 0; i < 9; i++)
+        {
+            GameController.Monsters.Add(new List<MonsterController>());
+        }
         // Generate walls
         walls = ImportWalls(WallsCSV.text, levelData.Width, levelData.Height);
         for (int x = 0; x < levelData.Width; x++)
@@ -70,35 +83,28 @@ public class LevelGenerator : MonoBehaviour
                         entityObject = Instantiate(Bed, EntityHolder);
                         // Rotate base on direction of nearest wall
                         int rotation = 0;
-                        if (entity.customFields.ContainsKey("Rotation") && (int)entity.customFields["Rotation"] >= 0)
+                        if (entity.id == "BedV")
                         {
-                            rotation = (int)entity.customFields["Rotation"];
-                        }
-                        else
-                        {
-                            if (entity.id == "BedV")
+                            if (SafeGetWall(pos.x, pos.y - 1) > 0)
                             {
-                                if (SafeGetWall(pos.x, pos.y - 1) > 0)
-                                {
-                                    rotation = 270;
-                                }
-                                else
-                                {
-                                    entityObject.transform.position += new Vector3(PhysicalSize, 0, 0);
-                                    rotation = 90;
-                                }
+                                rotation = 270;
                             }
-                            else // if (entity.id == "BedH")
+                            else
                             {
-                                if (SafeGetWall(pos.x - 1, pos.y) > 0)
-                                {
-                                    rotation = 180;
-                                }
-                                else
-                                {
-                                    entityObject.transform.position += new Vector3(0, 0, PhysicalSize);
-                                    rotation = 0;
-                                }
+                                entityObject.transform.position += new Vector3(PhysicalSize, 0, 0);
+                                rotation = 90;
+                            }
+                        }
+                        else // if (entity.id == "BedH")
+                        {
+                            if (SafeGetWall(pos.x - 1, pos.y) > 0)
+                            {
+                                rotation = 180;
+                            }
+                            else
+                            {
+                                entityObject.transform.position += new Vector3(0, 0, PhysicalSize);
+                                rotation = 0;
                             }
                         }
                         entityObject.transform.Rotate(new Vector3(0, rotation, 0));
@@ -112,6 +118,8 @@ public class LevelGenerator : MonoBehaviour
                         {
                             walls[pos.x + 1, pos.y] = 2;
                         }
+                        // Add to monster list
+                        GameController.Monsters[(int)entity.customFields["Area"]].Add(entityObject.GetComponent<MonsterController>());
                         break;
                     case "Caretaker":
                         entityObject = Instantiate(Caretaker, EntityHolder);

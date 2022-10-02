@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    private static UIManager _current;
+    public static UIManager Current
+    { 
+        get
+        {
+            return _current != null ? _current : (_current = FindObjectOfType<UIManager>());
+        }
+    }
     public GameObject[] UIWindows;
     public GameObject GameInterface;
     public enum UIElements {Settings, NextLevel, GameOver, LevelMenu}
