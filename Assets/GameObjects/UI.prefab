@@ -3344,6 +3344,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7116555362789621225, guid: 567d9f55e576ad54ea628a739f16770e, type: 3}
+      propertyPath: Bell
+      value: 
+      objectReference: {fileID: 8300000, guid: f85a771c2418b37428c6dfac9c0c4a7f, type: 3}
+    - target: {fileID: 7116555362789621225, guid: 567d9f55e576ad54ea628a739f16770e, type: 3}
+      propertyPath: Ticking
+      value: 
+      objectReference: {fileID: 8300000, guid: 0515231374373f640ad9c8cfa7173837, type: 3}
     - target: {fileID: 7116555363715510772, guid: 567d9f55e576ad54ea628a739f16770e, type: 3}
       propertyPath: m_Color.b
       value: 1

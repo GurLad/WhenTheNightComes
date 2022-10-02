@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIClock : MonoBehaviour
 {
     private float ClockTime, LastTime;
+    public AudioClip Bell, Ticking;
     public GameObject MinHandle, HourHandle;
     public bool ClockTicking;
 
@@ -14,6 +15,7 @@ public class UIClock : MonoBehaviour
     {
         ClockTime = 0;
         SC = FindObjectOfType<SettingsController>();
+        //SoundController.PlaySound(Ticking);
     }
 
     // Update is called once per frame
@@ -28,6 +30,12 @@ public class UIClock : MonoBehaviour
             MinHandle.transform.rotation = Quaternion.Euler(0, 0, -ClockTime % 10.0f * 36);
 
             HourHandle.transform.rotation = Quaternion.Euler(0, 0, -Mathf.Floor(ClockTime / 10.0f) * 30);
+
+            if(Mathf.Floor(LastTime / 10.0f)!= Mathf.Floor(ClockTime / 10.0f))
+            {
+                //SoundController.PlaySound(Bell);
+                //SoundController.PlaySound(Ticking);
+            }
         }
     }
 
@@ -44,6 +52,11 @@ public class UIClock : MonoBehaviour
     public float CurrentSecond()
     {
         return ClockTime % 10.0f;
+    }
+
+    public void SetTime(float Time_)
+    {
+        ClockTime = Time_;
     }
 
 
