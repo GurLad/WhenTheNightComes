@@ -14,10 +14,12 @@ public class MonsterController : MonoBehaviour
     private float AttackTime=0;
     private bool MonsterAttacking = false;
     private UIManager UIM;
+    private ScoreManager SM;
 
     void Start()
     {
         UIM = FindObjectOfType<UIManager>();
+        SM = FindObjectOfType<ScoreManager>();
 
         //Randomizing order of hands
         ShuffleHands();
@@ -90,6 +92,16 @@ public class MonsterController : MonoBehaviour
     public void StopMonsterAttack()
     {
         MonsterAttacking = false;
+
+        if(AttackTime< MonsterAttackDuration/10)
+            SM.AddPoints(5);
+        else if (AttackTime < MonsterAttackDuration/4)
+            SM.AddPoints(4);
+        else if (AttackTime < MonsterAttackDuration/2)
+            SM.AddPoints(3);
+        else if (AttackTime < MonsterAttackDuration)
+            SM.AddPoints(2);
+
         AttackTime = 0;
 
         ShuffleHands();

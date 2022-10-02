@@ -19,7 +19,6 @@ float CurrentSecond()			//returns current second (basically time mod 10)
 void SetTime(float Time_)		//sets clock time (in seconds)
 
 ScoreManager:
-
 int GetHighScore()      //Self explanatory
 int GetTotalPoints()	//Self explanatory
 int GetPoints()			//Self explanatory
