@@ -78,7 +78,7 @@ public static class Pathfinder
     {
         void Squash(List<Node> totalPath, int curr, int next)
         {
-            Debug.Log("Squashed everything between " + totalPath[curr] + " -> " + totalPath[next - 1]);
+            //Debug.Log("Squashed everything between " + totalPath[curr] + " -> " + totalPath[next - 1]);
             for (int i = curr + 1; i < next - 1; i++)
             {
                 totalPath.RemoveAt(curr + 1);
@@ -172,11 +172,21 @@ public static class Pathfinder
             if (!(numerator < longest))
             {
                 numerator -= longest;
+                if (i < longest && (!CanMove(x + dx1, y) || !CanMove(x, y + dy1)))
+                {
+                    //Debug.Log("No line of sight between " + new Vector2Int(x, y) + " and " + new Vector2Int(x + dx1, y + dy1) + " - checking " + start + " to " + end);
+                    return false;
+                }
                 x += dx1;
                 y += dy1;
             }
             else
             {
+                if (i < longest && (!CanMove(x + dx2, y) || !CanMove(x, y + dy2)))
+                {
+                    //Debug.Log("No line of sight between " + new Vector2Int(x, y) + " and " + new Vector2Int(x + dx2, y + dy2) + " - checking " + start + " to " + end);
+                    return false;
+                }
                 x += dx2;
                 y += dy2;
             }
