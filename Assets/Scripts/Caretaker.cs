@@ -7,6 +7,7 @@ public class Caretaker : MonoBehaviour
     private enum SweepState { None, FirstPass, SecondPass, Return }
     [Header("General")]
     public float ArrivalThreshold = 0.1f;
+    public Flashlight Flashlight;
     [Header("Run")]
     public CaretakerStats RunStats;
     [Header("Idle")]
@@ -48,21 +49,22 @@ public class Caretaker : MonoBehaviour
                     case SweepState.None:
                         break;
                     case SweepState.FirstPass:
-                        Debug.Log("Began second pass");
+                        //Debug.Log("Began second pass");
                         count = 0;
                         sweepState = SweepState.SecondPass;
                         previousYRot = currentYRot;
                         targetYRot = currentYRot + 60;
                         break;
                     case SweepState.SecondPass:
-                        Debug.Log("Began return");
+                        //Debug.Log("Began return");
                         count = 0;
                         sweepState = SweepState.Return;
                         previousYRot = currentYRot;
                         targetYRot = currentYRot - 30;
                         break;
                     case SweepState.Return:
-                        Debug.Log("Finished sweep");
+                        //Debug.Log("Finished sweep");
+                        Flashlight.Active = false;
                         count = 0;
                         sweepState = SweepState.None;
                         break;
@@ -122,10 +124,11 @@ public class Caretaker : MonoBehaviour
                 rigidbody.velocity = Vector3.zero;
                 count = 0;
                 // Begin sweep
+                Flashlight.Active = true;
                 sweepState = SweepState.FirstPass;
                 previousYRot = currentYRot;
                 targetYRot = currentYRot - 30;
-                Debug.Log("Began first pass");
+                //Debug.Log("Began first pass");
                 return;
             }
             GenerateRots();
@@ -171,7 +174,7 @@ public class Caretaker : MonoBehaviour
                 previousYRot += 360;
             }
         }
-        Debug.Log(previousYRot + " -> " + targetYRot);
+        //Debug.Log(previousYRot + " -> " + targetYRot);
         count = 0;
     }
 

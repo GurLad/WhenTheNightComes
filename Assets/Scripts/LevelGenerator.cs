@@ -37,17 +37,21 @@ public class LevelGenerator : MonoBehaviour
         {
             for (int y = 0; y < levelData.Height; y++)
             {
-                if (walls[x, y] == 1) // Wall
+                switch (walls[x,y])
                 {
-                    GameObject newWall = Instantiate(Wall, WallHolder);
-                    newWall.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
-                    newWall.SetActive(true);
-                }
-                else if (walls[x, y] == 2) // Void
-                {
-                    GameObject newVoid = Instantiate(Void, WallHolder);
-                    newVoid.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
-                    newVoid.SetActive(true);
+                    case 1: // Wall
+                        GameObject newWall = Instantiate(Wall, WallHolder);
+                        newWall.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
+                        newWall.SetActive(true);
+                        break;
+                    case 2: // Void
+                        GameObject newVoid = Instantiate(Void, WallHolder);
+                        newVoid.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
+                        newVoid.SetActive(true);
+                        break;
+                    case 3: // Pathfinding blocker - aka floor
+                    default:
+                        break;
                 }
             }
         }
