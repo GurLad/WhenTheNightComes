@@ -9,19 +9,19 @@ public class UIClock : MonoBehaviour
     public GameObject MinHandle, HourHandle;
     public bool ClockTicking;
 
-    private SettingsController SC;
+    private UIManager UIM;
 
     void Start()
     {
         ClockTime = 0;
-        SC = FindObjectOfType<SettingsController>();
+        UIM = FindObjectOfType<UIManager>();
         //SoundController.PlaySound(Ticking);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!SC.SettingsActive)
+        if (!UIM.IsAnyWindowOpen())
         {
             LastTime = ClockTime;
             if (ClockTicking)

@@ -1506,6 +1506,7 @@ GameObject:
   - component: {fileID: 3537722048295176515}
   - component: {fileID: 3537722048295176512}
   - component: {fileID: 3537722048295176516}
+  - component: {fileID: 7344935309369886595}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1623,6 +1624,24 @@ MonoBehaviour:
   SFX: 0
   Music: 0
   Sensitivity: 0
+--- !u!114 &7344935309369886595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537722048295176513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de11bed2dcae73f43b6fdfacb7226dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIWindows:
+  - {fileID: 3537722050100196222}
+  - {fileID: 5955613743642579711}
+  - {fileID: 1833307218119417202}
+  - {fileID: 6985366235780971153}
+  GameInterface: {fileID: 3537722048293962641}
 --- !u!1 &3537722048380002704
 GameObject:
   m_ObjectHideFlags: 0
@@ -3874,7 +3893,7 @@ GameObject:
   - component: {fileID: 3537722050100196211}
   - component: {fileID: 3537722050100196208}
   m_Layer: 5
-  m_Name: EscMenu
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6777,6 +6796,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5683a943e83124f4780ab711058be633, type: 3}
+--- !u!224 &6013794678549268550 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7092546060213967186, guid: 5683a943e83124f4780ab711058be633, type: 3}
+  m_PrefabInstance: {fileID: 3537722048370839828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6013794678549268551 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7092546060213967187, guid: 5683a943e83124f4780ab711058be633, type: 3}
@@ -6788,11 +6812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &6013794678549268550 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7092546060213967186, guid: 5683a943e83124f4780ab711058be633, type: 3}
-  m_PrefabInstance: {fileID: 3537722048370839828}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6042588320697610329
 PrefabInstance:
   m_ObjectHideFlags: 0

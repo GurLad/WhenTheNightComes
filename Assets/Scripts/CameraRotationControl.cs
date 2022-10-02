@@ -7,16 +7,16 @@ public class CameraRotationControl : MonoBehaviour
     public float Sensitivity;
     private Quaternion OldRotation, Offset, NewRotation;
 
-    private SettingsController SC;
+    private UIManager UIM;
 
     private void Start()
     {
-        SC = FindObjectOfType<SettingsController>();
+        UIM = FindObjectOfType<UIManager>();
     }
 
     void Update() //Calculating new camera angles based on mouse movement
     {
-        if (!SC.SettingsActive)
+        if (!UIM.IsAnyWindowOpen())
         {
             OldRotation = transform.rotation;
             Offset = Quaternion.Euler(-Input.GetAxis("Mouse Y") * Sensitivity, Input.GetAxis("Mouse X") * Sensitivity, 0);

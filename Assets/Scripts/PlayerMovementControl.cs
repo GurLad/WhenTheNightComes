@@ -11,15 +11,15 @@ public class PlayerMovementControl : MonoBehaviour
     private CharacterController CharController;
     private Vector3 Direction, CameraRotation;
 
-    private SettingsController SC;
+    private UIManager UIM;
     private void Start()
     {
         CharController = this.GetComponent<CharacterController>();
-        SC = FindObjectOfType<SettingsController>();
+        UIM = FindObjectOfType<UIManager>();
     }
     void Update()
     {
-        if (!SC.SettingsActive)
+        if (!UIM.IsAnyWindowOpen())
         {
             Direction = Vector3.zero;
             if (Input.GetKey("w") && !Input.GetKey("s"))

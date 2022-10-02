@@ -7,7 +7,7 @@ public class SettingsController : MonoBehaviour
     public UnityEngine.UI.Slider SFXSlider, MusicSlider, SensitivitySlider;
     public UnityEngine.UI.Toggle FullscreenBox;
     public UnityEngine.UI.Dropdown ResolutionDropdown;
-    public GameObject SettingsMenu, GameUI;
+    public UIManager UIManager_;
 
     private int[,] Resolutions = new int[,] {
         {1024, 768},
@@ -22,14 +22,14 @@ public class SettingsController : MonoBehaviour
         {4096,2304},
         {8192,4608}};
 
-    public bool Fullscreen, SettingsActive;
+    public bool Fullscreen,;
     public int Resolution;
     public float SFX, Music, Sensitivity;
     void Start()
     {
         UpdateSettings();
-        SettingsActive = false;
         Cursor.visible = false;
+        UIManager_ = FindObjectOfType<UIManager>();
     }
 
     public void UpdateSettings()
@@ -47,7 +47,7 @@ public class SettingsController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)&&UIManager_.IsWindowOpen(UIManager.UIElements.Settings))
         {
             ChangeVisibilityOfSettingsMenu();
         }
@@ -55,9 +55,9 @@ public class SettingsController : MonoBehaviour
 
     public void ChangeVisibilityOfSettingsMenu()
     {
-        SettingsActive = !SettingsActive;
-        Cursor.visible = SettingsActive;
-        SettingsMenu.SetActive(SettingsActive);
-        GameUI.SetActive(!SettingsActive);
-    }
+        if(UIManager_.IsAnyWindowOpen())
+            UIManager_.CloseWindows();
+        else
+            UIManager_.OpenWindow(UIManager.UIElements.Settings);
+   }
 }
