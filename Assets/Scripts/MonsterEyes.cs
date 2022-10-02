@@ -23,7 +23,7 @@ public class MonsterEyes : MonoBehaviour
         TimeSinceStartedBlinking = Time.time - BlinkStart;
         if(TimeSinceStartedBlinking<BlinkDuration)
         {
-            alpha = -255 * TimeSinceStartedBlinking * (TimeSinceStartedBlinking - BlinkDuration);
+            alpha = Mathf.Round(-255 * TimeSinceStartedBlinking * (TimeSinceStartedBlinking - BlinkDuration));
         }
         else
         {
