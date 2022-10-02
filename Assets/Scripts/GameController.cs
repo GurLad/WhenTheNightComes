@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
             if (index > 0)
             {
                 index--;
-                List<MonsterController> available = Monsters[index].FindAll(a => !a.IsMonsterAttacking());
+                List<MonsterController> available = Monsters[index].FindAll(a => !a.MonsterAttackSuccessful() && !a.IsMonsterAttacking());
                 if (available.Count > 0)
                 {
                     MonsterController selected = available[Random.Range(0, available.Count)];
