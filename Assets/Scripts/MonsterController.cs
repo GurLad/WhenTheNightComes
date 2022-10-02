@@ -60,15 +60,24 @@ public class MonsterController : MonoBehaviour
                 }
             }
 
-            /*if(MonsterAttackSuccessful())
+            if (MonsterAttackSuccessful())
             {
-                StopMonsterAttack();
+                MonsterWin();
                 StartMonsterAttack();
-            }*/
+            }
                 
         }
     }
 
+    private void MonsterWin()
+    {
+        SM.AddPoints(-20);
+        ShuffleHands();
+        StopMonsterAttack();
+
+        SM.LoseLife();
+
+    }
     public bool IsMonsterAttacking()
     {
         return MonsterAttacking;
@@ -91,17 +100,19 @@ public class MonsterController : MonoBehaviour
 
     public void StopMonsterAttack()
     {
-        MonsterAttacking = false;
+        if (MonsterAttacking)
+        {
+            MonsterAttacking = false;
 
-        if(AttackTime< MonsterAttackDuration/10)
-            SM.AddPoints(5);
-        else if (AttackTime < MonsterAttackDuration/4)
-            SM.AddPoints(4);
-        else if (AttackTime < MonsterAttackDuration/2)
-            SM.AddPoints(3);
-        else if (AttackTime < MonsterAttackDuration)
-            SM.AddPoints(2);
-
+            if (AttackTime < MonsterAttackDuration / 10)
+                SM.AddPoints(5);
+            else if (AttackTime < MonsterAttackDuration / 4)
+                SM.AddPoints(4);
+            else if (AttackTime < MonsterAttackDuration / 2)
+                SM.AddPoints(3);
+            else if (AttackTime < MonsterAttackDuration)
+                SM.AddPoints(2);
+        }
         AttackTime = 0;
 
         ShuffleHands();

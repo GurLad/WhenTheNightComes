@@ -29,7 +29,7 @@ public class UIClock : MonoBehaviour
 
             MinHandle.transform.rotation = Quaternion.Euler(0, 0, -ClockTime % 10.0f * 36);
 
-            HourHandle.transform.rotation = Quaternion.Euler(0, 0, -Mathf.Floor(ClockTime / 10.0f) * 30);
+            HourHandle.transform.rotation = Quaternion.Euler(0, 0, -Mathf.Floor(ClockTime / 10.0f) * 30+60);
 
             if(Mathf.Floor(LastTime / 10.0f)!= Mathf.Floor(ClockTime / 10.0f))
             {
@@ -37,6 +37,9 @@ public class UIClock : MonoBehaviour
                 //SoundController.PlaySound(Ticking);
             }
         }
+
+        if (ClockTime > 80)
+            Win();
     }
 
     public int CurrentHour() 
@@ -59,5 +62,9 @@ public class UIClock : MonoBehaviour
         ClockTime = Time_;
     }
 
-
+    private void Win()
+    {
+        UIM.OpenWindow(UIManager.UIElements.NextLevel);
+        FindObjectOfType<ScoreManager>().EndLevel();
+    }
 }
