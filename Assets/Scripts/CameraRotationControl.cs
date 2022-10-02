@@ -32,7 +32,7 @@ public class CameraRotationControl : MonoBehaviour
     private void Raycast()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(0.5f,0.5f,0));
 
         if (Physics.Raycast(ray, out hit))
         {
