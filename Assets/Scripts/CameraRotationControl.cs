@@ -32,23 +32,38 @@ public class CameraRotationControl : MonoBehaviour
     private void Raycast()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(0.5f,0.5f,0));
+        Transform cameraTransform = Camera.main.transform;
 
-        if (Physics.Raycast(ray, out hit))
+        Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, ObjectInteractionMaxDistance);
+            
+
+        if (hit.collider!=null)
         {
-            Transform objectHit = hit.transform;
+            Debug.DrawLine(cameraTransform.position, hit.transform.position, Color.yellow);
+            GameObject parent = hit.transform.gameObject;
 
-            if(Vector3.Distance(Camera.main.transform.position, hit.transform.position)<ObjectInteractionMaxDistance) //checking if object is in range
+            for (int i = 0; i < 5; i++)
             {
-                if (hit.transform.gameObject.GetComponent<InteractableObject>() != null)
+                if (parent.GetComponent<InteractableObject>() != null)
                 {
-                    hit.transform.gameObject.GetComponent<InteractableObject>().Highlight();
-                    if(Input.GetMouseButtonDown(0))
+                    parent.GetComponent<InteractableObject>().Highlight();
+                    
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        hit.transform.gameObject.GetComponent<InteractableObject>().Interact();
+                        Debug.Log("Clicked InteractableObject!");
+                        parent.GetComponent<InteractableObject>().Interact();
                     }
+                    break;
+                }
+                else
+                {
+                    if (parent.transform.parent != null)
+                        parent = parent.transform.parent.gameObject;
+                    else
+                        break;
                 }
             }
+
         }
     }
 }
