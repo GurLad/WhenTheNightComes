@@ -22,9 +22,10 @@ public class SettingsController : MonoBehaviour
         {4096,2304},
         {8192,4608}};
 
-    public bool Fullscreen,;
+    public bool Fullscreen;
     public int Resolution;
     public float SFX, Music, Sensitivity;
+    private int CameraSensitivityUpdated = 0;
     void Start()
     {
         UpdateSettings();
@@ -42,12 +43,20 @@ public class SettingsController : MonoBehaviour
 
         Screen.fullScreen = Fullscreen;
         Screen.SetResolution(Resolutions[Resolution, 0], Resolutions[Resolution, 1], Fullscreen);
-        Camera.main.gameObject.GetComponent<CameraRotationControl>().Sensitivity = Sensitivity * 2;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)&&UIManager_.IsWindowOpen(UIManager.UIElements.Settings))
+        if (CameraSensitivityUpdated == 0)
+            CameraSensitivityUpdated++;
+        else if (CameraSensitivityUpdated==1)
+        {
+            CameraSensitivityUpdated++;
+            Camera.main.gameObject.GetComponent<CameraRotationControl>().Sensitivity = Sensitivity * 2;
+        }
+            
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             ChangeVisibilityOfSettingsMenu();
         }

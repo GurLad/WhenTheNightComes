@@ -13,11 +13,11 @@ public class MonsterController : MonoBehaviour
 
     private float AttackTime=0;
     private bool MonsterAttacking = false;
-    private SettingsController SC;
+    private UIManager UIM;
 
     void Start()
     {
-        SC = FindObjectOfType<SettingsController>();
+        UIM = FindObjectOfType<UIManager>();
 
         //Randomizing order of hands
         ShuffleHands();
@@ -27,7 +27,7 @@ public class MonsterController : MonoBehaviour
 
     void Update()
     {
-        if (!SC.SettingsActive)
+        if (!UIM.IsAnyWindowOpen())
         {
             if(MonsterAttacking)
             {
