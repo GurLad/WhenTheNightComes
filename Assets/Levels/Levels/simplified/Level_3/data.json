@@ -859,17 +859,6 @@
 				"height": 16,
 				"color": 9755059,
 				"customFields" : {}
-			},
-			{
-				"id": "Caretaker",
-				"iid": "0e82adc0-2a00-11ed-b403-75a35ab444d4",
-				"layer": "Beds",
-				"x": 176,
-				"y": 176,
-				"width": 16,
-				"height": 16,
-				"color": 9755059,
-				"customFields" : {}
 			}
 		]
 	}

@@ -3133,20 +3133,6 @@
 							"defUid": 2,
 							"px": [160,272],
 							"fieldInstances": []
-						},
-						{
-							"__identifier": "Caretaker",
-							"__grid": [11,11],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#94D9B3",
-							"iid": "0e82adc0-2a00-11ed-b403-75a35ab444d4",
-							"width": 16,
-							"height": 16,
-							"defUid": 2,
-							"px": [176,176],
-							"fieldInstances": []
 						}
 					]
 				},
