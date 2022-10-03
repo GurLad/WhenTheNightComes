@@ -164,7 +164,9 @@ public class Caretaker : MonoBehaviour
                 }
                 else
                 {
-                    targetYRot = GetLookAtRot(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible")) - stats.SweepArc / 2;
+                    //targetYRot = GetLookAtRot(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible")) - stats.SweepArc / 2;
+                    GenerateRots(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible"));
+                    targetYRot -= stats.SweepArc / 2;
                     lookAtPos = null;
                 }
                 if (walkingAudioSource != null)
