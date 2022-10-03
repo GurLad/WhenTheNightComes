@@ -77,7 +77,7 @@ public class MonsterController : MonoBehaviour
         ShuffleHands();
         StopMonsterAttack();
 
-        SoundController.Play3DSound(MonsterWinSFX[Random.Range(0, MonsterWinSFX.Length)], gameObject);
+        SoundController.Play3DSound(MonsterWinSFX[Random.Range(0, MonsterWinSFX.Length)], gameObject, 0.5f);
         SM.LoseLife();
 
     }
@@ -99,7 +99,7 @@ public class MonsterController : MonoBehaviour
     {
         MonsterAttacking = true;
 
-        SoundController.Play3DSound(MonsterSpawnSFX[Random.Range(0, MonsterSpawnSFX.Length)], gameObject);
+        SoundController.Play3DSound(MonsterSpawnSFX[Random.Range(0, MonsterSpawnSFX.Length)], gameObject, 0.3f);
 
         AttackTime = 0;
     }

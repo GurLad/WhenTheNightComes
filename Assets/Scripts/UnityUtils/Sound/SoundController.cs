@@ -90,7 +90,7 @@ public class SoundController : MonoBehaviour
         return audioSource;
     }
 
-    public static AudioSource Play3DSound(AudioClip audioClip, GameObject obj, float minValue = 0, Vector2? range = null)
+    public static AudioSource3D Play3DSound(AudioClip audioClip, GameObject obj, float minValue = 0, Vector2? range = null)
     {
         if (audioClip == null)
         {
@@ -101,12 +101,14 @@ public class SoundController : MonoBehaviour
         {
             if (!soundController.audioSources[i].isPlaying && soundController.audioSources3D.Find(a => a.AudioSource == soundController.audioSources[i]) == null)
             {
+                //Debug.Log("Used " + i);
                 audioSource = soundController.audioSources[i];
                 break;
             }
         }
         if (audioSource == null)
         {
+            //Debug.Log("Created");
             audioSource = soundController.gameObject.AddComponent<AudioSource>();
             audioSource.volume = Volume;
             soundController.audioSources.Add(audioSource);
@@ -118,7 +120,7 @@ public class SoundController : MonoBehaviour
         soundController.audioSources3D.Add(audioSource3D);
         // Play
         audioSource.PlayOneShot(audioClip);
-        return audioSource;
+        return audioSource3D;
     }
 
     private void LateUpdate()

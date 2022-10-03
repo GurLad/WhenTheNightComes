@@ -31,7 +31,7 @@ public class Caretaker : MonoBehaviour
     private float targetYRot;
     private float currentYRot;
     private Vector2Int? lookAtPos;
-    private AudioSource walkingAudioSource;
+    private AudioSource3D walkingAudioSource;
 
     private void Start()
     {
@@ -68,14 +68,14 @@ public class Caretaker : MonoBehaviour
                         count = 0;
                         sweepState = SweepState.SecondPass;
                         previousYRot = currentYRot;
-                        targetYRot = currentYRot + 60;
+                        targetYRot = currentYRot + stats.SweepArc;
                         break;
                     case SweepState.SecondPass:
                         //Debug.Log("Began return");
                         count = 0;
                         sweepState = SweepState.Return;
                         previousYRot = currentYRot;
-                        targetYRot = currentYRot - 30;
+                        targetYRot = currentYRot - stats.SweepArc / 2;
                         break;
                     case SweepState.Return:
                         //Debug.Log("Finished sweep");
@@ -132,8 +132,12 @@ public class Caretaker : MonoBehaviour
 
     private void FollowPath()
     {
-        if (walkingAudioSource == null || !walkingAudioSource.isPlaying)
+        if (walkingAudioSource == null || walkingAudioSource.AudioSource == null || !walkingAudioSource.AudioSource.isPlaying)
         {
+            if (walkingAudioSource == null || walkingAudioSource.AudioSource == null)
+            {
+                //Debug.Log("Null");
+            }
             walkingAudioSource = SoundController.Play3DSound(Available ? WalkSFX : RunSFX, gameObject);
         }
         if (Vector3.Distance(transform.position - new Vector3(0, transform.position.y, 0), currentPath[0].To3D()) <= ArrivalThreshold)
@@ -149,16 +153,16 @@ public class Caretaker : MonoBehaviour
                 previousYRot = currentYRot;
                 if (lookAtPos == null)
                 {
-                    targetYRot = currentYRot - 30;
+                    targetYRot = currentYRot - stats.SweepArc / 2;
                 }
                 else
                 {
-                    targetYRot = GetLookAtRot(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible")) - 30;
+                    targetYRot = GetLookAtRot(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible")) - stats.SweepArc / 2;
                     lookAtPos = null;
                 }
                 if (walkingAudioSource != null)
                 {
-                    walkingAudioSource.Stop();
+                    walkingAudioSource.AudioSource.Stop();
                 }
                 if (!Available)
                 {
@@ -233,6 +237,7 @@ public class Caretaker : MonoBehaviour
 
     public void SetTarget(Vector2Int pos, bool run = true)
     {
+        //Debug.Log("Target");
         // Immediatly stop current action
         currentPath.Clear();
         //transform.position = transform.position.To2D().To3D() + new Vector3(0, transform.position.y, 0);
@@ -253,5 +258,6 @@ public class Caretaker : MonoBehaviour
         public float Speed;
         public float TurnSpeed;
         public float SweepSpeed;
+        public float SweepArc = 60;
     }
 }

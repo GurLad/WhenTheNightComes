@@ -569,11 +569,13 @@ MonoBehaviour:
   RunStats:
     Speed: 3
     TurnSpeed: 3
-    SweepSpeed: 1
+    SweepSpeed: 1.5
+    SweepArc: 90
   IdleStats:
     Speed: 1
     TurnSpeed: 1
     SweepSpeed: 1
+    SweepArc: 60
   IdlePauseTimeRange: {x: 1, y: 2}
   IdleMoveRange: {x: 1, y: 4}
   RotationObject: {fileID: 7057992515812892784}

@@ -17,7 +17,7 @@ public class PlayerMovementControl : MonoBehaviour
         CharController = this.GetComponent<CharacterController>();
         UIM = FindObjectOfType<UIManager>();
     }
-    void Update()
+    void FixedUpdate()
     {
         if (!UIM.IsAnyWindowOpen())
         {
