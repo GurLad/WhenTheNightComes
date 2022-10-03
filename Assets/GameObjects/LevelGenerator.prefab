@@ -43,9 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088f6398253cd81469a038b678d42bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterAttackInterval: 0
-  MonsterAttackIntervalDecrement: 0
-  LevelData: 
+  Waves: []
+  Monsters: []
 --- !u!1 &556358075
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +397,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallsCSV: {fileID: 4900000, guid: 14f6ac2f2163b524d8c40ced5a7780e0, type: 3}
   EntitiesJSON: {fileID: 4900000, guid: 481963726085e3e4481af75204853b6e, type: 3}
+  Waves:
+  - Length: 5
+    SpawnString: 
+    DeadAdditions: 
+  - Length: 10
+    SpawnString: 1,2
+    DeadAdditions: 
+  - Length: 5
+    SpawnString: 6,7
+    DeadAdditions: 
+  - Length: 5
+    SpawnString: 4,5
+    DeadAdditions: 
+  - Length: 10
+    SpawnString: 8,9,14,15
+    DeadAdditions: 
+  - Length: 2
+    SpawnString: 12
+    DeadAdditions: 
+  - Length: 2
+    SpawnString: 13
+    DeadAdditions: 
+  - Length: 4
+    SpawnString: 0
+    DeadAdditions: 
+  - Length: 9
+    SpawnString: 3
+    DeadAdditions: 
+  - Length: 2.5
+    SpawnString: 4,5
+    DeadAdditions: 
+  - Length: 10.5
+    SpawnString: 6,7
+    DeadAdditions: 
+  - Length: 2.5
+    SpawnString: 8,9
+    DeadAdditions: 
+  - Length: 2.5
+    SpawnString: 10,11
+    DeadAdditions: 
+  - Length: 0
+    SpawnString: 12,13,14,15
+    DeadAdditions: 
   MonsterAttackInterval: 2
   MonsterAttackIntervalDecrement: 0.2
   LevelString: 11002200112200

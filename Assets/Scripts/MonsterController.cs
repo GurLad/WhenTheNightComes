@@ -13,6 +13,9 @@ public class MonsterController : MonoBehaviour
     public float Hand1Time, Hand2Time, Hand3Time, Hand4Time;
     public float BlinkChanceMonster, BlinkChanceSafe;
 
+    [HideInInspector]
+    public int id;
+
     [Header("Minimap")]
     public Renderer MinimapMain;
     public Renderer MinimapEyes;

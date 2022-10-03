@@ -17,20 +17,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 0
-				}
-			},
-			{
-				"id": "BedV",
-				"iid": "56330f00-2a00-11ed-a192-51eb926400a6",
-				"layer": "Beds",
-				"x": 64,
-				"y": 16,
-				"width": 16,
-				"height": 32,
-				"color": 14259348,
-				"customFields": {
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -43,7 +31,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 0
+					"Area": 0,
+					"ID": 5
 				}
 			},
 			{
@@ -56,7 +45,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 0
+					"Area": 0,
+					"ID": 6
 				}
 			},
 			{
@@ -69,7 +59,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 0
+					"Area": 0,
+					"ID": 2
 				}
 			},
 			{
@@ -82,7 +73,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 1
+					"Area": 1,
+					"ID": 8
 				}
 			},
 			{
@@ -95,7 +87,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 1
+					"Area": 1,
+					"ID": 12
 				}
 			},
 			{
@@ -108,7 +101,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 1
+					"Area": 1,
+					"ID": 13
 				}
 			},
 			{
@@ -121,7 +115,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 1
+					"Area": 1,
+					"ID": 9
 				}
 			},
 			{
@@ -134,7 +129,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 1
+					"Area": 1,
+					"ID": 10
 				}
 			},
 			{
@@ -147,7 +143,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 1
+					"Area": 1,
+					"ID": 14
 				}
 			},
 			{
@@ -160,7 +157,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 0
+					"Area": 0,
+					"ID": 4
 				}
 			},
 			{
@@ -173,7 +171,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 0
+					"Area": 0,
+					"ID": 7
 				}
 			},
 			{
@@ -186,7 +185,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 0
+					"Area": 0,
+					"ID": 3
 				}
 			},
 			{
@@ -199,7 +199,8 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 1
+					"Area": 1,
+					"ID": 15
 				}
 			},
 			{
@@ -212,7 +213,22 @@
 				"height": 32,
 				"color": 14259348,
 				"customFields": {
-					"Area": 1
+					"Area": 1,
+					"ID": 11
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "9ea55c70-2a00-11ed-b403-91cf2a6f3191",
+				"layer": "Beds",
+				"x": 64,
+				"y": 16,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 1
 				}
 			}
 		],

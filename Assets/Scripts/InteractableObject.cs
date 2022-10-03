@@ -11,6 +11,7 @@ public class InteractableObject : MonoBehaviour
     public bool CanInteract;
     private int highlightDelay;
     private ObjectAnimation animation;
+    private int hourInteracted;
 
     private void Update()
     {
@@ -21,6 +22,11 @@ public class InteractableObject : MonoBehaviour
             {
                 animation.AnimateStopHighlight();
             }
+        }
+        if (hourInteracted >= 0 && hourInteracted != UIClock.Current.CurrentHour())
+        {
+            Recover();
+            hourInteracted = -1;
         }
     }
 
@@ -37,8 +43,10 @@ public class InteractableObject : MonoBehaviour
         {
             highlightDelay = 0;
             animation.AnimateInteraction();
-            CaretakerController.Current.GetClosestAvailableCaretaker(CaretakerPos)?.SetTarget(CaretakerPos, transform.position.To2D());
+            (CaretakerController.Current.GetClosestAvailableCaretaker(CaretakerPos) ??
+             CaretakerController.Current.GetClosestAvailableCaretaker(CaretakerPos, false)).SetTarget(CaretakerPos, transform.position.To2D());
             CanInteract = false;
+            hourInteracted = UIClock.Current.CurrentHour();
         }
     }
 

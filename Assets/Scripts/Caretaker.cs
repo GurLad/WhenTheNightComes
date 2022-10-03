@@ -12,6 +12,7 @@ public class Caretaker : MonoBehaviour
     public AudioClip RunSFX;
     public List<AudioClip> OnCallSFX;
     public List<AudioClip> OnArriveSFX;
+    public Renderer MinimapIndicator;
     [Header("Run")]
     public CaretakerStats RunStats;
     [Header("Idle")]
@@ -242,9 +243,39 @@ public class Caretaker : MonoBehaviour
         currentPath.Clear();
         //transform.position = transform.position.To2D().To3D() + new Vector3(0, transform.position.y, 0);
         stats = run ? RunStats : IdleStats;
-        currentPath = Pathfinder.GetPath(transform.position.To2D(), pos);
-        currentPath.RemoveAt(0); // No need for the start pos
-        GenerateRots();
+        if (transform.position.To2D() == pos)
+        {
+            rigidbody.velocity = Vector3.zero;
+            count = 0;
+            // Begin sweep
+            Flashlight.Active = true;
+            sweepState = SweepState.FirstPass;
+            previousYRot = currentYRot;
+            if (lookAtPos == null)
+            {
+                targetYRot = currentYRot - stats.SweepArc / 2;
+            }
+            else
+            {
+                targetYRot = GetLookAtRot(transform.position.To2D(), lookAtPos ?? throw new System.Exception("Impossible")) - stats.SweepArc / 2;
+                lookAtPos = null;
+            }
+            if (walkingAudioSource != null)
+            {
+                walkingAudioSource.AudioSource.Stop();
+            }
+            if (!Available)
+            {
+                SoundController.Play3DSound(OnArriveSFX[Random.Range(0, OnArriveSFX.Count)], gameObject);
+            }
+            //Debug.Log("Began first pass");
+        }
+        else
+        {
+            currentPath = Pathfinder.GetPath(transform.position.To2D(), pos);
+            currentPath.RemoveAt(0); // No need for the start pos
+            GenerateRots();
+        }
         if (run)
         {
             Available = false;

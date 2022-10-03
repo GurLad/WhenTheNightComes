@@ -17,13 +17,13 @@ public class CaretakerController : MonoBehaviour
         caretakers.Add(caretaker);
     }
 
-    public Caretaker GetClosestAvailableCaretaker(Vector2Int point)
+    public Caretaker GetClosestAvailableCaretaker(Vector2Int point, bool mustBeAvailabe = true)
     {
         if (caretakers.Count <= 0)
         {
             throw new System.Exception("No caretakers!");
         }
-        List<Caretaker> availableCaretakers = caretakers.FindAll(a => a.Available);
+        List<Caretaker> availableCaretakers = mustBeAvailabe ? caretakers.FindAll(a => a.Available) : caretakers;
         if (availableCaretakers.Count <= 0)
         {
             return null;

@@ -975,31 +975,25 @@ MonoBehaviour:
   - {fileID: 2000783895335392064}
   MonsterAttackDuration: 20
   MonsterWinSFX:
-  - {fileID: 8300000, guid: b10b97c4a82faca428e962cbfd76cd35, type: 3}
-  - {fileID: 8300000, guid: ef4d4d9c49dfec54b986bb1fdc8028a3, type: 3}
-  - {fileID: 8300000, guid: c6d4f8a1844e5274cb68a30ba6bbc773, type: 3}
-  - {fileID: 8300000, guid: e1684fcefb3ca3f4083380b8819aa8a6, type: 3}
-  - {fileID: 8300000, guid: 013e5b3fd435c244aab2b2b81be7eef3, type: 3}
-  - {fileID: 8300000, guid: b574eff4af72ad44eafa4cd959c7be0d, type: 3}
+  - {fileID: 8300000, guid: 147fdbf22211a2a40b46530abcd126fc, type: 3}
+  - {fileID: 8300000, guid: 729ca10a7a2c94b4ab75dcddd23e8ace, type: 3}
   MonsterSpawnSFX:
-  - {fileID: 8300000, guid: ad1c6a46f5da04c489c590ff7e269d55, type: 3}
-  - {fileID: 8300000, guid: 972ee789f4e62ee47b4534137cfead70, type: 3}
-  - {fileID: 8300000, guid: bae3999b7d8af1340acb46fc7f1d5638, type: 3}
-  - {fileID: 8300000, guid: d71b1bb20698ce24386d5f78d0ea7736, type: 3}
-  - {fileID: 8300000, guid: f3ebd0faad011994f922d0460a8ecf82, type: 3}
-  - {fileID: 8300000, guid: 8ed02e6603530e74886a6312eb9bf45f, type: 3}
-  - {fileID: 8300000, guid: 430e9ec69b633e241a062d304fc70b17, type: 3}
-  - {fileID: 8300000, guid: bfa4eca4799261043a7b2b5eb0b7a078, type: 3}
+  - {fileID: 8300000, guid: 879ad30db9f17514290f7b763304d845, type: 3}
+  - {fileID: 8300000, guid: 69a9bfb206865a24a81ea9567b92869a, type: 3}
+  - {fileID: 8300000, guid: e6e3923ba8f26f447a7caa1ed98e4269, type: 3}
   MonsterDeadSFX:
-  - {fileID: 8300000, guid: d4cef90e4ac095b4b9a299f7f179d841, type: 3}
-  - {fileID: 8300000, guid: e04bf2c750f01b949812d40d4e0e36e1, type: 3}
-  - {fileID: 8300000, guid: f77bebd380e6a9c4f8691fe9534bf770, type: 3}
+  - {fileID: 8300000, guid: 7af816bc82d19d04ebd0e669b6860f83, type: 3}
+  - {fileID: 8300000, guid: 493b60bdc5a688049b822831ec538613, type: 3}
+  - {fileID: 8300000, guid: 3644d8e95e863f04b8a942e900f2d1f2, type: 3}
+  - {fileID: 8300000, guid: 2b4c4111ac5cb6f41b787e46b4e86082, type: 3}
+  - {fileID: 8300000, guid: 6eb2c2d98d24d10458e2bffc843c4574, type: 3}
   Hand1Time: 0.01
   Hand2Time: 0.3
   Hand3Time: 0.6
   Hand4Time: 0.8
   BlinkChanceMonster: 0.1
   BlinkChanceSafe: 0.001
+  id: 0
   MinimapMain: {fileID: 7020493945073666895}
   MinimapEyes: {fileID: 6643921961983434408}
   MinimapSafe: {r: 0.7137255, g: 0.78009754, b: 1, a: 1}

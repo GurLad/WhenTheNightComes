@@ -28,7 +28,7 @@ public class Flashlight : MonoBehaviour
         minimapMaterial = MinimapFlashlight.material = Instantiate(MinimapFlashlight.material);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         MonsterController monster = other.gameObject.GetComponentInParent<MonsterController>(); // Assume the hitbox is of the bed model
         if (monster != null && Active)

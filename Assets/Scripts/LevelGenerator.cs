@@ -9,6 +9,9 @@ public class LevelGenerator : MonoBehaviour
     [Header("Level data")]
     public TextAsset WallsCSV;
     public TextAsset EntitiesJSON;
+    [Header("New way")]
+    public List<WaveData> Waves;
+    [Header("Old way")]
     public float MonsterAttackInterval;
     public float MonsterAttackIntervalDecrement;
     public string LevelString;
@@ -38,13 +41,15 @@ public class LevelGenerator : MonoBehaviour
         // Load basic data
         levelData = LevelData.Interpret(EntitiesJSON.text, TileSize);
         // Init GameController
-        GameController.MonsterAttackInterval = MonsterAttackInterval;
-        GameController.MonsterAttackIntervalDecrement = MonsterAttackIntervalDecrement;
-        GameController.LevelData = LevelString;
-        for (int i = 0; i < 9; i++)
-        {
-            GameController.Monsters.Add(new List<MonsterController>());
-        }
+        //// Old way
+        //GameController.MonsterAttackInterval = MonsterAttackInterval;
+        //GameController.MonsterAttackIntervalDecrement = MonsterAttackIntervalDecrement;
+        //GameController.LevelData = LevelString;
+        //for (int i = 0; i < 9; i++)
+        //{
+        //    GameController.Monsters.Add(new List<MonsterController>());
+        //}
+        GameController.Waves = Waves;
         // Generate walls
         walls = ImportWalls(WallsCSV.text, levelData.Width, levelData.Height);
         for (int x = 0; x < levelData.Width; x++)
@@ -119,7 +124,10 @@ public class LevelGenerator : MonoBehaviour
                             walls[pos.x + 1, pos.y] = 2;
                         }
                         // Add to monster list
-                        GameController.Monsters[(int)entity.customFields["Area"]].Add(entityObject.GetComponent<MonsterController>());
+                        MonsterController monster = entityObject.GetComponent<MonsterController>();
+                        monster.id = (int)entity.customFields["ID"];
+                        //GameController.Monsters[(int)entity.customFields["Area"]].Add(monster);
+                        GameController.Monsters.Add(monster);
                         break;
                     case "Caretaker":
                         entityObject = Instantiate(Caretaker, EntityHolder);
@@ -179,6 +187,32 @@ public class LevelGenerator : MonoBehaviour
             }
         }
         return result;
+    }
+
+    [ContextMenu("Validate level")]
+    void ValidateLevel()
+    {
+        float sum = 0;
+        foreach (var wave in Waves)
+        {
+            sum += wave.Length;
+        }
+        if (sum >= 71 || sum <= 69)
+        {
+            Debug.LogWarning("Sum: " + sum + " != 70!");
+        }
+        else
+        {
+            Debug.Log("Sum: " + sum + " ~= 70 :)");
+        }
+    }
+
+    [System.Serializable]
+    public class WaveData
+    {
+        public float Length;
+        public string SpawnString;
+        public string DeadAdditions;
     }
 
     [System.Serializable]

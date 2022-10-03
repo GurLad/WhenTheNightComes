@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Networking.Types;
 
 public static class Pathfinder
 {
@@ -17,6 +18,10 @@ public static class Pathfinder
 
     public static float GetTrueDistance(Vector2Int start, Vector2Int end)
     {
+        if (start == end)
+        {
+            return 0;
+        }
         List<Vector2Int> parts = GetPath(start, end);
         float sum = 0;
         for (int i = 0; i < parts.Count - 1; i++)
