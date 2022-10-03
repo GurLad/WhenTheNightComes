@@ -29,6 +29,7 @@ public class LevelGenerator : MonoBehaviour
     public GameObject Caretaker;
     public GameObject Player;
     public GameObject Object;
+    public GameObject Window;
     [Header("Minimap")]
     public Camera MinimapCamera;
     public RenderTexture MinimapRenderer;
@@ -135,8 +136,9 @@ public class LevelGenerator : MonoBehaviour
                     case "Player":
                         entityObject = Instantiate(Player, EntityHolder);
                         break;
+                    case "Window":
                     case "Object":
-                        entityObject = Instantiate(Object, EntityHolder);
+                        entityObject = Instantiate(entity.id == "Object" ? Object : Window, EntityHolder);
                         InteractableObject interactableObject = entityObject.GetComponent<InteractableObject>();
                         interactableObject.CaretakerPos = entity.customFields["CaretakerTarget"].ToVector2Int();
                         interactableObject.Init((int)entity.customFields["Type"]);

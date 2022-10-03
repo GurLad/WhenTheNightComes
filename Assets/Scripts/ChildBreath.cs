@@ -8,6 +8,7 @@ public class ChildBreath : MonoBehaviour
     public Vector2 SizeRange;
     public Vector2 SpeedRange;
     public float DeadSize;
+    public AudioClip[] DeathSFX;
     private float count;
     private float size;
     private float speed;
@@ -41,6 +42,7 @@ public class ChildBreath : MonoBehaviour
 
     public void Kill()
     {
+        SoundController.PlaySound(DeathSFX[Random.Range(0, DeathSFX.Length)]);
         dead = true;
         count = 0;
     }

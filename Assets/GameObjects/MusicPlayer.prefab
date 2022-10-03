@@ -48,9 +48,9 @@ MonoBehaviour:
   - Name: Level
     AudioClip: {fileID: 8300000, guid: 61cbccad836c70f4b95053998fb6fe33, type: 3}
   - Name: Menu
-    AudioClip: {fileID: 8300000, guid: 2d11a2406515d40498e69b3e903687b1, type: 3}
+    AudioClip: {fileID: 8300000, guid: 25f83a209bf4aa4458814f15714095a6, type: 3}
   - Name: GameOver
-    AudioClip: {fileID: 8300000, guid: f0e48a97f481fe9449a5b0bf30fec173, type: 3}
+    AudioClip: {fileID: 8300000, guid: d4e51982ce318b6438733b53afdc06be, type: 3}
   - Name: Silence
     AudioClip: {fileID: 8300000, guid: 4a85fdbaf1d2e124d9ce7bec955f6c12, type: 3}
   FadeSpeed: 1

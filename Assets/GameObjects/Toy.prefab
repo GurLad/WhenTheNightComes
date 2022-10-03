@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParticleSystem: {fileID: 2837542604337453285}
+  ClickSFX:
+  - {fileID: 8300000, guid: b58de3280196d164fb45815e41b31da4, type: 3}
   Rotator: {fileID: 3438458531466501001}
   FallSpeed: 1
   RecoverSpeed: 2

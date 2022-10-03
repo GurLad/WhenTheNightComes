@@ -5,6 +5,7 @@ using UnityEngine;
 public class OAParticles : ObjectAnimation
 {
     public ParticleSystem ParticleSystem;
+    public AudioClip[] ClickSFX;
 
     protected virtual void Start()
     {
@@ -24,6 +25,7 @@ public class OAParticles : ObjectAnimation
 
     public override void AnimateInteraction()
     {
+        SoundController.PlaySound(ClickSFX[Random.Range(0, ClickSFX.Length)]);
         if (ParticleSystem.isPlaying)
         {
             ParticleSystem.Stop();

@@ -200,6 +200,20 @@ MonoBehaviour:
   SizeRange: {x: 0.1, y: 0.2}
   SpeedRange: {x: 0.4, y: 0.6}
   DeadSize: 0.5
+  DeathSFX:
+  - {fileID: 8300000, guid: ba661ebdd68a4d141ba56ffd8487daf4, type: 3}
+  - {fileID: 8300000, guid: ea2cb88ec8192e04cb5c568d3bd1c368, type: 3}
+  - {fileID: 8300000, guid: 4bd986978133525438dd5ed5fd0d4191, type: 3}
+  - {fileID: 8300000, guid: d1fcf079321724846a8d2e14c13eb167, type: 3}
+  - {fileID: 8300000, guid: b4cee38ee5737664c8ce9c268d186eb1, type: 3}
+  - {fileID: 8300000, guid: 34f116892f0479a4f80b0cae7b3f2e60, type: 3}
+  - {fileID: 8300000, guid: b69cf4434a3e4da49ad08257f61aabff, type: 3}
+  - {fileID: 8300000, guid: 359dc8caf2a300548a0d39f68283bacd, type: 3}
+  - {fileID: 8300000, guid: 221b6b0e547b5364a9bb21c512734671, type: 3}
+  - {fileID: 8300000, guid: 5eb927c20dd68f041ae3cfeab04f3c67, type: 3}
+  - {fileID: 8300000, guid: 6385da5972949a14cbfcec5f350f793d, type: 3}
+  - {fileID: 8300000, guid: c9c7d7b4cbfbcad47a185446e52b0771, type: 3}
+  - {fileID: 8300000, guid: 9f52a7513a3573948b12202d081ca8c2, type: 3}
 --- !u!1 &8411573262008112939
 GameObject:
   m_ObjectHideFlags: 0

@@ -556,6 +556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParticleSystem: {fileID: 3094270583655514541}
+  ClickSFX:
+  - {fileID: 8300000, guid: bf5dee0ce5aba9a4698aa0d28f0e3232, type: 3}
 --- !u!1 &6919143907454685044
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +748,7 @@ MonoBehaviour:
   Caretaker: {fileID: 8613151042373153117}
   Player: {fileID: 8247316387549448377}
   Object: {fileID: 1180574263493619584}
+  Window: {fileID: 5000788981103484650}
   MinimapCamera: {fileID: 1380344493}
   MinimapRenderer: {fileID: 8400000, guid: 5395cab8fe902c143846fa4194016f51, type: 2}
   MinimapUI: {fileID: 0}
