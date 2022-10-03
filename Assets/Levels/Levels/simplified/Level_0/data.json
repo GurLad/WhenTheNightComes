@@ -254,6 +254,17 @@
 				"height": 16,
 				"color": 9755059,
 				"customFields" : {}
+			},
+			{
+				"id": "Caretaker",
+				"iid": "526f8220-2a00-11ed-b403-ebb3840052a4",
+				"layer": "Beds",
+				"x": 240,
+				"y": 128,
+				"width": 16,
+				"height": 16,
+				"color": 9755059,
+				"customFields" : {}
 			}
 		],
 		"Player": [
@@ -262,7 +273,7 @@
 				"iid": "9d74f210-2a00-11ed-a192-0b5c23db3e27",
 				"layer": "Beds",
 				"x": 240,
-				"y": 160,
+				"y": 192,
 				"width": 16,
 				"height": 16,
 				"color": 9742553,
