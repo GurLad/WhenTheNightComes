@@ -49,6 +49,7 @@ public class CameraRotationControl : MonoBehaviour
             {
                 if (parent.GetComponent<InteractableObject>() != null)
                 {
+                    Crosshair.Current.Hand();
                     parent.GetComponent<InteractableObject>().Highlight();
                     
                     if (Input.GetMouseButtonDown(0))
@@ -59,6 +60,7 @@ public class CameraRotationControl : MonoBehaviour
                 }
                 else
                 {
+                    Crosshair.Current.NoHand();
                     if (parent.transform.parent != null)
                         parent = parent.transform.parent.gameObject;
                     else
