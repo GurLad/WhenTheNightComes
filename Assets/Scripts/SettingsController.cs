@@ -37,7 +37,7 @@ public class SettingsController : MonoBehaviour
         MusicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         SensitivitySlider.value = PlayerPrefs.GetFloat("Sensitivity", 0.8f);
         FullscreenBox.isOn = PlayerPrefs.GetInt("Fullscreen", 1) > 0;
-        if (!PlayerPrefs.HasKey("Resolution1"))
+        if (!PlayerPrefs.HasKey("Resolution2"))
         {
             // Find resolution
             Resolution res = Screen.currentResolution;
@@ -49,10 +49,13 @@ public class SettingsController : MonoBehaviour
                     return;
                 }
             }
+            // No resolution
+            ResolutionDropdown.value = 0;
+            Fullscreen = false;
         }
         else
         {
-            ResolutionDropdown.value = PlayerPrefs.GetInt("Resolution1");
+            ResolutionDropdown.value = PlayerPrefs.GetInt("Resolution2");
         }
     }
 
