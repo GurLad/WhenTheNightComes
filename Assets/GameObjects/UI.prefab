@@ -4270,6 +4270,7 @@ GameObject:
   - component: {fileID: 397781746165835391}
   - component: {fileID: 3898536888008892328}
   - component: {fileID: 6740986870451348615}
+  - component: {fileID: 6264662245668528852}
   m_Layer: 5
   m_Name: NextLevel
   m_TagString: Untagged
@@ -4378,7 +4379,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3898536888008892328}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6264662245668528852}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6264662245668528852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3787606076565339609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64605b513a7ad8447a7488921818126b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sandbox
 --- !u!1 &3819126430147777158
 GameObject:
   m_ObjectHideFlags: 0
@@ -7218,6 +7244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5683a943e83124f4780ab711058be633, type: 3}
+--- !u!224 &6013794678549268550 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7092546060213967186, guid: 5683a943e83124f4780ab711058be633, type: 3}
+  m_PrefabInstance: {fileID: 3537722048370839828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6013794678549268551 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7092546060213967187, guid: 5683a943e83124f4780ab711058be633, type: 3}
@@ -7229,11 +7260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &6013794678549268550 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7092546060213967186, guid: 5683a943e83124f4780ab711058be633, type: 3}
-  m_PrefabInstance: {fileID: 3537722048370839828}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3904042949722405784
 PrefabInstance:
   m_ObjectHideFlags: 0

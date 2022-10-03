@@ -64,17 +64,20 @@ public class GameController : MonoBehaviour
                         deadCount++;
                     }
                 }
-                for (int i = 0; i < Mathf.Min(deadAdditions.Length, deadCount); i++)
-                {
-                    int id = int.Parse(deadAdditions[i]);
-                    MonsterController selected = Monsters.Find(a => a.id == id);
-                    if (!selected.MonsterAttackSuccessful())
+                if (Waves[currentWave].DeadAdditions != "")
+                { 
+                    for (int i = 0; i < Mathf.Min(deadAdditions.Length, deadCount); i++)
                     {
-                        selected.StartMonsterAttack();
-                    }
-                    else
-                    {
-                        deadCount++;
+                        int id = int.Parse(deadAdditions[i]);
+                        MonsterController selected = Monsters.Find(a => a.id == id);
+                        if (!selected.MonsterAttackSuccessful())
+                        {
+                            selected.StartMonsterAttack();
+                        }
+                        else
+                        {
+                            deadCount++;
+                        }
                     }
                 }
             }

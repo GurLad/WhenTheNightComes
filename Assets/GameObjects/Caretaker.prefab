@@ -566,6 +566,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5494b9cd552a0104d935a673551acbe9, type: 3}
   OnArriveSFX:
   - {fileID: 8300000, guid: cf3fe3074ef97a54db0800c7566e27ef, type: 3}
+  MinimapIndicator: {fileID: 3484538763574226028}
+  MinimapIdling: {r: 0.83137256, g: 0.83137256, b: 0.34509805, a: 1}
+  MinimapActive: {r: 0.9339623, g: 0.9339623, b: 0.13656995, a: 1}
   RunStats:
     Speed: 3
     TurnSpeed: 3
@@ -694,5 +697,10 @@ PrefabInstance:
 --- !u!4 &3484538763525719483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3697628738887739381, guid: fc43dbbda7066dd48bdaae146bb70c21, type: 3}
+  m_PrefabInstance: {fileID: 219282425990767182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3484538763574226028 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3697628738981318178, guid: fc43dbbda7066dd48bdaae146bb70c21, type: 3}
   m_PrefabInstance: {fileID: 219282425990767182}
   m_PrefabAsset: {fileID: 0}

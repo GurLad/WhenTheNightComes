@@ -43,8 +43,11 @@ public class InteractableObject : MonoBehaviour
         {
             highlightDelay = 0;
             animation.AnimateInteraction();
-            (CaretakerController.Current.GetClosestAvailableCaretaker(CaretakerPos) ??
-             CaretakerController.Current.GetClosestAvailableCaretaker(CaretakerPos, false)).SetTarget(CaretakerPos, transform.position.To2D());
+            Caretaker caretaker = CaretakerController.Current.GetClosestAvailableCaretaker(this);
+            if (caretaker != null)
+            {
+                SelectCaretaker(caretaker);
+            }
             CanInteract = false;
             hourInteracted = UIClock.Current.CurrentHour();
         }
@@ -63,5 +66,10 @@ public class InteractableObject : MonoBehaviour
     {
         animation.AnimateRecovery();
         CanInteract = true;
+    }
+
+    public void SelectCaretaker(Caretaker caretaker)
+    {
+        caretaker.SetTarget(CaretakerPos, transform.position.To2D());
     }
 }

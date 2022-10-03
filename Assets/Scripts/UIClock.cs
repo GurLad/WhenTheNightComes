@@ -46,7 +46,7 @@ public class UIClock : MonoBehaviour
             }
         }
 
-        if (ClockTime > 80)
+        if (ClockTime > 90)
             Win();
     }
 

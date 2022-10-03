@@ -40,12 +40,12 @@ public class Flashlight : MonoBehaviour
             {
                 if (hit.transform == Caretaker.transform)
                 {
-                    Debug.Log("Hit monster");
+                    //Debug.Log("Hit monster");
                     monster.StopMonsterAttack();
                 }
                 else
                 {
-                    Debug.Log("No line of sight! Hit " + hit.transform.name);
+                    //Debug.Log("No line of sight! Hit " + hit.transform.name);
                 }
             }
         }

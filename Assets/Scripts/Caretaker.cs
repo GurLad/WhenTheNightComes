@@ -12,7 +12,10 @@ public class Caretaker : MonoBehaviour
     public AudioClip RunSFX;
     public List<AudioClip> OnCallSFX;
     public List<AudioClip> OnArriveSFX;
+    [Header("Minimap")]
     public Renderer MinimapIndicator;
+    public Color MinimapIdling;
+    public Color MinimapActive;
     [Header("Run")]
     public CaretakerStats RunStats;
     [Header("Idle")]
@@ -39,6 +42,8 @@ public class Caretaker : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         CaretakerController.Current.AddCaretaker(this);
         Available = true;
+        MinimapIndicator.material = Instantiate(MinimapIndicator.material);
+        MinimapIndicator.material.color = MinimapIdling;
         //// DEBUG
         //transform.position = new Vector2Int(19, 13).To3D();
         //SetTarget(new Vector2Int(16, 17), false);
@@ -84,6 +89,7 @@ public class Caretaker : MonoBehaviour
                         count = 0;
                         sweepState = SweepState.None;
                         Available = true;
+                        MinimapIndicator.material.color = MinimapIdling;
                         break;
                     default:
                         break;
@@ -279,6 +285,7 @@ public class Caretaker : MonoBehaviour
         if (run)
         {
             Available = false;
+            MinimapIndicator.material.color = MinimapActive;
             SoundController.Play3DSound(OnCallSFX[Random.Range(0, OnCallSFX.Count)], gameObject);
         }
     }

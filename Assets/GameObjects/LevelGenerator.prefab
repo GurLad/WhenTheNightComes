@@ -411,19 +411,19 @@ MonoBehaviour:
     SpawnString: 4,5
     DeadAdditions: 
   - Length: 10
-    SpawnString: 8,9,14,15
+    SpawnString: 8,9,12,13
     DeadAdditions: 
   - Length: 2
-    SpawnString: 12
+    SpawnString: 14
     DeadAdditions: 
   - Length: 2
-    SpawnString: 13
+    SpawnString: 15
     DeadAdditions: 
   - Length: 4
-    SpawnString: 0
+    SpawnString: 3
     DeadAdditions: 
   - Length: 9
-    SpawnString: 3
+    SpawnString: 0
     DeadAdditions: 
   - Length: 2.5
     SpawnString: 4,5
