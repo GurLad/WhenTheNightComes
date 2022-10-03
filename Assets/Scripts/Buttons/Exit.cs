@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadScene : MonoBehaviour
+public class Exit : MonoBehaviour
 {
-    public string Name;
-
     public void Click()
     {
-        SceneLoader.LoadScene(Name); // TEMP
+        Application.Quit();
     }
 }
