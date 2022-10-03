@@ -2120,7 +2120,7 @@
 							"px": [16,192],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 23, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [23] }] }
 							]
 						},
 						{
@@ -2137,7 +2137,7 @@
 							"px": [16,240],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 22, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [22] }] }
 							]
 						},
 						{
@@ -2154,7 +2154,7 @@
 							"px": [16,288],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 21, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [21] }] }
 							]
 						},
 						{
@@ -2171,7 +2171,7 @@
 							"px": [48,304],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 20, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [20] }] }
 							]
 						},
 						{
@@ -2188,7 +2188,7 @@
 							"px": [96,304],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 19, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [19] }] }
 							]
 						},
 						{
@@ -2205,7 +2205,7 @@
 							"px": [144,304],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 18, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [18] }] }
 							]
 						},
 						{
@@ -2222,7 +2222,7 @@
 							"px": [192,304],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 17, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [17] }] }
 							]
 						},
 						{
@@ -2239,7 +2239,7 @@
 							"px": [240,304],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 16, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [16] }] }
 							]
 						},
 						{
@@ -2256,7 +2256,7 @@
 							"px": [288,304],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 15, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [15] }] }
 							]
 						},
 						{
@@ -2273,7 +2273,7 @@
 							"px": [304,288],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 14, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [14] }] }
 							]
 						},
 						{
@@ -2290,7 +2290,7 @@
 							"px": [304,240],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 13, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [13] }] }
 							]
 						},
 						{
@@ -2307,7 +2307,7 @@
 							"px": [304,192],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 12, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [12] }] }
 							]
 						},
 						{
@@ -2324,7 +2324,7 @@
 							"px": [304,144],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 11, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [11] }] }
 							]
 						},
 						{
@@ -2341,7 +2341,7 @@
 							"px": [304,96],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 10, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [10] }] }
 							]
 						},
 						{
@@ -2358,7 +2358,7 @@
 							"px": [304,48],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 9, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [9] }] }
 							]
 						},
 						{
@@ -2375,7 +2375,7 @@
 							"px": [16,144],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [0] }] }
 							]
 						},
 						{
@@ -2392,7 +2392,7 @@
 							"px": [16,96],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 1, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [1] }] }
 							]
 						},
 						{
@@ -2409,7 +2409,7 @@
 							"px": [16,48],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 2, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [2] }] }
 							]
 						},
 						{
@@ -2426,7 +2426,7 @@
 							"px": [48,16],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 3, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [3] }] }
 							]
 						},
 						{
@@ -2443,7 +2443,7 @@
 							"px": [96,16],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 4, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [4] }] }
 							]
 						},
 						{
@@ -2460,7 +2460,7 @@
 							"px": [144,16],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 5, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [5] }] }
 							]
 						},
 						{
@@ -2477,7 +2477,7 @@
 							"px": [192,16],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 6, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [6] }] }
 							]
 						},
 						{
@@ -2494,7 +2494,7 @@
 							"px": [240,16],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 7, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [7] }] }
 							]
 						},
 						{
@@ -2511,7 +2511,7 @@
 							"px": [288,16],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 8, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [8] }] }
 							]
 						},
 						{
@@ -2528,7 +2528,7 @@
 							"px": [112,128],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 24, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [24] }] }
 							]
 						},
 						{
@@ -2545,7 +2545,7 @@
 							"px": [224,128],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 27, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [27] }] }
 							]
 						},
 						{
@@ -2562,7 +2562,7 @@
 							"px": [224,192],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 28, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [28] }] }
 							]
 						},
 						{
@@ -2579,7 +2579,7 @@
 							"px": [112,192],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 31, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [31] }] }
 							]
 						},
 						{
@@ -2596,7 +2596,7 @@
 							"px": [128,224],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 30, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [30] }] }
 							]
 						},
 						{
@@ -2613,7 +2613,7 @@
 							"px": [192,224],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 29, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [29] }] }
 							]
 						},
 						{
@@ -2630,7 +2630,7 @@
 							"px": [192,112],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 26, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [26] }] }
 							]
 						},
 						{
@@ -2647,7 +2647,7 @@
 							"px": [128,112],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 25, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [25] }] }
 							]
 						},
 						{
@@ -3155,20 +3155,20 @@
 					"visible": true,
 					"optionalRules": [],
 					"intGridCsv": [
-						2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4,4,4,4,4,4,4,4,4,2,2,4,
+						2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,4,4,4,4,4,4,4,4,4,2,2,4,
 						4,4,4,4,4,4,4,4,2,2,4,4,4,4,4,4,4,4,4,2,2,4,4,4,4,4,4,4,4,4,2,2,4,4,1,
-						1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,2,2,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-						1,1,4,4,2,2,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,2,2,4,4,1,1,1,2,2,
-						2,2,1,1,2,2,2,2,1,1,1,4,4,2,2,4,4,1,1,1,2,2,4,4,1,1,4,4,2,2,1,1,1,4,4,
+						1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,2,4,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+						1,1,4,4,2,2,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,4,2,4,4,1,1,1,2,2,
+						2,2,1,1,2,2,2,2,1,1,1,4,4,2,4,4,4,1,1,1,2,2,4,4,1,1,4,4,2,2,1,1,1,4,4,
 						2,2,4,4,1,1,1,2,4,4,4,1,1,4,4,4,2,1,1,1,4,4,2,2,4,4,1,1,1,2,4,4,1,1,1,
 						1,4,4,2,1,1,1,4,4,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,
 						1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,4,4,1,1,1,2,4,4,1,1,1,1,4,4,2,
-						1,1,1,4,4,2,2,4,4,1,1,1,2,4,4,4,1,1,4,4,4,2,1,1,1,4,4,2,2,4,4,1,1,1,2,
+						1,1,1,4,4,2,4,4,4,1,1,1,2,4,4,4,1,1,4,4,4,2,1,1,1,4,4,4,2,4,4,1,1,1,2,
 						2,4,4,1,1,4,4,2,2,1,1,1,4,4,2,2,4,4,1,1,1,2,2,2,2,1,1,2,2,2,2,1,1,1,4,
 						4,2,2,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,2,2,4,4,1,1,1,1,1,1,1,1,
 						1,1,1,1,1,1,1,1,4,4,2,2,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,2,2,4,
 						4,4,4,4,4,4,4,4,2,2,4,4,4,4,4,4,4,4,4,2,2,4,4,4,4,4,4,4,4,4,2,2,4,4,4,
-						4,4,4,4,4,4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+						4,4,4,4,4,4,2,2,2,2,2,4,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,2,2
 					],
 					"autoLayerTiles": [],
 					"seed": 407843,
@@ -4043,17 +4043,17 @@
 					"visible": true,
 					"optionalRules": [],
 					"intGridCsv": [
-						0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,4,1,1,
-						1,4,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,4,1,1,1,4,4,4,0,0,0,0,0,0,0,0,
-						0,0,0,0,0,0,2,4,4,1,1,1,4,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,4,1,1,1,
-						4,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,4,1,1,1,4,4,2,0,0,0,0,0,0,0,0,0,
-						0,0,0,0,0,4,4,4,1,1,1,4,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,4,1,1,1,4,
-						4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,4,1,1,1,4,4,2,0,0,0,0,0,0,0,0,0,0,
-						0,0,0,0,2,2,2,1,1,1,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,1,1,1,1,1,1,1,
-						2,2,0,0,0,0,0,0,0,0,0,0,0,2,2,1,1,1,1,1,1,1,1,1,2,2,0,0,0,0,0,0,0,0,0,
-						0,2,4,4,1,1,1,1,1,1,1,4,4,2,0,0,0,0,0,0,0,0,0,0,2,4,4,1,1,1,2,1,1,1,4,
-						4,4,0,0,0,0,0,0,0,0,0,0,2,4,4,1,1,1,2,1,1,1,4,4,2,0,0,0,0,0,0,0,0,0,0,
-						2,4,4,1,1,1,2,1,1,1,4,4,2,0,0,0,0,0,2,2,2,2,2,2,2,2,1,1,1,2,1,1,1,2,2,
+						3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,4,4,1,1,
+						1,4,4,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,4,4,1,1,1,4,4,4,3,3,3,3,3,3,3,3,
+						3,3,3,3,3,3,2,4,4,1,1,1,4,4,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,4,4,1,1,1,
+						4,4,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,4,4,1,1,1,4,4,2,3,3,3,3,3,3,3,3,3,
+						3,3,3,3,3,4,4,4,1,1,1,4,4,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,4,4,1,1,1,4,
+						4,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,4,4,1,1,1,4,4,2,3,3,3,3,3,3,3,3,3,3,
+						3,3,3,3,2,2,2,1,1,1,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,1,1,1,1,1,1,1,
+						2,2,3,3,3,3,3,3,3,3,3,3,3,2,2,1,1,1,1,1,1,1,1,1,2,2,3,3,3,3,3,3,3,3,3,
+						3,2,4,4,1,1,1,1,1,1,1,4,4,2,3,3,3,3,3,3,3,3,3,3,2,4,4,1,1,1,2,1,1,1,4,
+						4,4,3,3,3,3,3,3,3,3,3,3,2,4,4,1,1,1,2,1,1,1,4,4,2,3,3,3,3,3,3,3,3,3,3,
+						2,4,4,1,1,1,2,1,1,1,4,4,2,3,3,3,3,3,2,2,2,2,2,2,2,2,1,1,1,2,1,1,1,2,2,
 						2,2,2,4,2,2,2,4,4,4,4,4,4,1,1,1,1,2,1,1,1,1,4,4,4,4,4,4,2,2,4,4,4,4,4,
 						4,1,1,1,1,2,1,1,1,1,4,4,4,4,4,4,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 						1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,
