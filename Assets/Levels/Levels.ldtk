@@ -598,20 +598,6 @@
 							"fieldInstances": []
 						},
 						{
-							"__identifier": "Caretaker",
-							"__grid": [14,16],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": null,
-							"__smartColor": "#94D9B3",
-							"iid": "61888470-2a00-11ed-a192-65224c1179c4",
-							"width": 16,
-							"height": 16,
-							"defUid": 2,
-							"px": [224,256],
-							"fieldInstances": []
-						},
-						{
 							"__identifier": "BedV",
 							"__grid": [1,6],
 							"__pivot": [0,0],
@@ -934,6 +920,20 @@
 								}] },
 								{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 12, "realEditorValues": [] }
 							]
+						},
+						{
+							"__identifier": "Caretaker",
+							"__grid": [14,16],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"iid": "327c7610-2a00-11ed-b403-9fada9785483",
+							"width": 16,
+							"height": 16,
+							"defUid": 2,
+							"px": [224,256],
+							"fieldInstances": []
 						}
 					]
 				},

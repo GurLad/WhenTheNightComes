@@ -27,12 +27,12 @@ public class UIManager : MonoBehaviour
     {
         GameInterface.SetActive(false);
         UIWindows[(int)window].SetActive(true);
-        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void CloseWindows()
     {
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         GameInterface.SetActive(true);
         foreach (var x in UIWindows)
             x.SetActive(false);
@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
         if (!IsAnyWindowOpen())
         {
             GameInterface.SetActive(true);
-            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

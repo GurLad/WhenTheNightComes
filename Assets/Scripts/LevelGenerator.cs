@@ -33,7 +33,7 @@ public class LevelGenerator : MonoBehaviour
     private LevelData levelData;
     private int[,] walls;
 
-    private void Start()
+    private void Awake()
     {
         // Load basic data
         levelData = LevelData.Interpret(EntitiesJSON.text, TileSize);

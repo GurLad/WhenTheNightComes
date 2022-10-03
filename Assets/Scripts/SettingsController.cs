@@ -23,12 +23,13 @@ public class SettingsController : MonoBehaviour
     public bool Fullscreen;
     public int Resolution;
     public float SFX, Music, Sensitivity;
-    private int CameraSensitivityUpdated = 0;
+    private CameraRotationControl cameraRotationControl;
     void Start()
     {
+        cameraRotationControl = FindObjectOfType<CameraRotationControl>();
         LoadSettings();
         UpdateSettings();
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         UIManager_ = FindObjectOfType<UIManager>();
     }
 
@@ -69,6 +70,7 @@ public class SettingsController : MonoBehaviour
         Screen.SetResolution(Resolutions[Resolution, 0], Resolutions[Resolution, 1], Fullscreen);
         SoundController.Volume = SFX;
         CrossfadeMusicPlayer.Instance.Volume = Music;
+        cameraRotationControl.Sensitivity = Sensitivity * 2;
 
         // Save
         PlayerPrefs.SetFloat("SFXVolume", SFX);
@@ -80,15 +82,6 @@ public class SettingsController : MonoBehaviour
 
     private void Update()
     {
-        if (CameraSensitivityUpdated == 0)
-            CameraSensitivityUpdated++;
-        else if (CameraSensitivityUpdated==1)
-        {
-            CameraSensitivityUpdated++;
-            Camera.main.gameObject.GetComponent<CameraRotationControl>().Sensitivity = Sensitivity * 2;
-        }
-            
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ChangeVisibilityOfSettingsMenu();

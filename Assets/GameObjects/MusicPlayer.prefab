@@ -69,4 +69,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 1
-  base3DRange: {x: 3, y: 10}
+  base3DRange: {x: 5, y: 13}

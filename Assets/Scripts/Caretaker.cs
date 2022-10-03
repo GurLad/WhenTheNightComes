@@ -9,6 +9,7 @@ public class Caretaker : MonoBehaviour
     public float ArrivalThreshold = 0.1f;
     public Flashlight Flashlight;
     public AudioClip WalkSFX;
+    public AudioClip RunSFX;
     [Header("Run")]
     public CaretakerStats RunStats;
     [Header("Idle")]
@@ -16,6 +17,8 @@ public class Caretaker : MonoBehaviour
     public Vector2 IdlePauseTimeRange;
     public Vector2Int IdleMoveRange;
     public Transform RotationObject;
+    [HideInInspector]
+    public bool Available;
     private Rigidbody rigidbody;
     private CaretakerStats stats;
     private List<Vector2Int> currentPath = new List<Vector2Int>();
@@ -32,6 +35,7 @@ public class Caretaker : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         CaretakerController.Current.AddCaretaker(this);
+        Available = true;
         //// DEBUG
         //transform.position = new Vector2Int(19, 13).To3D();
         //SetTarget(new Vector2Int(16, 17), false);
@@ -41,6 +45,7 @@ public class Caretaker : MonoBehaviour
     {
         if (UIManager.Current.IsAnyWindowOpen())
         {
+            rigidbody.velocity = Vector3.zero;
             return;
         }
         if (currentPath.Count > 0) // Moving
@@ -75,6 +80,7 @@ public class Caretaker : MonoBehaviour
                         Flashlight.Active = false;
                         count = 0;
                         sweepState = SweepState.None;
+                        Available = true;
                         break;
                     default:
                         break;
@@ -126,7 +132,7 @@ public class Caretaker : MonoBehaviour
     {
         if (walkingAudioSource == null || !walkingAudioSource.isPlaying)
         {
-            walkingAudioSource = SoundController.Play3DSound(WalkSFX, gameObject);
+            walkingAudioSource = SoundController.Play3DSound(Available ? WalkSFX : RunSFX, gameObject);
         }
         if (Vector3.Distance(transform.position - new Vector3(0, transform.position.y, 0), currentPath[0].To3D()) <= ArrivalThreshold)
         {
@@ -228,6 +234,10 @@ public class Caretaker : MonoBehaviour
         currentPath = Pathfinder.GetPath(transform.position.To2D(), pos);
         currentPath.RemoveAt(0); // No need for the start pos
         GenerateRots();
+        if (run)
+        {
+            Available = false;
+        }
     }
 
     [System.Serializable]

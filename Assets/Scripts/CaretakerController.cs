@@ -17,21 +17,26 @@ public class CaretakerController : MonoBehaviour
         caretakers.Add(caretaker);
     }
 
-    public Caretaker GetClosestCaretaker(Vector2Int point)
+    public Caretaker GetClosestAvailableCaretaker(Vector2Int point)
     {
         if (caretakers.Count <= 0)
         {
             throw new System.Exception("No caretakers!");
         }
-        Caretaker minCaretaker = caretakers[0];
-        float minDistance = Pathfinder.GetTrueDistance(minCaretaker.transform.position.To2D(), point);
-        for (int i = 1; i < caretakers.Count; i++)
+        List<Caretaker> availableCaretakers = caretakers.FindAll(a => a.Available);
+        if (availableCaretakers.Count <= 0)
         {
-            float distance = Pathfinder.GetTrueDistance(caretakers[i].transform.position.To2D(), point);
+            return null;
+        }
+        Caretaker minCaretaker = availableCaretakers[0];
+        float minDistance = Pathfinder.GetTrueDistance(minCaretaker.transform.position.To2D(), point);
+        for (int i = 1; i < availableCaretakers.Count; i++)
+        {
+            float distance = Pathfinder.GetTrueDistance(availableCaretakers[i].transform.position.To2D(), point);
             if (distance < minDistance)
             {
                 minDistance = distance;
-                minCaretaker = caretakers[i];
+                minCaretaker = availableCaretakers[i];
             }
         }
         return minCaretaker;

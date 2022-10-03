@@ -37,7 +37,7 @@ public class InteractableObject : MonoBehaviour
         {
             highlightDelay = 0;
             animation.AnimateInteraction();
-            CaretakerController.Current.GetClosestCaretaker(CaretakerPos).SetTarget(CaretakerPos, transform.position.To2D());
+            CaretakerController.Current.GetClosestAvailableCaretaker(CaretakerPos)?.SetTarget(CaretakerPos, transform.position.To2D());
             CanInteract = false;
         }
     }

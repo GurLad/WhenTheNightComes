@@ -559,7 +559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArrivalThreshold: 0.1
   Flashlight: {fileID: 1494738852521834450}
-  WalkSFX: {fileID: 8300000, guid: c3ed0ed8c4b9f2649a5847126931029d, type: 3}
+  WalkSFX: {fileID: 8300000, guid: 19ecdb43d9917174696f57d7daba22e5, type: 3}
+  RunSFX: {fileID: 8300000, guid: 4aa22e83242365a49963b99dee5939bf, type: 3}
   RunStats:
     Speed: 3
     TurnSpeed: 3
@@ -571,6 +572,7 @@ MonoBehaviour:
   IdlePauseTimeRange: {x: 1, y: 2}
   IdleMoveRange: {x: 1, y: 4}
   RotationObject: {fileID: 7057992515812892784}
+  Available: 0
 --- !u!1 &7057992515812892791
 GameObject:
   m_ObjectHideFlags: 0

@@ -99,7 +99,7 @@ public class SoundController : MonoBehaviour
         AudioSource audioSource = null;
         for (int i = 0; i < 3; i++)
         {
-            if (!soundController.audioSources[i].isPlaying)
+            if (!soundController.audioSources[i].isPlaying && soundController.audioSources3D.Find(a => a.AudioSource == soundController.audioSources[i]) == null)
             {
                 audioSource = soundController.audioSources[i];
                 break;
@@ -121,7 +121,7 @@ public class SoundController : MonoBehaviour
         return audioSource;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         for (int i = 0; i < audioSources3D.Count; i++)
         {
