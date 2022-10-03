@@ -1,0 +1,685 @@
+{
+	"x": 368,
+	"y": 352,
+	"width": 368,
+	"height": 400,
+	"iid": "50af8e30-2a00-11ed-b403-037330a21a2a",
+	"layers": [],
+	"entities": {
+		"BedV": [
+			{
+				"id": "BedV",
+				"iid": "ca5e5f90-2a00-11ed-b403-a70d98dbc3ea",
+				"layer": "Beds",
+				"x": 16,
+				"y": 272,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "cb155380-2a00-11ed-b403-e7ce25f0431b",
+				"layer": "Beds",
+				"x": 64,
+				"y": 272,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "cb66cee0-2a00-11ed-b403-0944186b754d",
+				"layer": "Beds",
+				"x": 112,
+				"y": 272,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "cc415060-2a00-11ed-b403-db6e04f8066d",
+				"layer": "Beds",
+				"x": 240,
+				"y": 272,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "ccaeb830-2a00-11ed-b403-a51e59d83db0",
+				"layer": "Beds",
+				"x": 288,
+				"y": 272,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "cd0f4ec0-2a00-11ed-b403-1fd18ff0f063",
+				"layer": "Beds",
+				"x": 336,
+				"y": 272,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "cd662150-2a00-11ed-b403-35089551186b",
+				"layer": "Beds",
+				"x": 336,
+				"y": 352,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "cdb9bf90-2a00-11ed-b403-c7c0a0539db5",
+				"layer": "Beds",
+				"x": 288,
+				"y": 352,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "ce08a2e0-2a00-11ed-b403-ef3fdb3876e3",
+				"layer": "Beds",
+				"x": 240,
+				"y": 352,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "ce66a160-2a00-11ed-b403-81c72d1e629f",
+				"layer": "Beds",
+				"x": 192,
+				"y": 352,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "cee10180-2a00-11ed-b403-53f52daffaf0",
+				"layer": "Beds",
+				"x": 160,
+				"y": 352,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "cf4df420-2a00-11ed-b403-7904b6a0aba3",
+				"layer": "Beds",
+				"x": 112,
+				"y": 352,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "cfb679f0-2a00-11ed-b403-a9cc2df850f6",
+				"layer": "Beds",
+				"x": 64,
+				"y": 352,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			},
+			{
+				"id": "BedV",
+				"iid": "d0426640-2a00-11ed-b403-719cf90dff43",
+				"layer": "Beds",
+				"x": 16,
+				"y": 352,
+				"width": 16,
+				"height": 32,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 0
+				}
+			}
+		],
+		"BedH": [
+			{
+				"id": "BedH",
+				"iid": "d14d4690-2a00-11ed-b403-33d4f2296015",
+				"layer": "Beds",
+				"x": 96,
+				"y": 240,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "d1bd1f60-2a00-11ed-b403-016560295421",
+				"layer": "Beds",
+				"x": 96,
+				"y": 192,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "d239f080-2a00-11ed-b403-cb1e360cba0e",
+				"layer": "Beds",
+				"x": 240,
+				"y": 192,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "d28885b0-2a00-11ed-b403-93f5e34e6043",
+				"layer": "Beds",
+				"x": 240,
+				"y": 240,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "d592df80-2a00-11ed-b403-e11bcd146dad",
+				"layer": "Beds",
+				"x": 208,
+				"y": 16,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "d6194d90-2a00-11ed-b403-e5aafa51f9d0",
+				"layer": "Beds",
+				"x": 208,
+				"y": 64,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "d67f8970-2a00-11ed-b403-8f7c8e1e7b87",
+				"layer": "Beds",
+				"x": 208,
+				"y": 112,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "d6d5bfc0-2a00-11ed-b403-cf72d79005ed",
+				"layer": "Beds",
+				"x": 128,
+				"y": 112,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "d7276230-2a00-11ed-b403-994102cf4651",
+				"layer": "Beds",
+				"x": 128,
+				"y": 64,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "d77b0070-2a00-11ed-b403-a7789e9e3c22",
+				"layer": "Beds",
+				"x": 128,
+				"y": 16,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Rotation": -1,
+					"Area": 0
+				}
+			}
+		],
+		"Window": [
+			{
+				"id": "Window",
+				"iid": "dafc8610-2a00-11ed-b403-dd9f78fdfc4b",
+				"layer": "Beds",
+				"x": 112,
+				"y": 96,
+				"width": 16,
+				"height": 16,
+				"color": 7794156,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 10,
+						"cy": 6
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Window",
+				"iid": "db7140e0-2a00-11ed-b403-1d59150340c5",
+				"layer": "Beds",
+				"x": 240,
+				"y": 32,
+				"width": 16,
+				"height": 16,
+				"color": 7794156,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 12,
+						"cy": 2
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Window",
+				"iid": "dd8a5ce0-2a00-11ed-b403-a954ead54c49",
+				"layer": "Beds",
+				"x": 272,
+				"y": 208,
+				"width": 16,
+				"height": 16,
+				"color": 7794156,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 14,
+						"cy": 13
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Window",
+				"iid": "de73f990-2a00-11ed-b403-f91bb8cb0d8d",
+				"layer": "Beds",
+				"x": 320,
+				"y": 256,
+				"width": 16,
+				"height": 16,
+				"color": 7794156,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 20,
+						"cy": 19
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Window",
+				"iid": "df0c9010-2a00-11ed-b403-8d3d1830e0b8",
+				"layer": "Beds",
+				"x": 304,
+				"y": 384,
+				"width": 16,
+				"height": 16,
+				"color": 7794156,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 19,
+						"cy": 21
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Window",
+				"iid": "e4abeca0-2a00-11ed-b403-d108d9827793",
+				"layer": "Beds",
+				"x": 96,
+				"y": 384,
+				"width": 16,
+				"height": 16,
+				"color": 7794156,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 6,
+						"cy": 21
+					},
+					"Type": -1
+				}
+			}
+		],
+		"Object": [
+			{
+				"id": "Object",
+				"iid": "e132a460-2a00-11ed-b403-b9fe95b7ba86",
+				"layer": "Beds",
+				"x": 96,
+				"y": 208,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 8,
+						"cy": 13
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Object",
+				"iid": "e2d57ef0-2a00-11ed-b403-2d560c199338",
+				"layer": "Beds",
+				"x": 48,
+				"y": 272,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 3,
+						"cy": 19
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Object",
+				"iid": "e3597c00-2a00-11ed-b403-538bf8aaaea4",
+				"layer": "Beds",
+				"x": 48,
+				"y": 368,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 3,
+						"cy": 21
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Object",
+				"iid": "e63db030-2a00-11ed-b403-6bd792e56630",
+				"layer": "Beds",
+				"x": 96,
+				"y": 272,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 6,
+						"cy": 19
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Object",
+				"iid": "e68f52a0-2a00-11ed-b403-a1e2b6cbc542",
+				"layer": "Beds",
+				"x": 144,
+				"y": 368,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 9,
+						"cy": 21
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Object",
+				"iid": "e708ef70-2a00-11ed-b403-276f0c97d54b",
+				"layer": "Beds",
+				"x": 208,
+				"y": 368,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 13,
+						"cy": 21
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Object",
+				"iid": "e7883190-2a00-11ed-b403-c3b1804652c4",
+				"layer": "Beds",
+				"x": 272,
+				"y": 272,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 17,
+						"cy": 19
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Object",
+				"iid": "e858c800-2a00-11ed-b403-514e67fea09b",
+				"layer": "Beds",
+				"x": 272,
+				"y": 368,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 17,
+						"cy": 21
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Object",
+				"iid": "e98efe10-2a00-11ed-b403-4725f8d072e5",
+				"layer": "Beds",
+				"x": 224,
+				"y": 80,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 12,
+						"cy": 5
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Object",
+				"iid": "e9d88a30-2a00-11ed-b403-7d59fa53dab0",
+				"layer": "Beds",
+				"x": 128,
+				"y": 48,
+				"width": 16,
+				"height": 16,
+				"color": 14273428,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 10,
+						"cy": 3
+					},
+					"Type": -1
+				}
+			}
+		],
+		"Caretaker": [
+			{
+				"id": "Caretaker",
+				"iid": "12f37560-2a00-11ed-b403-e378c664ea35",
+				"layer": "Beds",
+				"x": 224,
+				"y": 320,
+				"width": 16,
+				"height": 16,
+				"color": 9755059,
+				"customFields" : {}
+			},
+			{
+				"id": "Caretaker",
+				"iid": "134e3f90-2a00-11ed-b403-d753ec0d2e68",
+				"layer": "Beds",
+				"x": 128,
+				"y": 320,
+				"width": 16,
+				"height": 16,
+				"color": 9755059,
+				"customFields" : {}
+			},
+			{
+				"id": "Caretaker",
+				"iid": "158a9b00-2a00-11ed-b403-39e54c751a65",
+				"layer": "Beds",
+				"x": 144,
+				"y": 224,
+				"width": 16,
+				"height": 16,
+				"color": 9755059,
+				"customFields" : {}
+			},
+			{
+				"id": "Caretaker",
+				"iid": "15fce4d0-2a00-11ed-b403-1f1b8b01e3e0",
+				"layer": "Beds",
+				"x": 208,
+				"y": 224,
+				"width": 16,
+				"height": 16,
+				"color": 9755059,
+				"customFields" : {}
+			}
+		],
+		"Player": [
+			{
+				"id": "Player",
+				"iid": "170a8440-2a00-11ed-b403-3bb4a8166701",
+				"layer": "Beds",
+				"x": 176,
+				"y": 176,
+				"width": 16,
+				"height": 16,
+				"color": 9742553,
+				"customFields" : {}
+			}
+		]
+	}
+}
