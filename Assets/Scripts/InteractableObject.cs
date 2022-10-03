@@ -12,7 +12,7 @@ public class InteractableObject : MonoBehaviour
     private int highlightDelay;
     [SerializeField]
     private ObjectAnimation animation;
-    private int hourInteracted;
+    private int hourInteracted = -1;
 
     private void Update()
     {
