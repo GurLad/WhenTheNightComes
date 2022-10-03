@@ -22,6 +22,7 @@ public class LevelGenerator : MonoBehaviour
     [Header("Walls")]
     public Transform WallHolder;
     public GameObject Wall;
+    public GameObject Door;
     public GameObject Void;
     [Header("Entities")]
     public Transform EntityHolder;
@@ -68,6 +69,11 @@ public class LevelGenerator : MonoBehaviour
                         GameObject newVoid = Instantiate(Void, WallHolder);
                         newVoid.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
                         newVoid.SetActive(true);
+                        break;
+                    case 4: // Door
+                        GameObject newDoor = Instantiate(Door, WallHolder);
+                        newDoor.transform.position += new Vector2Int(x, y).To3D() * PhysicalSize;
+                        newDoor.SetActive(true);
                         break;
                     case 3: // Pathfinding blocker - aka floor
                     default:
