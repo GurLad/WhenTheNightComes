@@ -35,7 +35,7 @@ public class UIClock : MonoBehaviour
             LastTime = ClockTime;
             if (ClockTicking)
             {
-                Debug.Log("Time since last: " + Conductor.TimeSinceLastBeat + ", pos: " + Conductor.SongPositionInBeats);
+                //Debug.Log("Time since last: " + Conductor.TimeSinceLastBeat + ", pos: " + Conductor.SongPositionInBeats);
                 ClockTime = Conductor.TimeSinceLastBeat + Conductor.SongPositionInBeats;
             }
 

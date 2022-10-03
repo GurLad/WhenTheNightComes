@@ -10,6 +10,7 @@ public class InteractableObject : MonoBehaviour
     [HideInInspector]
     public bool CanInteract;
     private int highlightDelay;
+    [SerializeField]
     private ObjectAnimation animation;
     private int hourInteracted;
 
@@ -23,7 +24,7 @@ public class InteractableObject : MonoBehaviour
                 animation.AnimateStopHighlight();
             }
         }
-        if (hourInteracted >= 0 && hourInteracted != UIClock.Current.CurrentHour())
+        if (hourInteracted >= 0 && hourInteracted < UIClock.Current.CurrentHour() - 1) // Recover after 1-2 hours
         {
             Recover();
             hourInteracted = -1;

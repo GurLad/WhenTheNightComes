@@ -52,12 +52,12 @@ public class Conductor : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        //Load the AudioSource attached to the Conductor GameObject
+        musicSource = GetComponent<AudioSource>();
     }
 
     private void Start()
     {
-        //Load the AudioSource attached to the Conductor GameObject
-        musicSource = GetComponent<AudioSource>();
         //PlaySong(Songs[0].Name);
     }
 
