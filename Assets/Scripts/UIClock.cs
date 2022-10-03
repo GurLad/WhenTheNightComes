@@ -23,7 +23,8 @@ public class UIClock : MonoBehaviour
     {
         ClockTime = 0;
         UIM = FindObjectOfType<UIManager>();
-        SoundController.PlaySound(Ticking);
+        //SoundController.PlaySound(Ticking);
+        Conductor.PlaySong("Level");
     }
 
     // Update is called once per frame
@@ -33,7 +34,10 @@ public class UIClock : MonoBehaviour
         {
             LastTime = ClockTime;
             if (ClockTicking)
-                ClockTime += Time.deltaTime;
+            {
+                Debug.Log("Time since last: " + Conductor.TimeSinceLastBeat + ", pos: " + Conductor.SongPositionInBeats);
+                ClockTime = Conductor.TimeSinceLastBeat + Conductor.SongPositionInBeats;
+            }
 
             MinHandle.transform.rotation = Quaternion.Euler(0, 0, -ClockTime % 10.0f * 36);
 
@@ -41,8 +45,8 @@ public class UIClock : MonoBehaviour
 
             if(Mathf.Floor(LastTime / 10.0f)!= Mathf.Floor(ClockTime / 10.0f))
             {
-                SoundController.PlaySound(Bell);
-                SoundController.PlaySound(Ticking);
+                //SoundController.PlaySound(Bell);
+                //SoundController.PlaySound(Ticking);
             }
         }
 

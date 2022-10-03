@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     //public string LevelData;
     //[HideInInspector]
     //public List<List<MonsterController>> Monsters = new List<List<MonsterController>>();
-    private float count;
+    private float totalLength;
     private int currentWave = 0;
     //// Old way
     //private int currentIndex;
@@ -38,10 +38,10 @@ public class GameController : MonoBehaviour
         {
             return;
         }
-        count += Time.deltaTime;
-        if (count >= Waves[currentWave].Length)
+        //Debug.Log(UIClock.Current.CurrentTime());
+        if (UIClock.Current.CurrentTime() >= Waves[currentWave].Length + totalLength)
         {
-            count -= Waves[currentWave++].Length;
+            totalLength += Waves[currentWave++].Length;
             if (currentWave >= Waves.Count)
             {
                 return;

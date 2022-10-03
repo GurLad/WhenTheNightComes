@@ -92,10 +92,14 @@ public class SettingsController : MonoBehaviour
     {
         if(UIManager_.IsAnyWindowOpen())
         {
+            Conductor.Resume();
+            Time.timeScale = 1;
             UIManager_.CloseWindows();
         }
         else
         {
+            Conductor.Pause();
+            Time.timeScale = 0;
             UIManager_.OpenWindow(UIManager.UIElements.Settings);
             LoadSettings();
         }

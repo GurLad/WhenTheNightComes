@@ -53,7 +53,7 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: f0e48a97f481fe9449a5b0bf30fec173, type: 3}
   FadeSpeed: 1
   Volume: 1
-  PlayOnStart: 1
+  PlayOnStart: 0
   KeepTimestamp: 0
   Playing: 
 --- !u!114 &6229733969329963145
