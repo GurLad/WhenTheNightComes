@@ -10,15 +10,9 @@ public class SettingsController : MonoBehaviour
     public UIManager UIManager_;
 
     private int[,] Resolutions = new int[,] {
-        {1024, 768},
         {1280,720},
-        {1440,900},
         {1920,1080},
-        {1920,1200},
-        {2048,1536},
-        {2560,1440},
-        {2560,1600},
-        {2560,2048}};
+        {2560,1440}};
 
     public bool Fullscreen;
     public int Resolution;
@@ -39,7 +33,7 @@ public class SettingsController : MonoBehaviour
         MusicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         SensitivitySlider.value = PlayerPrefs.GetFloat("Sensitivity", 0.8f);
         FullscreenBox.isOn = PlayerPrefs.GetInt("Fullscreen", 1) > 0;
-        if (!PlayerPrefs.HasKey("Resolution"))
+        if (!PlayerPrefs.HasKey("Resolution1"))
         {
             // Find resolution
             Resolution res = Screen.currentResolution;
@@ -54,7 +48,7 @@ public class SettingsController : MonoBehaviour
         }
         else
         {
-            ResolutionDropdown.value = PlayerPrefs.GetInt("Resolution");
+            ResolutionDropdown.value = PlayerPrefs.GetInt("Resolution1");
         }
     }
 
@@ -77,7 +71,7 @@ public class SettingsController : MonoBehaviour
         PlayerPrefs.SetFloat("MusicVolume", Music);
         PlayerPrefs.SetFloat("Sensitivity", Sensitivity);
         PlayerPrefs.SetInt("Fullscreen", Fullscreen ? 1 : 0);
-        PlayerPrefs.SetInt("Resolution", Resolution);
+        PlayerPrefs.SetInt("Resolution1", Resolution);
     }
 
     private void Update()
