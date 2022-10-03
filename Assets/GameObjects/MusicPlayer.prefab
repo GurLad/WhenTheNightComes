@@ -53,6 +53,8 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: d4e51982ce318b6438733b53afdc06be, type: 3}
   - Name: Silence
     AudioClip: {fileID: 8300000, guid: 4a85fdbaf1d2e124d9ce7bec955f6c12, type: 3}
+  - Name: Win
+    AudioClip: {fileID: 8300000, guid: e7beab3a239ef054aa6c16dc5626ba1e, type: 3}
   FadeSpeed: 1
   Volume: 1
   PlayOnStart: 0

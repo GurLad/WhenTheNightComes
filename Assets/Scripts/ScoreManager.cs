@@ -88,7 +88,7 @@ public class ScoreManager : MonoBehaviour
     public void EndLevel() // Win
     {
         Conductor.Pause();
-        CrossfadeMusicPlayer.Instance.Play("Menu");
+        CrossfadeMusicPlayer.Instance.Play("Win");
         Playing = false;
         TotalPoints += Points;
         UpdateDisplay();

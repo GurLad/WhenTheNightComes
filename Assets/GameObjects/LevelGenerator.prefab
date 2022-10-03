@@ -557,7 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParticleSystem: {fileID: 3094270583655514541}
   ClickSFX:
-  - {fileID: 8300000, guid: bf5dee0ce5aba9a4698aa0d28f0e3232, type: 3}
+  - {fileID: 8300000, guid: e3c6a695ca9e5124e8f1b14cb9dd42f3, type: 3}
 --- !u!1 &6919143907454685044
 GameObject:
   m_ObjectHideFlags: 0
