@@ -306,7 +306,7 @@ PrefabInstance:
     - target: {fileID: 8613151043753118244, guid: e7d5f5e4437fac54290f6b3f11b108a7, type: 3}
       propertyPath: WallsCSV
       value: 
-      objectReference: {fileID: 4900000, guid: d81b6510911ea664487b5e0caebe84a5, type: 3}
+      objectReference: {fileID: 4900000, guid: 6686e3f75d3e82046b54f7b2ffb5c57b, type: 3}
     - target: {fileID: 8613151043753118244, guid: e7d5f5e4437fac54290f6b3f11b108a7, type: 3}
       propertyPath: MinimapUI
       value: 
@@ -314,7 +314,7 @@ PrefabInstance:
     - target: {fileID: 8613151043753118244, guid: e7d5f5e4437fac54290f6b3f11b108a7, type: 3}
       propertyPath: EntitiesJSON
       value: 
-      objectReference: {fileID: 4900000, guid: c139f6e2be4ef1240860772978168ab9, type: 3}
+      objectReference: {fileID: 4900000, guid: 475e2342f42b20941af979cdf389abda, type: 3}
     - target: {fileID: 8613151043753118244, guid: e7d5f5e4437fac54290f6b3f11b108a7, type: 3}
       propertyPath: Waves.Array.size
       value: 16
@@ -1103,6 +1103,14 @@ PrefabInstance:
     - target: {fileID: 3537722048295176517, guid: 124e29232bdb92d408964f20a7cd2005, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467490364876035100, guid: 124e29232bdb92d408964f20a7cd2005, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467490364876035100, guid: 124e29232bdb92d408964f20a7cd2005, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 124e29232bdb92d408964f20a7cd2005, type: 3}
