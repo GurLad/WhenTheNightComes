@@ -727,7 +727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2754271149785056957
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1105,8 +1105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759e9ad8134d9f84694f6ab29c4b6f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFXSlider: {fileID: 1203947757427276873}
-  MusicSlider: {fileID: 152651251706043266}
+  MainMenu: 0
+  SFXSlider: {fileID: 152651251706043266}
+  MusicSlider: {fileID: 1203947757427276873}
   SensitivitySlider: {fileID: 3537722049259662375}
   FullscreenBox: {fileID: 3537722049753847412}
   ResolutionDropdown: {fileID: 6013794678549268551}

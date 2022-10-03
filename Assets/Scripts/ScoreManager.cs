@@ -75,6 +75,8 @@ public class ScoreManager : MonoBehaviour
 
     public void EndGame()
     {
+        Conductor.Pause();
+        CrossfadeMusicPlayer.Instance.Play("GameOver");
         Playing = false;
         if (HighScore < TotalPoints)
             HighScore = TotalPoints;
@@ -85,6 +87,8 @@ public class ScoreManager : MonoBehaviour
 
     public void EndLevel() // Win
     {
+        Conductor.Pause();
+        CrossfadeMusicPlayer.Instance.Play("Menu");
         Playing = false;
         TotalPoints += Points;
         UpdateDisplay();
@@ -94,8 +98,8 @@ public class ScoreManager : MonoBehaviour
     }
     public void UpdateDisplay()  
     {
-        GameOver.text = "Total Score: " + TotalPoints.ToString() + "\nHighscore: " + HighScore.ToString();
-        NextLevel.text = "Score: " + Points.ToString() +"\nTotal Score: " + TotalPoints.ToString() + "\nHighscore: " + HighScore.ToString();
+        //GameOver.text = "Total Score: " + TotalPoints.ToString() + "\nHighscore: " + HighScore.ToString();
+        //NextLevel.text = "Score: " + Points.ToString() +"\nTotal Score: " + TotalPoints.ToString() + "\nHighscore: " + HighScore.ToString();
         PointCounter.text = "Score: " + Points.ToString();
     }
 

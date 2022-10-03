@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SettingsController : MonoBehaviour
 {
+    public bool MainMenu = false;
     public UnityEngine.UI.Slider SFXSlider, MusicSlider, SensitivitySlider;
     public UnityEngine.UI.Toggle FullscreenBox;
     public UnityEngine.UI.Dropdown ResolutionDropdown;
@@ -23,7 +24,10 @@ public class SettingsController : MonoBehaviour
         cameraRotationControl = FindObjectOfType<CameraRotationControl>();
         LoadSettings();
         UpdateSettings();
-        Cursor.lockState = CursorLockMode.Locked;
+        if (!MainMenu)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         UIManager_ = FindObjectOfType<UIManager>();
     }
 
@@ -64,7 +68,10 @@ public class SettingsController : MonoBehaviour
         Screen.SetResolution(Resolutions[Resolution, 0], Resolutions[Resolution, 1], Fullscreen);
         SoundController.Volume = SFX;
         CrossfadeMusicPlayer.Instance.Volume = Music;
-        cameraRotationControl.Sensitivity = Sensitivity * 2;
+        if (cameraRotationControl != null)
+        {
+            cameraRotationControl.Sensitivity = Sensitivity * 2;
+        }
 
         // Save
         PlayerPrefs.SetFloat("SFXVolume", SFX);
@@ -76,7 +83,7 @@ public class SettingsController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && ScoreManager.Current.Playing)
+        if (!MainMenu && Input.GetKeyDown(KeyCode.Escape) && ScoreManager.Current.Playing)
         {
             ChangeVisibilityOfSettingsMenu();
         }
