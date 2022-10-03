@@ -413,28 +413,22 @@ MonoBehaviour:
   - Length: 10
     SpawnString: 8,9,12,13
     DeadAdditions: 
-  - Length: 2
-    SpawnString: 14
+  - Length: 5
+    SpawnString: 14,15
     DeadAdditions: 
-  - Length: 2
-    SpawnString: 15
-    DeadAdditions: 
-  - Length: 4
-    SpawnString: 3
-    DeadAdditions: 
-  - Length: 9
-    SpawnString: 0
+  - Length: 10
+    SpawnString: 2,3
     DeadAdditions: 
   - Length: 2.5
     SpawnString: 4,5
     DeadAdditions: 
-  - Length: 10.5
+  - Length: 7.5
     SpawnString: 6,7
     DeadAdditions: 
-  - Length: 2.5
+  - Length: 5
     SpawnString: 8,9
     DeadAdditions: 
-  - Length: 2.5
+  - Length: 5
     SpawnString: 10,11
     DeadAdditions: 
   - Length: 0

@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    private static ScoreManager _current;
+    public static ScoreManager Current
+    {
+        get
+        {
+            return _current != null ? _current : (_current = FindObjectOfType<ScoreManager>());
+        }
+    }
     private int Points=0, TotalPoints=0, HighScore=0, Lifes = 3;
 
     public GameObject life1, life2, life3;
 
     public UnityEngine.UI.Text GameOver, NextLevel, PointCounter;
+
+    public bool Playing = true;
+
     void Start()
     {
         UpdateDisplay();
@@ -61,8 +72,10 @@ public class ScoreManager : MonoBehaviour
         }
 
     }
+
     public void EndGame()
     {
+        Playing = false;
         if (HighScore < TotalPoints)
             HighScore = TotalPoints;
         UpdateDisplay();
@@ -70,8 +83,9 @@ public class ScoreManager : MonoBehaviour
         Points = 0;
     }
 
-    public void EndLevel()
+    public void EndLevel() // Win
     {
+        Playing = false;
         TotalPoints += Points;
         UpdateDisplay();
         Lifes = 3;

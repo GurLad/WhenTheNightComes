@@ -16,6 +16,13 @@ public class MonsterController : MonoBehaviour
     [HideInInspector]
     public int id;
 
+    [Header("Bed model")]
+    public Renderer Head;
+    public Renderer Blanket;
+    public Color[] SkinColors;
+    public Color[] HairColors;
+    public Texture[] BlanketTextures;
+
     [Header("Minimap")]
     public Renderer MinimapMain;
     public Renderer MinimapEyes;
@@ -42,6 +49,14 @@ public class MonsterController : MonoBehaviour
         ShuffleHands();
 
         //StartMonsterAttack(); //testing
+
+        // Bed model init
+        Head.materials[0] = Instantiate(Head.materials[0]);
+        Head.materials[0].color = SkinColors[Random.Range(0, SkinColors.Length)];
+        Head.materials[1] = Instantiate(Head.materials[1]);
+        Head.materials[1].color = HairColors[Random.Range(0, HairColors.Length)];
+        Blanket.material = Instantiate(Blanket.material);
+        Blanket.material.mainTexture = BlanketTextures[Random.Range(0, BlanketTextures.Length)];
 
         // Minimap init
         MinimapMain.material = Instantiate(MinimapMain.material);
