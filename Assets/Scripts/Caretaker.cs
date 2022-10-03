@@ -10,6 +10,8 @@ public class Caretaker : MonoBehaviour
     public Flashlight Flashlight;
     public AudioClip WalkSFX;
     public AudioClip RunSFX;
+    public List<AudioClip> OnCallSFX;
+    public List<AudioClip> OnArriveSFX;
     [Header("Run")]
     public CaretakerStats RunStats;
     [Header("Idle")]
@@ -158,6 +160,10 @@ public class Caretaker : MonoBehaviour
                 {
                     walkingAudioSource.Stop();
                 }
+                if (!Available)
+                {
+                    SoundController.Play3DSound(OnArriveSFX[Random.Range(0, OnArriveSFX.Count)], gameObject);
+                }
                 //Debug.Log("Began first pass");
                 return;
             }
@@ -237,6 +243,7 @@ public class Caretaker : MonoBehaviour
         if (run)
         {
             Available = false;
+            SoundController.Play3DSound(OnCallSFX[Random.Range(0, OnCallSFX.Count)], gameObject);
         }
     }
 

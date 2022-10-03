@@ -561,6 +561,11 @@ MonoBehaviour:
   Flashlight: {fileID: 1494738852521834450}
   WalkSFX: {fileID: 8300000, guid: 19ecdb43d9917174696f57d7daba22e5, type: 3}
   RunSFX: {fileID: 8300000, guid: 4aa22e83242365a49963b99dee5939bf, type: 3}
+  OnCallSFX:
+  - {fileID: 8300000, guid: a1d52aaf7527ed244a072a2b274e817e, type: 3}
+  - {fileID: 8300000, guid: 5494b9cd552a0104d935a673551acbe9, type: 3}
+  OnArriveSFX:
+  - {fileID: 8300000, guid: cf3fe3074ef97a54db0800c7566e27ef, type: 3}
   RunStats:
     Speed: 3
     TurnSpeed: 3
