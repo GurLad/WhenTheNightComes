@@ -62,6 +62,7 @@ Material:
     m_Floats:
     - _BlurRadius: 25
     - _BlurStrength: 0
+    - _BrigthnessMod: 0.2
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -69,6 +70,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _GreenMulti: 0.2
     - _Metallic: 0
     - _Mode: 0
     - _NumBits: 0
