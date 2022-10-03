@@ -37,7 +37,7 @@ public class SettingsController : MonoBehaviour
     {
         SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1);
         MusicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
-        SensitivitySlider.value = PlayerPrefs.GetFloat("Sensitivity", 0.6f);
+        SensitivitySlider.value = PlayerPrefs.GetFloat("Sensitivity", 0.8f);
         FullscreenBox.isOn = PlayerPrefs.GetInt("Fullscreen", 1) > 0;
         if (!PlayerPrefs.HasKey("Resolution"))
         {
