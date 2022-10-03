@@ -34,7 +34,7 @@ public class ChildBreath : MonoBehaviour
             count += Time.deltaTime;
             count = Mathf.Min(count, 1);
             Vector3 temp = new Vector3(baseScale.x, baseScale.y, baseScale.z);
-            temp.y = Mathf.Lerp(DeadSize, baseScale.y, count);
+            temp.y = Mathf.Lerp(DeadSize * baseScale.y, baseScale.y, 1 - count);
             Blanket.transform.localScale = temp;
         }
     }

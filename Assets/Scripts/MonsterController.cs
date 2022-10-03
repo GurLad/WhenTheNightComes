@@ -22,6 +22,9 @@ public class MonsterController : MonoBehaviour
     public Color[] SkinColors;
     public Color[] HairColors;
     public Texture[] BlanketTextures;
+    public AdvancedAnimation DeathAnimation;
+    public ChildBreath Breath;
+    public List<GameObject> DeathHands;
 
     [Header("Minimap")]
     public Renderer MinimapMain;
@@ -132,6 +135,9 @@ public class MonsterController : MonoBehaviour
     {
         monsterAttackSuccessful = true;
         SM.AddPoints(-20);  //ADD CHILD DEATH ANIMATION HERE
+        DeathAnimation.Activate();
+        Breath.Kill();
+        DeathHands.ForEach(a => a.SetActive(true));
         ShuffleHands();
         StopMonsterAttack(true);
 
