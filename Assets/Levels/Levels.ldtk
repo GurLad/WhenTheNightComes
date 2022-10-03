@@ -10,7 +10,7 @@
 	},
 	"jsonVersion": "1.1.3",
 	"appBuildId": 458364,
-	"nextUid": 29,
+	"nextUid": 30,
 	"identifierStyle": "Capitalize",
 	"worldLayout": "Free",
 	"worldGridWidth": 256,
@@ -238,9 +238,9 @@
 			"pivotY": 0,
 			"fieldDefs": [
 				{
-					"identifier": "Rotation",
+					"identifier": "Area",
 					"__type": "Int",
-					"uid": 9,
+					"uid": 16,
 					"type": "F_Int",
 					"isArray": false,
 					"canBeNull": false,
@@ -253,11 +253,11 @@
 					"editorTextSuffix": null,
 					"editorTextPrefix": null,
 					"useForSmartColor": false,
-					"min": -1,
-					"max": 360,
+					"min": null,
+					"max": null,
 					"regex": null,
 					"acceptFileTypes": null,
-					"defaultOverride": { "id": "V_Int", "params": [-1] },
+					"defaultOverride": null,
 					"textLanguageMode": null,
 					"symmetricalRef": false,
 					"autoChainRef": true,
@@ -267,16 +267,16 @@
 					"tilesetUid": null
 				},
 				{
-					"identifier": "Area",
+					"identifier": "ID",
 					"__type": "Int",
-					"uid": 16,
+					"uid": 29,
 					"type": "F_Int",
 					"isArray": false,
 					"canBeNull": false,
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
-					"editorDisplayMode": "Hidden",
-					"editorDisplayPos": "Above",
+					"editorDisplayMode": "ValueOnly",
+					"editorDisplayPos": "Center",
 					"editorAlwaysShow": false,
 					"editorCutLongValues": true,
 					"editorTextSuffix": null,
@@ -1600,7 +1600,7 @@
 					"entityInstances": [
 						{
 							"__identifier": "BedH",
-							"__grid": [4,18],
+							"__grid": [4,11],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
@@ -1609,15 +1609,15 @@
 							"width": 32,
 							"height": 16,
 							"defUid": 8,
-							"px": [64,288],
+							"px": [64,176],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 6, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [6] }] }
 							]
 						},
 						{
 							"__identifier": "BedH",
-							"__grid": [4,15],
+							"__grid": [4,8],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
@@ -1626,15 +1626,15 @@
 							"width": 32,
 							"height": 16,
 							"defUid": 8,
-							"px": [64,240],
+							"px": [64,128],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 5, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [5] }] }
 							]
 						},
 						{
 							"__identifier": "BedH",
-							"__grid": [9,15],
+							"__grid": [9,8],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
@@ -1643,15 +1643,15 @@
 							"width": 32,
 							"height": 16,
 							"defUid": 8,
-							"px": [144,240],
+							"px": [144,128],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 7, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [7] }] }
 							]
 						},
 						{
 							"__identifier": "BedH",
-							"__grid": [9,18],
+							"__grid": [9,11],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
@@ -1660,10 +1660,10 @@
 							"width": 32,
 							"height": 16,
 							"defUid": 8,
-							"px": [144,288],
+							"px": [144,176],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 8, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [8] }] }
 							]
 						},
 						{
@@ -1680,7 +1680,7 @@
 							"px": [16,32],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [0] }] }
 							]
 						},
 						{
@@ -1697,7 +1697,7 @@
 							"px": [64,32],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 1, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [1] }] }
 							]
 						},
 						{
@@ -1714,7 +1714,7 @@
 							"px": [160,32],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 3, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [3] }] }
 							]
 						},
 						{
@@ -1731,7 +1731,7 @@
 							"px": [208,32],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 4, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [4] }] }
 							]
 						},
 						{
@@ -1748,7 +1748,7 @@
 							"px": [112,32],
 							"fieldInstances": [
 								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 15, "realEditorValues": [] },
-								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [] }
+								{ "__identifier": "ID", "__value": 2, "__type": "Int", "__tile": null, "defUid": 21, "realEditorValues": [{ "id": "V_Int", "params": [2] }] }
 							]
 						},
 						{
@@ -1795,7 +1795,7 @@
 						},
 						{
 							"__identifier": "Window",
-							"__grid": [3,16],
+							"__grid": [3,9],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
@@ -1804,18 +1804,18 @@
 							"width": 16,
 							"height": 16,
 							"defUid": 22,
-							"px": [48,256],
+							"px": [48,144],
 							"fieldInstances": [
-								{ "__identifier": "CaretakerTarget", "__value": { "cx": 6, "cy": 16 }, "__type": "Point", "__tile": null, "defUid": 23, "realEditorValues": [{
+								{ "__identifier": "CaretakerTarget", "__value": { "cx": 6, "cy": 9 }, "__type": "Point", "__tile": null, "defUid": 23, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["6,16"]
+									"params": ["6,9"]
 								}] },
 								{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 24, "realEditorValues": [] }
 							]
 						},
 						{
 							"__identifier": "Window",
-							"__grid": [11,16],
+							"__grid": [11,9],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
@@ -1824,11 +1824,11 @@
 							"width": 16,
 							"height": 16,
 							"defUid": 22,
-							"px": [176,256],
+							"px": [176,144],
 							"fieldInstances": [
-								{ "__identifier": "CaretakerTarget", "__value": { "cx": 8, "cy": 16 }, "__type": "Point", "__tile": null, "defUid": 23, "realEditorValues": [{
+								{ "__identifier": "CaretakerTarget", "__value": { "cx": 8, "cy": 9 }, "__type": "Point", "__tile": null, "defUid": 23, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["8,16"]
+									"params": ["8,9"]
 								}] },
 								{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 24, "realEditorValues": [] }
 							]
@@ -1912,6 +1912,114 @@
 								}] },
 								{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 12, "realEditorValues": [] }
 							]
+						},
+						{
+							"__identifier": "Window",
+							"__grid": [3,16],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#76EDEC",
+							"iid": "319c29c0-2a00-11ed-b403-4fccceab1239",
+							"width": 16,
+							"height": 16,
+							"defUid": 22,
+							"px": [48,256],
+							"fieldInstances": [
+								{ "__identifier": "CaretakerTarget", "__value": { "cx": 6, "cy": 16 }, "__type": "Point", "__tile": null, "defUid": 23, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["6,16"]
+								}] },
+								{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 24, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "Window",
+							"__grid": [11,16],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#76EDEC",
+							"iid": "3208f550-2a00-11ed-b403-47dd4574a8a2",
+							"width": 16,
+							"height": 16,
+							"defUid": 22,
+							"px": [176,256],
+							"fieldInstances": [
+								{ "__identifier": "CaretakerTarget", "__value": { "cx": 8, "cy": 16 }, "__type": "Point", "__tile": null, "defUid": 23, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["8,16"]
+								}] },
+								{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 24, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "BedH",
+							"__grid": [4,18],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D99494",
+							"iid": "39bb5360-2a00-11ed-b403-3db1ac3d5556",
+							"width": 32,
+							"height": 16,
+							"defUid": 8,
+							"px": [64,288],
+							"fieldInstances": [
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 10, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [10] }] }
+							]
+						},
+						{
+							"__identifier": "BedH",
+							"__grid": [4,15],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D99494",
+							"iid": "3a029590-2a00-11ed-b403-d50ae7f0bf5e",
+							"width": 32,
+							"height": 16,
+							"defUid": 8,
+							"px": [64,240],
+							"fieldInstances": [
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 9, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [9] }] }
+							]
+						},
+						{
+							"__identifier": "BedH",
+							"__grid": [9,15],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D99494",
+							"iid": "3b12cd10-2a00-11ed-b403-3dc08f855fe2",
+							"width": 32,
+							"height": 16,
+							"defUid": 8,
+							"px": [144,240],
+							"fieldInstances": [
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 11, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [11] }] }
+							]
+						},
+						{
+							"__identifier": "BedH",
+							"__grid": [9,18],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#D99494",
+							"iid": "3b7b04c0-2a00-11ed-b403-772b6a884a2e",
+							"width": 32,
+							"height": 16,
+							"defUid": 8,
+							"px": [144,288],
+							"fieldInstances": [
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 12, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [{ "id": "V_Int", "params": [12] }] }
+							]
 						}
 					]
 				},
@@ -1937,9 +2045,9 @@
 						3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,4,2,2,2,2,2,2,2,2,2,4,2,2,2,4,4,4,4,
 						4,4,4,4,4,4,4,4,4,2,2,4,4,4,4,4,4,4,4,4,4,4,4,4,2,2,1,1,1,1,1,1,1,1,1,
 						1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
-						2,2,2,2,2,2,1,1,1,2,2,2,2,2,2,3,3,3,3,2,4,1,1,1,4,2,3,3,3,3,3,3,3,3,2,
-						4,1,1,1,4,2,3,3,3,3,3,3,3,3,2,4,1,1,1,4,2,3,3,3,3,3,3,3,3,2,4,1,1,1,4,
-						2,3,3,3,3,3,3,3,3,2,4,1,1,1,4,2,3,3,3,3,3,3,3,2,2,2,1,1,1,2,2,2,3,3,3,
+						2,2,2,2,2,2,1,1,1,2,2,2,2,2,2,3,3,3,2,4,4,1,1,1,4,4,2,3,3,3,3,3,3,4,4,
+						4,1,1,1,4,4,4,3,3,3,3,3,3,2,4,4,1,1,1,4,4,2,3,3,3,3,3,3,2,4,4,1,1,1,4,
+						4,2,3,3,3,3,3,3,2,4,4,1,1,1,4,4,2,3,3,3,3,3,3,2,2,2,1,1,1,2,2,2,3,3,3,
 						3,3,3,2,4,4,1,1,1,4,4,2,3,3,3,3,3,3,2,4,4,1,1,1,4,4,2,3,3,3,3,3,3,4,4,
 						4,1,1,1,4,4,4,3,3,3,3,3,3,2,4,4,1,1,1,4,4,2,3,3,3,3,3,3,2,4,4,1,1,1,4,
 						4,2,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,3,3,3
@@ -2011,8 +2119,8 @@
 							"defUid": 8,
 							"px": [16,192],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2028,8 +2136,8 @@
 							"defUid": 8,
 							"px": [16,240],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2045,8 +2153,8 @@
 							"defUid": 8,
 							"px": [16,288],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2164,8 +2272,8 @@
 							"defUid": 8,
 							"px": [304,288],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2181,8 +2289,8 @@
 							"defUid": 8,
 							"px": [304,240],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2198,8 +2306,8 @@
 							"defUid": 8,
 							"px": [304,192],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2215,8 +2323,8 @@
 							"defUid": 8,
 							"px": [304,144],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2232,8 +2340,8 @@
 							"defUid": 8,
 							"px": [304,96],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2249,8 +2357,8 @@
 							"defUid": 8,
 							"px": [304,48],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2266,8 +2374,8 @@
 							"defUid": 8,
 							"px": [16,144],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2283,8 +2391,8 @@
 							"defUid": 8,
 							"px": [16,96],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2300,8 +2408,8 @@
 							"defUid": 8,
 							"px": [16,48],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2487,8 +2595,8 @@
 							"defUid": 8,
 							"px": [128,224],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2504,8 +2612,8 @@
 							"defUid": 8,
 							"px": [192,224],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2521,8 +2629,8 @@
 							"defUid": 8,
 							"px": [192,112],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -2538,8 +2646,8 @@
 							"defUid": 8,
 							"px": [128,112],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3367,8 +3475,8 @@
 							"defUid": 8,
 							"px": [96,240],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3384,8 +3492,8 @@
 							"defUid": 8,
 							"px": [96,192],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3401,8 +3509,8 @@
 							"defUid": 8,
 							"px": [240,192],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3418,8 +3526,8 @@
 							"defUid": 8,
 							"px": [240,240],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3435,8 +3543,8 @@
 							"defUid": 8,
 							"px": [208,16],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3452,8 +3560,8 @@
 							"defUid": 8,
 							"px": [208,64],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3469,8 +3577,8 @@
 							"defUid": 8,
 							"px": [208,112],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3486,8 +3594,8 @@
 							"defUid": 8,
 							"px": [128,112],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3503,8 +3611,8 @@
 							"defUid": 8,
 							"px": [128,64],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{
@@ -3520,8 +3628,8 @@
 							"defUid": 8,
 							"px": [128,16],
 							"fieldInstances": [
-								{ "__identifier": "Rotation", "__value": -1, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "Area", "__value": 0, "__type": "Int", "__tile": null, "defUid": 16, "realEditorValues": [] },
+								{ "__identifier": "ID", "__value": 0, "__type": "Int", "__tile": null, "defUid": 29, "realEditorValues": [] }
 							]
 						},
 						{

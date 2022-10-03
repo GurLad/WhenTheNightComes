@@ -12,13 +12,13 @@
 				"iid": "b4408460-2a00-11ed-b403-c3154d2ea736",
 				"layer": "Beds",
 				"x": 64,
-				"y": 288,
+				"y": 176,
 				"width": 32,
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 6
 				}
 			},
 			{
@@ -26,13 +26,13 @@
 				"iid": "b4a364e0-2a00-11ed-b403-0d8602c355bb",
 				"layer": "Beds",
 				"x": 64,
-				"y": 240,
+				"y": 128,
 				"width": 32,
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 5
 				}
 			},
 			{
@@ -40,13 +40,13 @@
 				"iid": "b5069380-2a00-11ed-b403-69514f26bb10",
 				"layer": "Beds",
 				"x": 144,
-				"y": 240,
+				"y": 128,
 				"width": 32,
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 7
 				}
 			},
 			{
@@ -54,13 +54,69 @@
 				"iid": "b55f88f0-2a00-11ed-b403-f93bd19cf643",
 				"layer": "Beds",
 				"x": 144,
+				"y": 176,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 8
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "39bb5360-2a00-11ed-b403-3db1ac3d5556",
+				"layer": "Beds",
+				"x": 64,
 				"y": 288,
 				"width": 32,
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 10
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "3a029590-2a00-11ed-b403-d50ae7f0bf5e",
+				"layer": "Beds",
+				"x": 64,
+				"y": 240,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 9
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "3b12cd10-2a00-11ed-b403-3dc08f855fe2",
+				"layer": "Beds",
+				"x": 144,
+				"y": 240,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 11
+				}
+			},
+			{
+				"id": "BedH",
+				"iid": "3b7b04c0-2a00-11ed-b403-772b6a884a2e",
+				"layer": "Beds",
+				"x": 144,
+				"y": 288,
+				"width": 32,
+				"height": 16,
+				"color": 14259348,
+				"customFields": {
+					"Area": 0,
+					"ID": 12
 				}
 			}
 		],
@@ -90,7 +146,7 @@
 				"color": 14259348,
 				"customFields": {
 					"Area": 0,
-					"ID": 0
+					"ID": 1
 				}
 			},
 			{
@@ -104,7 +160,7 @@
 				"color": 14259348,
 				"customFields": {
 					"Area": 0,
-					"ID": 0
+					"ID": 3
 				}
 			},
 			{
@@ -118,7 +174,7 @@
 				"color": 14259348,
 				"customFields": {
 					"Area": 0,
-					"ID": 0
+					"ID": 4
 				}
 			},
 			{
@@ -132,7 +188,7 @@
 				"color": 14259348,
 				"customFields": {
 					"Area": 0,
-					"ID": 0
+					"ID": 2
 				}
 			}
 		],
@@ -179,14 +235,14 @@
 				"iid": "d66b9e30-2a00-11ed-b403-cda1dad7c0bc",
 				"layer": "Beds",
 				"x": 48,
-				"y": 256,
+				"y": 144,
 				"width": 16,
 				"height": 16,
 				"color": 7794156,
 				"customFields": {
 					"CaretakerTarget": {
 						"cx": 6,
-						"cy": 16
+						"cy": 9
 					},
 					"Type": -1
 				}
@@ -196,14 +252,14 @@
 				"iid": "d769d450-2a00-11ed-b403-37aaa3c00fa1",
 				"layer": "Beds",
 				"x": 176,
-				"y": 256,
+				"y": 144,
 				"width": 16,
 				"height": 16,
 				"color": 7794156,
 				"customFields": {
 					"CaretakerTarget": {
 						"cx": 8,
-						"cy": 16
+						"cy": 9
 					},
 					"Type": -1
 				}
@@ -238,6 +294,40 @@
 					"CaretakerTarget": {
 						"cx": 12,
 						"cy": 4
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Window",
+				"iid": "319c29c0-2a00-11ed-b403-4fccceab1239",
+				"layer": "Beds",
+				"x": 48,
+				"y": 256,
+				"width": 16,
+				"height": 16,
+				"color": 7794156,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 6,
+						"cy": 16
+					},
+					"Type": -1
+				}
+			},
+			{
+				"id": "Window",
+				"iid": "3208f550-2a00-11ed-b403-47dd4574a8a2",
+				"layer": "Beds",
+				"x": 176,
+				"y": 256,
+				"width": 16,
+				"height": 16,
+				"color": 7794156,
+				"customFields": {
+					"CaretakerTarget": {
+						"cx": 8,
+						"cy": 16
 					},
 					"Type": -1
 				}

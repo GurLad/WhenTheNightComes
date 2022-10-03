@@ -215,8 +215,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -229,8 +229,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -243,8 +243,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -257,8 +257,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -271,8 +271,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -285,8 +285,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -299,8 +299,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -313,8 +313,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -327,8 +327,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			},
 			{
@@ -341,8 +341,8 @@
 				"height": 16,
 				"color": 14259348,
 				"customFields": {
-					"Rotation": -1,
-					"Area": 0
+					"Area": 0,
+					"ID": 0
 				}
 			}
 		],
