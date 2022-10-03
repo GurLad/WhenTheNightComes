@@ -710,10 +710,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 360455907, guid: e7d5f5e4437fac54290f6b3f11b108a7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8613151043753118244, guid: e7d5f5e4437fac54290f6b3f11b108a7, type: 3}
       propertyPath: MinimapUI
       value: 

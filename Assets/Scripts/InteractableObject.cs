@@ -10,7 +10,7 @@ public class InteractableObject : MonoBehaviour
     [HideInInspector]
     public bool CanInteract;
     private int highlightDelay;
-    [SerializeField]
+    //[SerializeField]
     private ObjectAnimation animation;
     private int hourInteracted = -1;
 
