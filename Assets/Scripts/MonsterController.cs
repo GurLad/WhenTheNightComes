@@ -13,10 +13,22 @@ public class MonsterController : MonoBehaviour
     public float Hand1Time, Hand2Time, Hand3Time, Hand4Time;
     public float BlinkChanceMonster, BlinkChanceSafe;
 
+    [Header("Minimap")]
+    public Renderer MinimapMain;
+    public Renderer MinimapEyes;
+    public Color MinimapSafe;
+    public Color MinimapBeginDanger;
+    public Color MinimapDanger;
+    public Color MinimapDead;
+    private Color minimapBaseEyes;
+    private Color minimapBaseMain;
+
     private float AttackTime=0;
     private bool MonsterAttacking = false;
     private UIManager UIM;
     private ScoreManager SM;
+
+    private bool monsterAttackSuccessful = false;
 
     void Start()
     {
@@ -27,13 +39,25 @@ public class MonsterController : MonoBehaviour
         ShuffleHands();
 
         //StartMonsterAttack(); //testing
+
+        // Minimap init
+        MinimapMain.material = Instantiate(MinimapMain.material);
+        MinimapEyes.material = Instantiate(MinimapEyes.material);
+        minimapBaseEyes = MinimapEyes.material.color;
+        minimapBaseMain = MinimapSafe;
     }
 
     void Update()
     {
         if (!UIM.IsAnyWindowOpen())  //If no window is open
         {
-            if(MonsterAttacking)  //While monster is attacking
+            if (MonsterAttackSuccessful())
+            {
+                // Minimap
+                MinimapMain.material.color = MinimapDead;
+                return;
+            }
+            if (MonsterAttacking)  //While monster is attacking
             {
                 AttackTime += Time.deltaTime;
                 AttackTime = Mathf.Min(AttackTime, MonsterAttackDuration);   //increase the attack timer and shor a correct ammount of hands based on it
@@ -52,6 +76,13 @@ public class MonsterController : MonoBehaviour
                     if (Random.value < BlinkChanceMonster * (AttackTime / MonsterAttackDuration))
                         Blink();
                 }
+
+                // Minimap
+                float percent = MonsterAttackProgress() / MonsterAttackDuration;
+                minimapBaseMain = new Color(Mathf.Lerp(MinimapBeginDanger.r, MinimapDanger.r, percent), Mathf.Lerp(MinimapBeginDanger.g, MinimapDanger.g, percent), Mathf.Lerp(MinimapBeginDanger.b, MinimapDanger.b, percent));
+                MinimapMain.material.color = minimapBaseMain;
+                minimapBaseEyes.a = percent;
+                MinimapEyes.material.color = minimapBaseEyes;
             }
             else //eyes can appear with small probablility even if no monster is attacking
             {
@@ -60,12 +91,20 @@ public class MonsterController : MonoBehaviour
                     if (Random.value < BlinkChanceSafe)
                         Blink();
                 }
+
+                // Minimap
+                MinimapMain.material.color = MinimapSafe;
+                minimapBaseEyes.a = 0;
+                MinimapEyes.material.color = minimapBaseEyes;
             }
 
             if (MonsterAttackSuccessful())    //in case attack timer reaches the max value
             {
                 MonsterWin();
                 StartMonsterAttack();
+
+                // Minimap
+                MinimapMain.material.color = MinimapDead;
             }
                 
         }
@@ -73,9 +112,10 @@ public class MonsterController : MonoBehaviour
 
     private void MonsterWin() //Things that happen once monster's attack succedes
     {
+        monsterAttackSuccessful = true;
         SM.AddPoints(-20);  //ADD CHILD DEATH ANIMATION HERE
         ShuffleHands();
-        StopMonsterAttack();
+        StopMonsterAttack(true);
 
         SoundController.Play3DSound(MonsterWinSFX[Random.Range(0, MonsterWinSFX.Length)], gameObject, 0.5f);
         SM.LoseLife();
@@ -88,7 +128,7 @@ public class MonsterController : MonoBehaviour
 
     public bool MonsterAttackSuccessful()
     {
-        return AttackTime >= MonsterAttackDuration-0.01f;
+        return monsterAttackSuccessful || AttackTime >= MonsterAttackDuration-0.01f;
     }
     public float MonsterAttackProgress() //time since monster started attacking
     {
@@ -104,8 +144,13 @@ public class MonsterController : MonoBehaviour
         AttackTime = 0;
     }
 
-    public void StopMonsterAttack()
+    public void StopMonsterAttack(bool forceStop = false)
     {
+        if (!forceStop && MonsterAttackSuccessful())
+        {
+            // Can't stop
+            return;
+        }
         if (MonsterAttacking)
         {
             MonsterAttacking = false;

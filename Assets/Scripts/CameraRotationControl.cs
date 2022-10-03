@@ -9,6 +9,8 @@ public class CameraRotationControl : MonoBehaviour
 
     public float ObjectInteractionMaxDistance;
 
+    public GameObject MinimapIndicator;
+
     private UIManager UIM;
 
     private void Start()
@@ -24,6 +26,7 @@ public class CameraRotationControl : MonoBehaviour
             Offset = Quaternion.Euler(-Input.GetAxis("Mouse Y") * Sensitivity, Input.GetAxis("Mouse X") * Sensitivity, 0);
             NewRotation = Quaternion.Euler(OldRotation.eulerAngles + Offset.eulerAngles);
             transform.rotation = NewRotation;
+            MinimapIndicator.transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
 
             Raycast();
         }
