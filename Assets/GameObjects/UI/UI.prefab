@@ -3285,7 +3285,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &596094288958233584
 CanvasRenderer:
@@ -3308,14 +3308,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.39607844}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a7051dbe980b2cb469c1335f1ebf7329, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ebb1aa61dbd64d14387a07ad2f526d52, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4923,6 +4923,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7123252446332809306, guid: a396083e0289ce140b461f2673e2195d, type: 3}
   m_PrefabInstance: {fileID: 8538237842481547914}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &379720200268266550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488169538266626768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64605b513a7ad8447a7488921818126b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Level
 --- !u!114 &1931773175317766730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4937,16 +4950,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: 0
   NextLevel: 1
---- !u!114 &379720200268266550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488169538266626768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64605b513a7ad8447a7488921818126b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Level
